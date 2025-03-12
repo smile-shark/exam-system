@@ -1,4 +1,3 @@
-
 <template>
 	<div class="center">
 		<h1>考试系统</h1>
@@ -6,18 +5,29 @@
 			<div :class="overlaylong">
 				<div class="overlaylong-Signin" v-if="disfiex == 0">
 					<h2 class="overlaylongH2">登 录</h2>
-					<input type="text" placeholder="账号">
-					<input type="text" placeholder="密码">
+					<input v-model="loginAcount" type="text" placeholder="账号">
+					<input v-model="loginPassword" type="password" placeholder="密码">
 					<h3>忘记密码？</h3>
-					<button class="inupbutton">登 录</button>
+					<button class="inupbutton" @click.prevent="studentLogin">登 录</button>
 				</div>
 				<div class="overlaylong-Signup" v-if="disfiex == 1">
 					<h2 class="overlaylongH2">注册账户</h2>
-					<input type="text" placeholder="昵称">
-					<input type="text" placeholder="账号">
-					<input type="text" placeholder="密码">
-					<input type="text" placeholder="重复密码">
-					<button class="inupbutton">注 册</button>
+					<input v-model="signupName" type="text" placeholder="昵称">
+					<input v-model="signupAccount" type="text" placeholder="账号">
+					<input v-model="signupPassword" type="password" placeholder="密码">
+					<input v-model="signupRePassword" type="password" placeholder="重复密码">
+					<template>
+						<el-select v-model="adminId" filterable placeholder="请选择教师"
+						style="width: 300px;">
+							<el-option
+							v-for="(item,index) in options"
+							:key="index"
+							:label="item.administratorName"
+							:value="item.administratorId">
+							</el-option>
+						</el-select>
+					</template>
+					<button class="inupbutton" @click.prevent="studentSignUp">注 册</button>
 				</div>
  
 			</div>
@@ -41,12 +51,21 @@
 </template>
  
 <script>
+import api from '@/axios/index'
 	export default {
 		data() {
 			return {
 				overlaylong: 'overlaylong',
 				overlaytitle: 'overlaytitle',
-				disfiex: 0
+				disfiex: 0,
+				options:[],
+				adminId: null,
+				loginAcount:'',
+				loginPassword:'',
+				signupName:'',
+				signupAccount:'',
+				signupPassword:'',
+				signupRePassword:''
 			}
 		},
 		methods: {
@@ -64,8 +83,81 @@
 				setTimeout(() => {
 					this.disfiex = 0
 				}, 200)
- 
+			},
+			studentSignUp(){
+				// 账号最少6位
+				if(this.signupAccount.length<6){
+					this.$message.error('账号长度最少6位')
+					return
+				}
+				// 密码最少6位
+				if(this.signupPassword.length<6){
+					this.$message.error('密码长度最少6位')
+					return
+				}
+				// 昵称最少1位
+				if(this.signupName.length<1){
+					this.$message.error('昵称长度最少1位')
+					return
+				}
+				// 账号和密码长度最多40，昵称最多20
+				if(this.signupAccount.length>40 || this.signupPassword.length>40 || this.signupName.length>20){
+					this.$message.error('账号或密码或昵称长度超过限制')
+					return	
+				}
+				// 密码和重复密码不一致
+				if(this.signupPassword!= this.signupRePassword){
+					this.$message.error('两次密码输入不一致')
+					return
+				}
+				// 如果没有选择admin
+				if(!this.adminId){
+					this.$message.error('请选择教师')
+					return
+				}
+				api.studentSignUp(
+					this.signupAccount,
+					this.signupPassword,
+					this.signupName,
+					this.adminId
+				).then(res=>{
+					if(res.msg=='注册成功'){
+						this.Signup()
+						this.signupAccount=''
+						this.signupPassword=''
+						this.signupRePassword=''
+						this.signupName=''
+						this.adminId=null
+					}
+				})
+			},
+			studentLogin(){
+				// 账号密码不能为空
+				if(this.loginAcount.length==0 || this.loginPassword.length==0){
+					this.$message.error('账号或密码不能为空')
+					return
+				}
+				// 账号密码最少6位
+				if(this.loginAcount.length<6 || this.loginPassword.length<6){
+					this.$message.error('账号或密码长度最少6位')
+					return
+				}
+				api.studentLogin(this.loginAcount,this.loginPassword).then(res=>{
+					if(res.msg=='登录成功'){
+						localStorage.setItem('studentInfo',JSON.stringify(res.data))
+						setTimeout(() => {
+							this.$router.push('/home')
+						}, 1000);
+					}
+				})
 			}
+		},
+		mounted(){
+			api.getAdministratorNameList().then(res=>{
+				if(res.success){
+					this.options=res.data
+				}
+			})
 		}
 	}
 </script>
@@ -233,7 +325,7 @@
 		border: none;
 		padding: 12px 15px;
 		margin: 10px 0;
-		width: 240px;
+		width: 270px;
 	}
 	h3{
 		font-size: 10px;

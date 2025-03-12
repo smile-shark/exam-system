@@ -226,12 +226,18 @@ if __name__ == '__main__':
     subsectionIdList = get_subsection_id()
     # 获取所有用户的问题
     for user in user_info:
-        token = get_token(user[0], user[1])
+        token = None
         try:
-            token['token_type']
-        except:
+            token = get_token(user[0], user[1])
+            var = token['token_type']
+        except Exception as e:
+            print(e)
             print("用户{}登录失败".format(user[0]))
-            break
+            continue
 
         for subsectionId in subsectionIdList:
-            save_question_answer(token, subsectionId[0])
+            try:
+                save_question_answer(token, subsectionId[0])
+            except Exception as e:
+                print("用户{}小节{}获取失败".format(user[0], subsectionId[0]))
+                print(e)

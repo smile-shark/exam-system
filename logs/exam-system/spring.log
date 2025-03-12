@@ -1,0 +1,1090 @@
+2025-03-12 11:47:38.699  INFO 25792 --- [exam-system] [main] c.smileshark.ExamSystemApplicationTests  : Starting ExamSystemApplicationTests using Java 22.0.2 with PID 25792 (started by SmileShark in E:\schoolProject\exam-system)
+2025-03-12 11:47:38.701  INFO 25792 --- [exam-system] [main] c.smileshark.ExamSystemApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2025-03-12 11:47:39.247  INFO 25792 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-03-12 11:47:39.265  INFO 25792 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JDBC repository interfaces.
+2025-03-12 11:47:40.716  INFO 25792 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12 11:47:45.915  INFO 25792 --- [exam-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@566fe83c
+2025-03-12 11:47:45.917  INFO 25792 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12 11:47:46.188  INFO 25792 --- [exam-system] [main] c.smileshark.ExamSystemApplicationTests  : Started ExamSystemApplicationTests in 7.829 seconds (process running for 8.546)
+2025-03-12 11:47:46.665  INFO 25792 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12 11:47:51.010  INFO 25792 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12 12:51:57.117  INFO 27516 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Starting ExamSystemApplication using Java 22.0.2 with PID 27516 (E:\schoolProject\exam-system\target\classes started by SmileShark in E:\schoolProject\exam-system)
+2025-03-12 12:51:57.120  INFO 27516 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-03-12 12:51:57.540  INFO 27516 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-03-12 12:51:57.554  INFO 27516 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2025-03-12 12:51:58.009  INFO 27516 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-12 12:51:58.011  INFO 27516 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.3.1] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2025-03-12 12:51:58.011  INFO 27516 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.1] using APR version [1.7.4].
+2025-03-12 12:51:58.024  INFO 27516 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2025-03-12 12:51:58.033  INFO 27516 --- [exam-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12 12:51:58.033  INFO 27516 --- [exam-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12 12:51:58.063  INFO 27516 --- [exam-system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12 12:51:58.063  INFO 27516 --- [exam-system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 912 ms
+2025-03-12 12:51:58.626  INFO 27516 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12 12:52:03.677  INFO 27516 --- [exam-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@153cfd86
+2025-03-12 12:52:03.678  INFO 27516 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12 12:52:03.814  INFO 27516 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-12 12:52:03.818  INFO 27516 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Started ExamSystemApplication in 7.036 seconds (process running for 7.53)
+2025-03-12 12:52:39.787  INFO 27516 --- [exam-system] [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12 12:52:39.788  INFO 27516 --- [exam-system] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-12 12:52:39.789  INFO 27516 --- [exam-system] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-12 12:57:11.219  INFO 27516 --- [exam-system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-12 12:57:11.224  INFO 27516 --- [exam-system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-12 12:57:11.226  INFO 27516 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12 12:57:11.232  INFO 27516 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12 12:57:13.681  INFO 30748 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Starting ExamSystemApplication using Java 22.0.2 with PID 30748 (E:\schoolProject\exam-system\target\classes started by SmileShark in E:\schoolProject\exam-system)
+2025-03-12 12:57:13.684  INFO 30748 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-03-12 12:57:14.040  INFO 30748 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-03-12 12:57:14.058  INFO 30748 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 0 JDBC repository interfaces.
+2025-03-12 12:57:14.452  INFO 30748 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-12 12:57:14.453  INFO 30748 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.3.1] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2025-03-12 12:57:14.453  INFO 30748 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.1] using APR version [1.7.4].
+2025-03-12 12:57:14.456  INFO 30748 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2025-03-12 12:57:14.466  INFO 30748 --- [exam-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12 12:57:14.466  INFO 30748 --- [exam-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12 12:57:14.507  INFO 30748 --- [exam-system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12 12:57:14.508  INFO 30748 --- [exam-system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 792 ms
+2025-03-12 12:57:15.004  INFO 30748 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12 12:57:20.043  INFO 30748 --- [exam-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@41ece227
+2025-03-12 12:57:20.044  INFO 30748 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12 12:57:20.153  INFO 30748 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-12 12:57:20.158  INFO 30748 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Started ExamSystemApplication in 6.741 seconds (process running for 7.138)
+2025-03-12 12:57:22.233  INFO 30748 --- [exam-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12 12:57:22.233  INFO 30748 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-12 12:57:22.234  INFO 30748 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-12 12:59:15.866  INFO 30748 --- [exam-system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-12 12:59:15.871  INFO 30748 --- [exam-system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-12 12:59:15.873  INFO 30748 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12 12:59:15.877  INFO 30748 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12 12:59:18.168  INFO 15276 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Starting ExamSystemApplication using Java 22.0.2 with PID 15276 (E:\schoolProject\exam-system\target\classes started by SmileShark in E:\schoolProject\exam-system)
+2025-03-12 12:59:18.170  INFO 15276 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-03-12 12:59:18.541  INFO 15276 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-03-12 12:59:18.555  INFO 15276 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2025-03-12 12:59:18.916  INFO 15276 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-12 12:59:18.920  INFO 15276 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.3.1] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2025-03-12 12:59:18.920  INFO 15276 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.1] using APR version [1.7.4].
+2025-03-12 12:59:18.923  INFO 15276 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2025-03-12 12:59:18.930  INFO 15276 --- [exam-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12 12:59:18.931  INFO 15276 --- [exam-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12 12:59:18.958  INFO 15276 --- [exam-system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12 12:59:18.958  INFO 15276 --- [exam-system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 756 ms
+2025-03-12 12:59:19.436  INFO 15276 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12 12:59:24.472  INFO 15276 --- [exam-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2ad2b274
+2025-03-12 12:59:24.473  INFO 15276 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12 12:59:24.588  INFO 15276 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-12 12:59:24.593  INFO 15276 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Started ExamSystemApplication in 6.709 seconds (process running for 7.052)
+2025-03-12 12:59:25.323  INFO 15276 --- [exam-system] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12 12:59:25.323  INFO 15276 --- [exam-system] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-12 12:59:25.324  INFO 15276 --- [exam-system] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-12 12:59:25.327  INFO 15276 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.filter.ControllerFilter   : 请求的url为：/administrator/list
+2025-03-12 13:00:12.004  INFO 15276 --- [exam-system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-12 13:00:12.008  INFO 15276 --- [exam-system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-12 13:00:12.011  INFO 15276 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12 13:00:12.014  INFO 15276 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12 13:00:14.367  INFO 28456 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Starting ExamSystemApplication using Java 22.0.2 with PID 28456 (E:\schoolProject\exam-system\target\classes started by SmileShark in E:\schoolProject\exam-system)
+2025-03-12 13:00:14.369  INFO 28456 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-03-12 13:00:14.729  INFO 28456 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-03-12 13:00:14.749  INFO 28456 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 0 JDBC repository interfaces.
+2025-03-12 13:00:15.116  INFO 28456 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-12 13:00:15.119  INFO 28456 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.3.1] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2025-03-12 13:00:15.119  INFO 28456 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.1] using APR version [1.7.4].
+2025-03-12 13:00:15.121  INFO 28456 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2025-03-12 13:00:15.129  INFO 28456 --- [exam-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12 13:00:15.129  INFO 28456 --- [exam-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12 13:00:15.166  INFO 28456 --- [exam-system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12 13:00:15.166  INFO 28456 --- [exam-system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 763 ms
+2025-03-12 13:00:15.667  INFO 28456 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12 13:00:20.717  INFO 28456 --- [exam-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@406ad6d5
+2025-03-12 13:00:20.718  INFO 28456 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12 13:00:20.822  INFO 28456 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-12 13:00:20.827  INFO 28456 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Started ExamSystemApplication in 6.728 seconds (process running for 7.094)
+2025-03-12 13:01:12.304  INFO 28456 --- [exam-system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-12 13:01:12.308  INFO 28456 --- [exam-system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-12 13:01:12.311  INFO 28456 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12 13:01:12.315  INFO 28456 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12 13:01:14.649  INFO 1336 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Starting ExamSystemApplication using Java 22.0.2 with PID 1336 (E:\schoolProject\exam-system\target\classes started by SmileShark in E:\schoolProject\exam-system)
+2025-03-12 13:01:14.651  INFO 1336 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-03-12 13:01:15.019  INFO 1336 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-03-12 13:01:15.033  INFO 1336 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2025-03-12 13:01:15.401  INFO 1336 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-12 13:01:15.404  INFO 1336 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.3.1] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2025-03-12 13:01:15.404  INFO 1336 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.1] using APR version [1.7.4].
+2025-03-12 13:01:15.407  INFO 1336 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2025-03-12 13:01:15.414  INFO 1336 --- [exam-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12 13:01:15.415  INFO 1336 --- [exam-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12 13:01:15.450  INFO 1336 --- [exam-system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12 13:01:15.450  INFO 1336 --- [exam-system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 761 ms
+2025-03-12 13:01:15.931  INFO 1336 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12 13:01:20.971  INFO 1336 --- [exam-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@42cc5460
+2025-03-12 13:01:20.972  INFO 1336 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12 13:01:21.101  INFO 1336 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-12 13:01:21.105  INFO 1336 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Started ExamSystemApplication in 6.769 seconds (process running for 7.123)
+2025-03-12 13:01:21.256  INFO 1336 --- [exam-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12 13:01:21.256  INFO 1336 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-12 13:01:21.258  INFO 1336 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-03-12 13:01:21.262  INFO 1336 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/list
+2025-03-12 13:02:38.648  INFO 1336 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/list
+2025-03-12 13:07:04.664  INFO 1336 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/ws
+2025-03-12 13:07:06.176  INFO 1336 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/ws
+2025-03-12 13:07:09.033  INFO 1336 --- [exam-system] [http-nio-8080-exec-9] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/ws
+2025-03-12 13:07:13.177  INFO 1336 --- [exam-system] [http-nio-8080-exec-10] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/ws
+2025-03-12 13:07:22.177  INFO 1336 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/ws
+2025-03-12 13:07:39.176  INFO 1336 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/ws
+2025-03-12 13:08:12.179  INFO 1336 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/ws
+2025-03-12 13:09:17.175  INFO 1336 --- [exam-system] [http-nio-8080-exec-6] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/ws
+2025-03-12 13:11:26.176  INFO 1336 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/ws
+2025-03-12 13:15:43.177  INFO 1336 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/ws
+2025-03-12 13:16:07.874  INFO 1336 --- [exam-system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-12 13:16:07.879  INFO 1336 --- [exam-system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-12 13:16:07.881  INFO 1336 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12 13:16:07.887  INFO 1336 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12 13:16:10.427  INFO 15852 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Starting ExamSystemApplication using Java 22.0.2 with PID 15852 (E:\schoolProject\exam-system\target\classes started by SmileShark in E:\schoolProject\exam-system)
+2025-03-12 13:16:10.429  INFO 15852 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-03-12 13:16:10.815  INFO 15852 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-03-12 13:16:10.827  INFO 15852 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+2025-03-12 13:16:11.237  INFO 15852 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-12 13:16:11.241  INFO 15852 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.3.1] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2025-03-12 13:16:11.241  INFO 15852 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.1] using APR version [1.7.4].
+2025-03-12 13:16:11.244  INFO 15852 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2025-03-12 13:16:11.253  INFO 15852 --- [exam-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12 13:16:11.253  INFO 15852 --- [exam-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12 13:16:11.298  INFO 15852 --- [exam-system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12 13:16:11.299  INFO 15852 --- [exam-system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 831 ms
+2025-03-12 13:16:11.831  INFO 15852 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12 13:16:16.871  INFO 15852 --- [exam-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@63a7781
+2025-03-12 13:16:16.872  INFO 15852 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12 13:16:16.981  INFO 15852 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-12 13:16:16.986  INFO 15852 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Started ExamSystemApplication in 6.844 seconds (process running for 7.239)
+2025-03-12 13:24:16.212  INFO 15852 --- [exam-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12 13:24:16.212  INFO 15852 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-12 13:24:16.213  INFO 15852 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-12 13:24:16.216  INFO 15852 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/ws
+2025-03-12 13:31:20.100  INFO 15852 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/
+2025-03-12 13:31:20.133  INFO 15852 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/favicon.ico
+2025-03-12 14:33:15.442  INFO 15852 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:33:42.536  INFO 15852 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:34:05.313  INFO 15852 --- [exam-system] [http-nio-8080-exec-9] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:34:28.561  INFO 15852 --- [exam-system] [http-nio-8080-exec-10] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:34:45.693  INFO 15852 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:34:48.649  INFO 15852 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:35:09.734  INFO 15852 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:35:15.469  INFO 15852 --- [exam-system] [http-nio-8080-exec-4] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:37:26.097  INFO 15852 --- [exam-system] [http-nio-8080-exec-5] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:38:00.333  INFO 15852 --- [exam-system] [http-nio-8080-exec-6] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:38:05.252  INFO 15852 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:38:14.212  INFO 15852 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:38:29.295  INFO 15852 --- [exam-system] [http-nio-8080-exec-9] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:38:30.344 ERROR 15852 --- [exam-system] [http-nio-8080-exec-6] com.smileshark.asp.ServiceAsp            : 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+### The error may exist in com/smileshark/mapper/AdministratorMapper.xml
+### The error may involve com.smileshark.mapper.AdministratorMapper.getAdministratorNameList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+2025-03-12 14:38:35.260 ERROR 15852 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.asp.ServiceAsp            : HikariPool-1 - Connection is not available, request timed out after 30007ms (total=10, active=10, idle=0, waiting=2)
+2025-03-12 14:38:35.262  WARN 15852 --- [exam-system] [http-nio-8080-exec-7] com.zaxxer.hikari.pool.ProxyConnection   : HikariPool-1 - Connection com.mysql.cj.jdbc.ConnectionImpl@dd63285 marked as broken because of SQLSTATE(08003), ErrorCode(0)
+
+java.sql.SQLNonTransientConnectionException: Can't call rollback when autocommit=true
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:102) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:81) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:55) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.rollback(ConnectionImpl.java:1948) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.zaxxer.hikari.pool.ProxyConnection.rollback(ProxyConnection.java:386) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyConnection.rollback(HikariProxyConnection.java) ~[HikariCP-5.1.0.jar:na]
+	at com.smileshark.asp.ServiceAsp.around(ServiceAsp.java:41) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727) ~[spring-aop-6.2.3.jar:6.2.3]
+	at com.smileshark.service.imp.AdministratorServiceImp$$SpringCGLIB$$0.getAdministratorNameList(<generated>) ~[classes/:na]
+	at com.smileshark.controller.AdministratorController.getAdministratorListName(AdministratorController.java:16) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at com.smileshark.filter.ControllerFilter.doFilter(ControllerFilter.java:21) ~[classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2025-03-12 14:38:35.267 ERROR 15852 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.asp.ServiceAsp            : 手动回滚失败
+2025-03-12 14:38:35.267 ERROR 15852 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.asp.ServiceAsp            : Can't call rollback when autocommit=true
+2025-03-12 14:38:35.267 ERROR 15852 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.asp.ServiceAsp            : 设置自动提交失败
+2025-03-12 14:38:35.267 ERROR 15852 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.asp.ServiceAsp            : Connection is closed
+2025-03-12 14:38:59.298 ERROR 15852 --- [exam-system] [http-nio-8080-exec-9] com.smileshark.asp.ServiceAsp            : HikariPool-1 - Connection is not available, request timed out after 30001ms (total=10, active=10, idle=0, waiting=1)
+2025-03-12 14:39:10.264 ERROR 15852 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.asp.ServiceAsp            : 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+### The error may exist in com/smileshark/mapper/AdministratorMapper.xml
+### The error may involve com.smileshark.mapper.AdministratorMapper.getAdministratorNameList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+2025-03-12 14:39:10.264  WARN 15852 --- [exam-system] [http-nio-8080-exec-8] com.zaxxer.hikari.pool.ProxyConnection   : HikariPool-1 - Connection com.mysql.cj.jdbc.ConnectionImpl@158152ca marked as broken because of SQLSTATE(08003), ErrorCode(0)
+
+java.sql.SQLNonTransientConnectionException: Can't call rollback when autocommit=true
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:102) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:81) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:55) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.rollback(ConnectionImpl.java:1948) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.zaxxer.hikari.pool.ProxyConnection.rollback(ProxyConnection.java:386) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyConnection.rollback(HikariProxyConnection.java) ~[HikariCP-5.1.0.jar:na]
+	at com.smileshark.asp.ServiceAsp.around(ServiceAsp.java:41) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727) ~[spring-aop-6.2.3.jar:6.2.3]
+	at com.smileshark.service.imp.AdministratorServiceImp$$SpringCGLIB$$0.getAdministratorNameList(<generated>) ~[classes/:na]
+	at com.smileshark.controller.AdministratorController.getAdministratorListName(AdministratorController.java:16) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at com.smileshark.filter.ControllerFilter.doFilter(ControllerFilter.java:21) ~[classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2025-03-12 14:39:10.265 ERROR 15852 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.asp.ServiceAsp            : 手动回滚失败
+2025-03-12 14:39:10.265 ERROR 15852 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.asp.ServiceAsp            : Can't call rollback when autocommit=true
+2025-03-12 14:39:10.266 ERROR 15852 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.asp.ServiceAsp            : 设置自动提交失败
+2025-03-12 14:39:10.266 ERROR 15852 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.asp.ServiceAsp            : Connection is closed
+2025-03-12 14:40:16.003  INFO 15852 --- [exam-system] [http-nio-8080-exec-10] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:40:46.017 ERROR 15852 --- [exam-system] [http-nio-8080-exec-10] com.smileshark.asp.ServiceAsp            : 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+### The error may exist in com/smileshark/mapper/AdministratorMapper.xml
+### The error may involve com.smileshark.mapper.AdministratorMapper.getAdministratorNameList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+2025-03-12 14:41:38.548  INFO 15852 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:42:08.564 ERROR 15852 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : HikariPool-1 - Connection is not available, request timed out after 30014ms (total=10, active=10, idle=0, waiting=0)
+2025-03-12 14:42:08.564  WARN 15852 --- [exam-system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.ProxyConnection   : HikariPool-1 - Connection com.mysql.cj.jdbc.ConnectionImpl@3debb256 marked as broken because of SQLSTATE(08003), ErrorCode(0)
+
+java.sql.SQLNonTransientConnectionException: Can't call rollback when autocommit=true
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:102) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:81) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:55) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.rollback(ConnectionImpl.java:1948) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.zaxxer.hikari.pool.ProxyConnection.rollback(ProxyConnection.java:386) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyConnection.rollback(HikariProxyConnection.java) ~[HikariCP-5.1.0.jar:na]
+	at com.smileshark.asp.ServiceAsp.around(ServiceAsp.java:41) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727) ~[spring-aop-6.2.3.jar:6.2.3]
+	at com.smileshark.service.imp.AdministratorServiceImp$$SpringCGLIB$$0.getAdministratorNameList(<generated>) ~[classes/:na]
+	at com.smileshark.controller.AdministratorController.getAdministratorListName(AdministratorController.java:16) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at com.smileshark.filter.ControllerFilter.doFilter(ControllerFilter.java:21) ~[classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2025-03-12 14:42:08.566 ERROR 15852 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : 手动回滚失败
+2025-03-12 14:42:08.566 ERROR 15852 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : Can't call rollback when autocommit=true
+2025-03-12 14:42:08.566 ERROR 15852 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : 设置自动提交失败
+2025-03-12 14:42:08.566 ERROR 15852 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : Connection is closed
+2025-03-12 14:42:28.959  INFO 15852 --- [exam-system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-12 14:42:28.963  INFO 15852 --- [exam-system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-12 14:42:28.968  INFO 15852 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12 14:42:28.970  INFO 15852 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12 14:42:31.626  INFO 31184 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Starting ExamSystemApplication using Java 22.0.2 with PID 31184 (E:\schoolProject\exam-system\target\classes started by SmileShark in E:\schoolProject\exam-system)
+2025-03-12 14:42:31.628  INFO 31184 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-03-12 14:42:32.011  INFO 31184 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-03-12 14:42:32.023  INFO 31184 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+2025-03-12 14:42:32.440  INFO 31184 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-12 14:42:32.444  INFO 31184 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.3.1] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2025-03-12 14:42:32.444  INFO 31184 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.1] using APR version [1.7.4].
+2025-03-12 14:42:32.448  INFO 31184 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2025-03-12 14:42:32.460  INFO 31184 --- [exam-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12 14:42:32.460  INFO 31184 --- [exam-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12 14:42:32.494  INFO 31184 --- [exam-system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12 14:42:32.495  INFO 31184 --- [exam-system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 830 ms
+2025-03-12 14:42:33.116  INFO 31184 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12 14:42:38.189  INFO 31184 --- [exam-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1d4cc7
+2025-03-12 14:42:38.190  INFO 31184 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12 14:42:38.296  INFO 31184 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-12 14:42:38.300  INFO 31184 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Started ExamSystemApplication in 6.984 seconds (process running for 7.406)
+2025-03-12 14:43:05.593  INFO 31184 --- [exam-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12 14:43:05.594  INFO 31184 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-12 14:43:05.595  INFO 31184 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-12 14:43:05.608  INFO 31184 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:43:44.585  INFO 31184 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:44:26.673  INFO 31184 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:44:36.070  INFO 31184 --- [exam-system] [http-nio-8080-exec-9] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:45:04.530  INFO 31184 --- [exam-system] [http-nio-8080-exec-5] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:45:14.745  INFO 31184 --- [exam-system] [http-nio-8080-exec-6] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:46:21.559  INFO 31184 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:46:32.767  INFO 31184 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:46:39.481  INFO 31184 --- [exam-system] [http-nio-8080-exec-4] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:46:50.328  INFO 31184 --- [exam-system] [http-nio-8080-exec-10] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:46:53.092  INFO 31184 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:46:54.156  INFO 31184 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:47:20.346 ERROR 31184 --- [exam-system] [http-nio-8080-exec-10] com.smileshark.asp.ServiceAsp            : 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+### The error may exist in com/smileshark/mapper/AdministratorMapper.xml
+### The error may involve com.smileshark.mapper.AdministratorMapper.getAdministratorNameList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+2025-03-12 14:47:23.108 ERROR 31184 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : HikariPool-1 - Connection is not available, request timed out after 30015ms (total=10, active=10, idle=0, waiting=1)
+2025-03-12 14:47:23.110  WARN 31184 --- [exam-system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.ProxyConnection   : HikariPool-1 - Connection com.mysql.cj.jdbc.ConnectionImpl@2a32de22 marked as broken because of SQLSTATE(08003), ErrorCode(0)
+
+java.sql.SQLNonTransientConnectionException: Can't call rollback when autocommit=true
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:102) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:81) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:55) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.rollback(ConnectionImpl.java:1948) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.zaxxer.hikari.pool.ProxyConnection.rollback(ProxyConnection.java:386) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyConnection.rollback(HikariProxyConnection.java) ~[HikariCP-5.1.0.jar:na]
+	at com.smileshark.asp.ServiceAsp.around(ServiceAsp.java:41) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727) ~[spring-aop-6.2.3.jar:6.2.3]
+	at com.smileshark.service.imp.AdministratorServiceImp$$SpringCGLIB$$0.getAdministratorNameList(<generated>) ~[classes/:na]
+	at com.smileshark.controller.AdministratorController.getAdministratorNameList(AdministratorController.java:16) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at com.smileshark.filter.ControllerFilter.doFilter(ControllerFilter.java:21) ~[classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2025-03-12 14:47:23.112 ERROR 31184 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : 手动回滚失败
+2025-03-12 14:47:23.113 ERROR 31184 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : Can't call rollback when autocommit=true
+2025-03-12 14:47:23.113 ERROR 31184 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : 设置自动提交失败
+2025-03-12 14:47:23.113 ERROR 31184 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : Connection is closed
+2025-03-12 14:47:23.585  INFO 31184 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:47:24.163 ERROR 31184 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.asp.ServiceAsp            : HikariPool-1 - Connection is not available, request timed out after 30006ms (total=9, active=9, idle=0, waiting=1)
+2025-03-12 14:47:24.163 ERROR 31184 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.asp.ServiceAsp            : 手动回滚失败
+2025-03-12 14:47:24.163 ERROR 31184 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.asp.ServiceAsp            : Connection is closed
+2025-03-12 14:47:24.163 ERROR 31184 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.asp.ServiceAsp            : 设置自动提交失败
+2025-03-12 14:47:24.163 ERROR 31184 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.asp.ServiceAsp            : Connection is closed
+2025-03-12 14:47:58.124 ERROR 31184 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.asp.ServiceAsp            : 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+### The error may exist in com/smileshark/mapper/AdministratorMapper.xml
+### The error may involve com.smileshark.mapper.AdministratorMapper.getAdministratorNameList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+2025-03-12 14:48:38.162  INFO 31184 --- [exam-system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-12 14:48:38.166  INFO 31184 --- [exam-system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-12 14:48:38.168  INFO 31184 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12 14:48:38.170  INFO 31184 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12 14:48:41.030  INFO 384 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Starting ExamSystemApplication using Java 22.0.2 with PID 384 (E:\schoolProject\exam-system\target\classes started by SmileShark in E:\schoolProject\exam-system)
+2025-03-12 14:48:41.034  INFO 384 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-03-12 14:48:41.404  INFO 384 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-03-12 14:48:41.409  INFO 384 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+2025-03-12 14:48:41.774  INFO 384 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-12 14:48:41.776  INFO 384 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.3.1] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2025-03-12 14:48:41.776  INFO 384 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.1] using APR version [1.7.4].
+2025-03-12 14:48:41.779  INFO 384 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2025-03-12 14:48:41.786  INFO 384 --- [exam-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12 14:48:41.787  INFO 384 --- [exam-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12 14:48:41.814  INFO 384 --- [exam-system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12 14:48:41.815  INFO 384 --- [exam-system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 749 ms
+2025-03-12 14:48:42.271  INFO 384 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12 14:48:47.337  INFO 384 --- [exam-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@406ad6d5
+2025-03-12 14:48:47.338  INFO 384 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12 14:48:47.432  INFO 384 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-12 14:48:47.437  INFO 384 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Started ExamSystemApplication in 6.668 seconds (process running for 7.008)
+2025-03-12 14:49:05.160  INFO 384 --- [exam-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12 14:49:05.160  INFO 384 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-12 14:49:05.161  INFO 384 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-03-12 14:49:05.164  INFO 384 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:50:07.367  INFO 384 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:50:13.403  INFO 384 --- [exam-system] [http-nio-8080-exec-4] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:50:27.328  INFO 384 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:50:38.349  INFO 384 --- [exam-system] [http-nio-8080-exec-5] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:52:25.519  INFO 384 --- [exam-system] [http-nio-8080-exec-6] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:52:41.672  INFO 384 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 14:52:46.507  INFO 384 --- [exam-system] [http-nio-8080-exec-10] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:11:11.719  INFO 384 --- [exam-system] [http-nio-8080-exec-9] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:14:21.640  INFO 384 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:14:51.654 ERROR 384 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.asp.ServiceAsp            : 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+### The error may exist in com/smileshark/mapper/AdministratorMapper.xml
+### The error may involve com.smileshark.mapper.AdministratorMapper.getAdministratorNameList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+2025-03-12 15:15:34.402  INFO 384 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:16:04.407 ERROR 384 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : HikariPool-1 - Connection is not available, request timed out after 30004ms (total=10, active=10, idle=0, waiting=0)
+2025-03-12 15:16:04.408  WARN 384 --- [exam-system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.ProxyConnection   : HikariPool-1 - Connection com.mysql.cj.jdbc.ConnectionImpl@501594eb marked as broken because of SQLSTATE(08003), ErrorCode(0)
+
+java.sql.SQLNonTransientConnectionException: Can't call rollback when autocommit=true
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:102) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:81) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:55) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.rollback(ConnectionImpl.java:1948) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.zaxxer.hikari.pool.ProxyConnection.rollback(ProxyConnection.java:386) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyConnection.rollback(HikariProxyConnection.java) ~[HikariCP-5.1.0.jar:na]
+	at com.smileshark.asp.ServiceAsp.around(ServiceAsp.java:44) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727) ~[spring-aop-6.2.3.jar:6.2.3]
+	at com.smileshark.service.imp.AdministratorServiceImp$$SpringCGLIB$$0.getAdministratorNameList(<generated>) ~[classes/:na]
+	at com.smileshark.controller.AdministratorController.getAdministratorNameList(AdministratorController.java:16) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at com.smileshark.filter.ControllerFilter.doFilter(ControllerFilter.java:21) ~[classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2025-03-12 15:16:04.412 ERROR 384 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : 手动回滚失败
+2025-03-12 15:16:04.412 ERROR 384 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : Can't call rollback when autocommit=true
+2025-03-12 15:16:04.412 ERROR 384 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : 设置自动提交失败
+2025-03-12 15:16:04.412 ERROR 384 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : Connection is closed
+2025-03-12 15:17:11.381  INFO 384 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:17:41.387 ERROR 384 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.asp.ServiceAsp            : 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+### The error may exist in com/smileshark/mapper/AdministratorMapper.xml
+### The error may involve com.smileshark.mapper.AdministratorMapper.getAdministratorNameList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+2025-03-12 15:18:26.672  INFO 384 --- [exam-system] [http-nio-8080-exec-4] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:18:32.188  INFO 384 --- [exam-system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-12 15:18:35.897  INFO 27184 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Starting ExamSystemApplication using Java 22.0.2 with PID 27184 (E:\schoolProject\exam-system\target\classes started by SmileShark in E:\schoolProject\exam-system)
+2025-03-12 15:18:35.898  INFO 27184 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-03-12 15:18:36.237  INFO 27184 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-03-12 15:18:36.250  INFO 27184 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+2025-03-12 15:18:36.612  INFO 27184 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-12 15:18:36.614  INFO 27184 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.3.1] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2025-03-12 15:18:36.614  INFO 27184 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.1] using APR version [1.7.4].
+2025-03-12 15:18:36.616  INFO 27184 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2025-03-12 15:18:36.623  INFO 27184 --- [exam-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12 15:18:36.623  INFO 27184 --- [exam-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12 15:18:36.650  INFO 27184 --- [exam-system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12 15:18:36.651  INFO 27184 --- [exam-system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 721 ms
+2025-03-12 15:18:37.120  INFO 27184 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12 15:18:42.193  INFO 27184 --- [exam-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@16b64a03
+2025-03-12 15:18:42.195  INFO 27184 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12 15:18:42.300  INFO 27184 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-12 15:18:42.305  INFO 27184 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Started ExamSystemApplication in 6.683 seconds (process running for 7.051)
+2025-03-12 15:20:34.898  INFO 27184 --- [exam-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12 15:20:34.899  INFO 27184 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-12 15:20:34.899  INFO 27184 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-03-12 15:20:34.902  INFO 27184 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:21:49.656  INFO 27184 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:22:53.914  INFO 27184 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:23:00.406  INFO 27184 --- [exam-system] [http-nio-8080-exec-4] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:23:18.707  INFO 27184 --- [exam-system] [http-nio-8080-exec-5] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:34:43.053  INFO 27184 --- [exam-system] [http-nio-8080-exec-10] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:34:49.465  INFO 27184 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:35:02.618  INFO 27184 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:35:15.024  INFO 27184 --- [exam-system] [http-nio-8080-exec-9] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:35:36.318  INFO 27184 --- [exam-system] [http-nio-8080-exec-6] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:35:42.753  INFO 27184 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:35:52.629  INFO 27184 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:36:06.338 ERROR 27184 --- [exam-system] [http-nio-8080-exec-6] com.smileshark.asp.ServiceAsp            : 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+### The error may exist in com/smileshark/mapper/AdministratorMapper.xml
+### The error may involve com.smileshark.mapper.AdministratorMapper.getAdministratorNameList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+2025-03-12 15:36:12.759 ERROR 27184 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : HikariPool-1 - Connection is not available, request timed out after 30004ms (total=10, active=10, idle=0, waiting=1)
+2025-03-12 15:36:12.761  WARN 27184 --- [exam-system] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.ProxyConnection   : HikariPool-1 - Connection com.mysql.cj.jdbc.ConnectionImpl@4621927f marked as broken because of SQLSTATE(08003), ErrorCode(0)
+
+java.sql.SQLNonTransientConnectionException: Can't call rollback when autocommit=true
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:102) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:81) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:55) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.rollback(ConnectionImpl.java:1948) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.zaxxer.hikari.pool.ProxyConnection.rollback(ProxyConnection.java:386) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyConnection.rollback(HikariProxyConnection.java) ~[HikariCP-5.1.0.jar:na]
+	at com.smileshark.asp.ServiceAsp.around(ServiceAsp.java:43) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:642) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:632) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.3.jar:6.2.3]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727) ~[spring-aop-6.2.3.jar:6.2.3]
+	at com.smileshark.service.imp.AdministratorServiceImp$$SpringCGLIB$$0.getAdministratorNameList(<generated>) ~[classes/:na]
+	at com.smileshark.controller.AdministratorController.getAdministratorNameList(AdministratorController.java:18) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at com.smileshark.filter.ControllerFilter.doFilter(ControllerFilter.java:21) ~[classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2025-03-12 15:36:12.765 ERROR 27184 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : 手动回滚失败
+2025-03-12 15:36:12.765 ERROR 27184 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : Can't call rollback when autocommit=true
+2025-03-12 15:36:12.765 ERROR 27184 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : 设置自动提交失败
+2025-03-12 15:36:12.765 ERROR 27184 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : Connection is closed
+2025-03-12 15:36:47.751 ERROR 27184 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.asp.ServiceAsp            : 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+### The error may exist in com/smileshark/mapper/AdministratorMapper.xml
+### The error may involve com.smileshark.mapper.AdministratorMapper.getAdministratorNameList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+2025-03-12 15:37:34.568  INFO 27184 --- [exam-system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-12 15:37:34.572  INFO 27184 --- [exam-system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-12 15:37:34.574  INFO 27184 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12 15:37:34.576  INFO 27184 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12 15:37:36.774  INFO 7536 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Starting ExamSystemApplication using Java 22.0.2 with PID 7536 (E:\schoolProject\exam-system\target\classes started by SmileShark in E:\schoolProject\exam-system)
+2025-03-12 15:37:36.776  INFO 7536 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-03-12 15:37:37.103  INFO 7536 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-03-12 15:37:37.115  INFO 7536 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 JDBC repository interfaces.
+2025-03-12 15:37:37.448  INFO 7536 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-12 15:37:37.450  INFO 7536 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.3.1] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2025-03-12 15:37:37.450  INFO 7536 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.1] using APR version [1.7.4].
+2025-03-12 15:37:37.452  INFO 7536 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2025-03-12 15:37:37.458  INFO 7536 --- [exam-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12 15:37:37.458  INFO 7536 --- [exam-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12 15:37:37.483  INFO 7536 --- [exam-system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12 15:37:37.483  INFO 7536 --- [exam-system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 677 ms
+2025-03-12 15:37:37.917  INFO 7536 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12 15:37:42.983  INFO 7536 --- [exam-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5d92e8e2
+2025-03-12 15:37:42.984  INFO 7536 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12 15:37:43.086  INFO 7536 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-12 15:37:43.092  INFO 7536 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Started ExamSystemApplication in 6.575 seconds (process running for 6.883)
+2025-03-12 15:37:44.171  INFO 7536 --- [exam-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12 15:37:44.171  INFO 7536 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-12 15:37:44.172  INFO 7536 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-12 15:37:44.175  INFO 7536 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:40:18.517  INFO 7536 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:41:23.644  INFO 7536 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:41:37.020  INFO 7536 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:41:59.710  INFO 7536 --- [exam-system] [http-nio-8080-exec-5] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:43:03.364  INFO 7536 --- [exam-system] [http-nio-8080-exec-6] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:44:57.291  INFO 7536 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:45:43.775  INFO 7536 --- [exam-system] [http-nio-8080-exec-4] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:46:13.977  INFO 7536 --- [exam-system] [http-nio-8080-exec-9] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:46:37.070  INFO 7536 --- [exam-system] [http-nio-8080-exec-10] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:47:07.085 ERROR 7536 --- [exam-system] [http-nio-8080-exec-10] com.smileshark.asp.ServiceAsp            : 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+### The error may exist in com/smileshark/mapper/AdministratorMapper.xml
+### The error may involve com.smileshark.mapper.AdministratorMapper.getAdministratorNameList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+2025-03-12 15:47:42.785  INFO 7536 --- [exam-system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-12 15:47:42.790  INFO 7536 --- [exam-system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-12 15:47:42.792  INFO 7536 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12 15:47:42.795  INFO 7536 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12 15:47:45.075  INFO 12972 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Starting ExamSystemApplication using Java 22.0.2 with PID 12972 (E:\schoolProject\exam-system\target\classes started by SmileShark in E:\schoolProject\exam-system)
+2025-03-12 15:47:45.077  INFO 12972 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-03-12 15:47:45.419  INFO 12972 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-03-12 15:47:45.431  INFO 12972 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+2025-03-12 15:47:45.681  INFO 12972 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-12 15:47:45.683  INFO 12972 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.3.1] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2025-03-12 15:47:45.683  INFO 12972 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.1] using APR version [1.7.4].
+2025-03-12 15:47:45.685  INFO 12972 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2025-03-12 15:47:45.692  INFO 12972 --- [exam-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12 15:47:45.692  INFO 12972 --- [exam-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12 15:47:45.716  INFO 12972 --- [exam-system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12 15:47:45.716  INFO 12972 --- [exam-system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 611 ms
+2025-03-12 15:47:46.034  INFO 12972 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12 15:47:51.131  INFO 12972 --- [exam-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@216f01
+2025-03-12 15:47:51.133  INFO 12972 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12 15:47:51.214  INFO 12972 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-12 15:47:51.218  INFO 12972 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Started ExamSystemApplication in 6.416 seconds (process running for 6.771)
+2025-03-12 15:47:54.132  INFO 12972 --- [exam-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12 15:47:54.133  INFO 12972 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-12 15:47:54.133  INFO 12972 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-03-12 15:47:54.137  INFO 12972 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:49:16.895  INFO 12972 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:50:29.566  INFO 12972 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 15:50:54.622  INFO 12972 --- [exam-system] [http-nio-8080-exec-9] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/student/signup
+2025-03-12 16:12:51.890  INFO 12972 --- [exam-system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-12 16:12:51.895  INFO 12972 --- [exam-system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-12 16:12:51.898  INFO 12972 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12 16:12:51.903  INFO 12972 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12 16:12:55.755  INFO 24976 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Starting ExamSystemApplication using Java 22.0.2 with PID 24976 (E:\schoolProject\exam-system\target\classes started by SmileShark in E:\schoolProject\exam-system)
+2025-03-12 16:12:55.757  INFO 24976 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-03-12 16:12:56.103  INFO 24976 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-03-12 16:12:56.116  INFO 24976 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2025-03-12 16:12:56.519  INFO 24976 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-12 16:12:56.522  INFO 24976 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.3.1] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2025-03-12 16:12:56.522  INFO 24976 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.1] using APR version [1.7.4].
+2025-03-12 16:12:56.525  INFO 24976 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2025-03-12 16:12:56.532  INFO 24976 --- [exam-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12 16:12:56.532  INFO 24976 --- [exam-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12 16:12:56.562  INFO 24976 --- [exam-system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12 16:12:56.564  INFO 24976 --- [exam-system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 775 ms
+2025-03-12 16:12:57.051  INFO 24976 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12 16:13:02.144  INFO 24976 --- [exam-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3a88f6fb
+2025-03-12 16:13:02.145  INFO 24976 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12 16:13:02.244  INFO 24976 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-12 16:13:02.248  INFO 24976 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Started ExamSystemApplication in 6.767 seconds (process running for 7.138)
+2025-03-12 16:13:20.544  INFO 24976 --- [exam-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12 16:13:20.544  INFO 24976 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-12 16:13:20.544  INFO 24976 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-03-12 16:13:20.548  INFO 24976 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/student/signup
+2025-03-12 16:13:20.664 ERROR 24976 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : 
+### Error updating database.  Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'studentPassowrd' in 'class com.smileshark.service.imp.StudentServiceImp$1'
+### The error may exist in com/smileshark/mapper/StudentMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into student (student_id, administrator_id, student_account, student_password, student_name)         VALUES (?,?,?,?,?)
+### Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'studentPassowrd' in 'class com.smileshark.service.imp.StudentServiceImp$1'
+2025-03-12 16:15:00.892  INFO 24976 --- [exam-system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-12 16:15:00.896  INFO 24976 --- [exam-system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-12 16:15:00.898  INFO 24976 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12 16:15:00.902  INFO 24976 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12 16:15:02.262  INFO 21080 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Starting ExamSystemApplication using Java 22.0.2 with PID 21080 (E:\schoolProject\exam-system\target\classes started by SmileShark in E:\schoolProject\exam-system)
+2025-03-12 16:15:02.263  INFO 21080 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-03-12 16:15:02.607  INFO 21080 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-03-12 16:15:02.619  INFO 21080 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+2025-03-12 16:15:02.971  INFO 21080 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-12 16:15:02.973  INFO 21080 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.3.1] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2025-03-12 16:15:02.973  INFO 21080 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.1] using APR version [1.7.4].
+2025-03-12 16:15:02.975  INFO 21080 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2025-03-12 16:15:02.982  INFO 21080 --- [exam-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12 16:15:02.982  INFO 21080 --- [exam-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12 16:15:03.007  INFO 21080 --- [exam-system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12 16:15:03.007  INFO 21080 --- [exam-system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 713 ms
+2025-03-12 16:15:03.466  INFO 21080 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12 16:15:08.536  INFO 21080 --- [exam-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@d84418a
+2025-03-12 16:15:08.538  INFO 21080 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12 16:15:08.637  INFO 21080 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-12 16:15:08.641  INFO 21080 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Started ExamSystemApplication in 6.633 seconds (process running for 6.963)
+2025-03-12 16:15:19.916  INFO 21080 --- [exam-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12 16:15:19.916  INFO 21080 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-12 16:15:19.916  INFO 21080 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-03-12 16:15:19.920  INFO 21080 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/student/signup
+2025-03-12 16:15:20.040  INFO 21080 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"msg":"注册成功","success":true}
+2025-03-12 16:18:08.473  INFO 21080 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 16:18:08.489  INFO 21080 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3fb381de7b1841a3810591abb62b5b04","administratorName":"吕伯涛"}],"msg":"success","success":true}
+2025-03-12 16:18:54.529  INFO 21080 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 16:18:54.532  INFO 21080 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3fb381de7b1841a3810591abb62b5b04","administratorName":"吕伯涛"}],"msg":"success","success":true}
+2025-03-12 16:25:39.445  INFO 21080 --- [exam-system] [http-nio-8080-exec-4] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 16:25:39.450  INFO 21080 --- [exam-system] [http-nio-8080-exec-4] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3fb381de7b1841a3810591abb62b5b04","administratorName":"吕伯涛"}],"msg":"success","success":true}
+2025-03-12 16:26:12.622  INFO 21080 --- [exam-system] [http-nio-8080-exec-5] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 16:26:12.622  INFO 21080 --- [exam-system] [http-nio-8080-exec-5] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3fb381de7b1841a3810591abb62b5b04","administratorName":"吕伯涛"}],"msg":"success","success":true}
+2025-03-12 16:28:09.798  INFO 21080 --- [exam-system] [http-nio-8080-exec-6] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 16:28:09.813  INFO 21080 --- [exam-system] [http-nio-8080-exec-6] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3fb381de7b1841a3810591abb62b5b04","administratorName":"吕伯涛"}],"msg":"success","success":true}
+2025-03-12 16:28:45.492  INFO 21080 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 16:28:45.498  INFO 21080 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3fb381de7b1841a3810591abb62b5b04","administratorName":"吕伯涛"}],"msg":"success","success":true}
+2025-03-12 16:28:53.858  INFO 21080 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 16:28:53.863  INFO 21080 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3fb381de7b1841a3810591abb62b5b04","administratorName":"吕伯涛"}],"msg":"success","success":true}
+2025-03-12 16:28:58.947  INFO 21080 --- [exam-system] [http-nio-8080-exec-10] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 16:28:58.950  INFO 21080 --- [exam-system] [http-nio-8080-exec-10] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3fb381de7b1841a3810591abb62b5b04","administratorName":"吕伯涛"}],"msg":"success","success":true}
+2025-03-12 16:30:51.846  INFO 21080 --- [exam-system] [http-nio-8080-exec-9] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 16:30:51.851  INFO 21080 --- [exam-system] [http-nio-8080-exec-9] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3fb381de7b1841a3810591abb62b5b04","administratorName":"吕伯涛"}],"msg":"success","success":true}
+2025-03-12 16:31:37.143  INFO 21080 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 16:31:37.146  INFO 21080 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3fb381de7b1841a3810591abb62b5b04","administratorName":"吕伯涛"}],"msg":"success","success":true}
+2025-03-12 16:31:50.174  INFO 21080 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/student/login
+2025-03-12 16:32:04.297  INFO 21080 --- [exam-system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-12 16:32:04.300  INFO 21080 --- [exam-system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-12 16:32:04.304  INFO 21080 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12 16:32:04.304  INFO 21080 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12 16:32:06.596  INFO 1728 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Starting ExamSystemApplication using Java 22.0.2 with PID 1728 (E:\schoolProject\exam-system\target\classes started by SmileShark in E:\schoolProject\exam-system)
+2025-03-12 16:32:06.597  INFO 1728 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-03-12 16:32:06.929  INFO 1728 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-03-12 16:32:06.941  INFO 1728 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JDBC repository interfaces.
+2025-03-12 16:32:07.278  INFO 1728 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-12 16:32:07.280  INFO 1728 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.3.1] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2025-03-12 16:32:07.280  INFO 1728 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.1] using APR version [1.7.4].
+2025-03-12 16:32:07.282  INFO 1728 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2025-03-12 16:32:07.289  INFO 1728 --- [exam-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12 16:32:07.289  INFO 1728 --- [exam-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12 16:32:07.314  INFO 1728 --- [exam-system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12 16:32:07.314  INFO 1728 --- [exam-system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 685 ms
+2025-03-12 16:32:07.794  INFO 1728 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12 16:32:12.882  INFO 1728 --- [exam-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@57416e49
+2025-03-12 16:32:12.883  INFO 1728 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12 16:32:12.981  INFO 1728 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-12 16:32:12.986  INFO 1728 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Started ExamSystemApplication in 6.646 seconds (process running for 6.976)
+2025-03-12 16:32:13.063  INFO 1728 --- [exam-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12 16:32:13.063  INFO 1728 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-12 16:32:13.064  INFO 1728 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-12 16:32:13.067  INFO 1728 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/student/login
+2025-03-12 16:32:13.184  INFO 1728 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":500,"msg":"没有该账号","success":false}
+2025-03-12 16:32:19.818  INFO 1728 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/student/login
+2025-03-12 16:32:19.833  INFO 1728 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":{"administratorId":"3fb381de7b1841a3810591abb62b5b04","studentAccount":"123456","studentId":"24c5b147f3e344b5aa60f08e11daacbe","studentName":"Jack"},"msg":"登录成功","success":true}
+2025-03-12 16:58:39.810  INFO 1728 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/
+2025-03-12 17:51:03.736  INFO 1728 --- [exam-system] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-12 17:51:03.742  INFO 1728 --- [exam-system] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-12 17:51:03.747  INFO 1728 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12 17:51:03.749  INFO 1728 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12 20:55:16.806  INFO 3336 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Starting ExamSystemApplication using Java 22.0.2 with PID 3336 (E:\schoolProject\exam-system\target\classes started by SmileShark in E:\schoolProject\exam-system)
+2025-03-12 20:55:16.808  INFO 3336 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-03-12 20:55:17.275  INFO 3336 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-03-12 20:55:17.291  INFO 3336 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JDBC repository interfaces.
+2025-03-12 20:55:17.750  INFO 3336 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-12 20:55:17.753  INFO 3336 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.3.1] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2025-03-12 20:55:17.753  INFO 3336 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.1] using APR version [1.7.4].
+2025-03-12 20:55:17.756  INFO 3336 --- [exam-system] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2025-03-12 20:55:17.766  INFO 3336 --- [exam-system] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-12 20:55:17.766  INFO 3336 --- [exam-system] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-12 20:55:17.802  INFO 3336 --- [exam-system] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-12 20:55:17.803  INFO 3336 --- [exam-system] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 961 ms
+2025-03-12 20:55:18.396  INFO 3336 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12 20:55:18.514  INFO 3336 --- [exam-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@726a8729
+2025-03-12 20:55:18.515  INFO 3336 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12 20:55:18.649  INFO 3336 --- [exam-system] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-12 20:55:18.654  INFO 3336 --- [exam-system] [main] com.smileshark.ExamSystemApplication     : Started ExamSystemApplication in 2.152 seconds (process running for 2.618)
+2025-03-12 21:01:04.944  INFO 3336 --- [exam-system] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-12 21:01:04.944  INFO 3336 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-12 21:01:04.945  INFO 3336 --- [exam-system] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-12 21:01:04.952  INFO 3336 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 21:01:05.109  INFO 3336 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[],"msg":"success","success":true}
+2025-03-12 21:01:15.993  INFO 3336 --- [exam-system] [http-nio-8080-exec-4] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 21:01:15.995  INFO 3336 --- [exam-system] [http-nio-8080-exec-4] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[],"msg":"success","success":true}
+2025-03-12 21:01:31.560  INFO 3336 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/student/login
+2025-03-12 21:01:31.599  INFO 3336 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":500,"msg":"没有该账号","success":false}
+2025-03-12 21:01:31.877  INFO 3336 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/student/login
+2025-03-12 21:01:31.879  INFO 3336 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":500,"msg":"没有该账号","success":false}
+2025-03-12 21:02:08.410  INFO 14672 --- [exam-system] [main] c.smileshark.ExamSystemApplicationTests  : Starting ExamSystemApplicationTests using Java 22.0.2 with PID 14672 (started by SmileShark in E:\schoolProject\exam-system)
+2025-03-12 21:02:08.411  INFO 14672 --- [exam-system] [main] c.smileshark.ExamSystemApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2025-03-12 21:02:08.903  INFO 14672 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-03-12 21:02:08.919  INFO 14672 --- [exam-system] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JDBC repository interfaces.
+2025-03-12 21:02:10.329  INFO 14672 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-12 21:02:10.535  INFO 14672 --- [exam-system] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b9b17ce
+2025-03-12 21:02:10.536  INFO 14672 --- [exam-system] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-12 21:02:10.833  INFO 14672 --- [exam-system] [main] c.smileshark.ExamSystemApplicationTests  : Started ExamSystemApplicationTests in 2.732 seconds (process running for 3.381)
+2025-03-12 21:02:11.426  INFO 14672 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-12 21:02:11.438  INFO 14672 --- [exam-system] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-12 21:03:23.826  INFO 3336 --- [exam-system] [http-nio-8080-exec-10] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 21:03:23.842  INFO 3336 --- [exam-system] [http-nio-8080-exec-10] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 21:03:59.483  INFO 3336 --- [exam-system] [http-nio-8080-exec-6] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/student/signup
+2025-03-12 21:03:59.492  INFO 3336 --- [exam-system] [http-nio-8080-exec-6] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"msg":"注册成功","success":true}
+2025-03-12 21:04:27.285  INFO 3336 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 21:04:27.287  INFO 3336 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 21:04:57.294  INFO 3336 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 21:04:57.297  INFO 3336 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 21:05:25.937  INFO 3336 --- [exam-system] [http-nio-8080-exec-9] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/student/login
+2025-03-12 21:05:25.943  INFO 3336 --- [exam-system] [http-nio-8080-exec-9] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","studentAccount":"123456","studentId":"3ce45a49550d45edbbd0158dfc0e7c1e","studentName":"王维"},"msg":"登录成功","success":true}
+2025-03-12 21:50:09.941  INFO 3336 --- [exam-system] [http-nio-8080-exec-5] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 21:50:09.944  INFO 3336 --- [exam-system] [http-nio-8080-exec-5] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 21:50:42.741  INFO 3336 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 21:50:42.743  INFO 3336 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 21:55:07.920  INFO 3336 --- [exam-system] [http-nio-8080-exec-4] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 21:55:07.921  INFO 3336 --- [exam-system] [http-nio-8080-exec-4] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 21:58:40.671  INFO 3336 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 21:58:40.673  INFO 3336 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 21:59:32.969  INFO 3336 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 21:59:32.971  INFO 3336 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 21:59:37.802  INFO 3336 --- [exam-system] [http-nio-8080-exec-10] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 21:59:37.804  INFO 3336 --- [exam-system] [http-nio-8080-exec-10] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 21:59:45.707  INFO 3336 --- [exam-system] [http-nio-8080-exec-6] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 21:59:45.709  INFO 3336 --- [exam-system] [http-nio-8080-exec-6] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 22:00:14.055  INFO 3336 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 22:00:14.057  INFO 3336 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 22:00:40.216  INFO 3336 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 22:00:40.217  INFO 3336 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 22:00:48.099  INFO 3336 --- [exam-system] [http-nio-8080-exec-9] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 22:00:48.101  INFO 3336 --- [exam-system] [http-nio-8080-exec-9] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 22:01:13.976  INFO 3336 --- [exam-system] [http-nio-8080-exec-5] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 22:01:13.978  INFO 3336 --- [exam-system] [http-nio-8080-exec-5] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 22:01:22.862  INFO 3336 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 22:01:22.863  INFO 3336 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 22:01:59.017  INFO 3336 --- [exam-system] [http-nio-8080-exec-4] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 22:01:59.019  INFO 3336 --- [exam-system] [http-nio-8080-exec-4] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 22:02:02.796  INFO 3336 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 22:02:02.798  INFO 3336 --- [exam-system] [http-nio-8080-exec-3] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 22:02:14.729  INFO 3336 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 22:02:14.730  INFO 3336 --- [exam-system] [http-nio-8080-exec-2] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 22:02:52.249  INFO 3336 --- [exam-system] [http-nio-8080-exec-10] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 22:02:52.251  INFO 3336 --- [exam-system] [http-nio-8080-exec-10] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 22:02:58.358  INFO 3336 --- [exam-system] [http-nio-8080-exec-6] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 22:02:58.359  INFO 3336 --- [exam-system] [http-nio-8080-exec-6] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 22:03:10.676  INFO 3336 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 22:03:10.677  INFO 3336 --- [exam-system] [http-nio-8080-exec-7] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 22:03:21.529  INFO 3336 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 22:03:21.531  INFO 3336 --- [exam-system] [http-nio-8080-exec-8] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 22:03:25.554  INFO 3336 --- [exam-system] [http-nio-8080-exec-9] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 22:03:25.556  INFO 3336 --- [exam-system] [http-nio-8080-exec-9] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 22:03:33.898  INFO 3336 --- [exam-system] [http-nio-8080-exec-5] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 22:03:33.899  INFO 3336 --- [exam-system] [http-nio-8080-exec-5] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
+2025-03-12 22:05:57.241  INFO 3336 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.filter.ControllerFilter   : 请求的url为：http://localhost:8080/administrator/name/list
+2025-03-12 22:05:57.242  INFO 3336 --- [exam-system] [http-nio-8080-exec-1] com.smileshark.asp.ServiceAsp            : 返回数据：{"code":200,"data":[{"administratorId":"3d0346578e4e4edfbbbf6797239a8883","administratorName":"哇嘎哇嘎"}],"msg":"success","success":true}
