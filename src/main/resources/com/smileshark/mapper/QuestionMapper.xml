@@ -34,7 +34,7 @@
     </sql>
     <sql id="subsectionId">
         <if test="subsectionId!=null">
-            subsection_id = #{subsectionId}
+            and subsection_id = #{subsectionId}
         </if>
     </sql>
 
@@ -64,5 +64,28 @@
             <include refid="questionTypes"/>
             <include refid="questionContent"/>
         </where>
+    </select>
+    <select id="selectQuestionBySubsectionsAndTypeLimitNum" resultType="question">
+        SELECT *
+        FROM question
+        <where>
+            <include refid="subsections"/>
+            <if test="questionType!=null">
+                and question_type=#{questionType}
+            </if>
+        </where>
+        ORDER BY RAND()
+        LIMIT #{limitNum};
+    </select>
+    <select id="selectQuestionByTypeLimitNum" resultType="question">
+        SELECT *
+        FROM question
+        <where>
+            <if test="questionType!=null">
+                and question_type=#{questionType}
+            </if>
+        </where>
+        ORDER BY RAND()
+        LIMIT #{limitNum};
     </select>
 </mapper>   

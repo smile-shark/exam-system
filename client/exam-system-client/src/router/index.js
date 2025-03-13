@@ -8,6 +8,8 @@ import AdminLoginView from '@/views/admin/login/AdminLoginView.vue'
 import AdminHomeView from '@/views/admin/home/AdminHomeView.vue'
 import AdminChildHomeView from '@/views/admin/home/child/AdminChildHomeView.vue'
 import AdminQuestionManageView from '@/views/admin/home/child/AdminQuestionManageView.vue'
+import CreateExamPaperView from '@/views/admin/home/child/CreateExamPaperView.vue'
+import ExamPaperReleaseView from '@/views/admin/home/child/ExamPaperReleaseView.vue'
 
 
 Vue.use(VueRouter)
@@ -77,6 +79,16 @@ const routes = [
         name: 'adminQuestionManage',
         component: AdminQuestionManageView,
         meta: { breadcrumb: '题目管理' }
+      },{
+        path: 'createExamPaper',
+        name: 'createExamPaper',
+        component: CreateExamPaperView,
+        meta: { breadcrumb: '创建试卷' }
+      },{
+        path: 'examPaperRelease',
+        name: 'examPaperRelease',
+        component: ExamPaperReleaseView,
+        meta: { breadcrumb: '发布试卷' }
       }
     ]
   }

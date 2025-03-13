@@ -24,4 +24,10 @@ public class RequestParams {
     private Integer page;
     private Integer size;
     private String questionId;
+    private List<String> courseIds;
+    private List<String> chapterIds;
+    private List<String> subsectionIds;
+    private Integer questionType0Count;
+    private Integer questionType1Count;
+    private Integer questionType2Count;
 }

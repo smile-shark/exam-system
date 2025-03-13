@@ -24,4 +24,13 @@ public interface QuestionMapper {
             @Param("questionContent") String questionContent,
             @Param("questionTypes")List<Integer> questionTypes
     );
+    List<Question> selectQuestionBySubsectionsAndTypeLimitNum(
+            @Param("subsections") List<Subsection> subsections,
+            @Param("questionType") Integer questionType,
+            @Param("limitNum") Integer limitNum
+    );
+    List<Question> selectQuestionByTypeLimitNum(
+            @Param("questionType") Integer questionType,
+            @Param("limitNum") Integer limitNum
+    );
 }

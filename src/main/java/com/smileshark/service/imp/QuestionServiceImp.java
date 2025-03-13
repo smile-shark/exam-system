@@ -33,7 +33,7 @@ public class QuestionServiceImp implements QuestionService {
 
     @Override
     public String questionListByCourseChapterSubsectionContentType(RequestParams requestParams) {
-        Result result = Result.error();
+        Result result;
         if(requestParams.getVague()){
             // 替换位模糊字符串
             requestParams.setQuestionContent(VagueUtil.createVagueString(
@@ -78,5 +78,71 @@ public class QuestionServiceImp implements QuestionService {
             result = Result.success("获取成功",PageInfo.of(page));
         }
         return JSONObject.toJSONString(result);
+    }
+
+    @Override
+    public String selectQuestionBySubsectionsAndTypeLimitNum(RequestParams requestParams) {
+        List<Question> questions = new CopyOnWriteArrayList<>();
+        List<Subsection> subsections = new CopyOnWriteArrayList<>();
+        if(!requestParams.getSubsectionIds().isEmpty()){
+            for (String subsectionId : requestParams.getSubsectionIds()) {
+                subsections.add(new Subsection(){{
+                    setSubsectionId(subsectionId);
+                }});
+            }
+        }else if(!requestParams.getChapterIds().isEmpty()){
+            for (String chapterId : requestParams.getChapterIds()) {
+                subsections.addAll(subsectionMapper.selectAllSubsectionsIdByChapterId(chapterId));
+            }
+        }else if(!requestParams.getCourseIds().isEmpty()){
+            for (String courseId : requestParams.getCourseIds()) {
+                for (Chapter chapter : chapterMapper.selectAllChaptersIdByCourseId(courseId)) {
+                    subsections.addAll(subsectionMapper.selectAllSubsectionsIdByChapterId(chapter.getChapterId()));
+                }
+            }
+        }
+        if(requestParams.getQuestionType0Count()>0){
+            if(subsections.isEmpty()){
+                questions.addAll(questionMapper.selectQuestionByTypeLimitNum(
+                        0,
+                        requestParams.getQuestionType0Count()
+                ));
+            }else{
+                questions.addAll(questionMapper.selectQuestionBySubsectionsAndTypeLimitNum(
+                        subsections,
+                        0,
+                        requestParams.getQuestionType0Count()
+                ));
+            }
+        }
+        if(requestParams.getQuestionType1Count()>0){
+            if(subsections.isEmpty()){
+                questions.addAll(questionMapper.selectQuestionByTypeLimitNum(
+                        1,
+                        requestParams.getQuestionType1Count()
+                ));
+            }else{
+                questions.addAll(questionMapper.selectQuestionBySubsectionsAndTypeLimitNum(
+                        subsections,
+                        1,
+                        requestParams.getQuestionType1Count()
+                ));
+            }
+        }
+        if(requestParams.getQuestionType2Count()>0){
+            if(subsections.isEmpty()){
+                questions.addAll(questionMapper.selectQuestionByTypeLimitNum(
+                        2,
+                        requestParams.getQuestionType2Count()
+                ));
+            }else{
+                questions.addAll(questionMapper.selectQuestionBySubsectionsAndTypeLimitNum(
+                        subsections,
+                        2,
+                        requestParams.getQuestionType2Count()
+                ));
+            }
+        }
+        return JSONObject.toJSONString(Result.success("获取成功",questions));
     }
 }

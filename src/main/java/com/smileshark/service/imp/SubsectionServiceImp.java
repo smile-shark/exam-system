@@ -28,4 +28,11 @@ public class SubsectionServiceImp implements SubsectionService {
                 requestParams.getSubsectionId()
         )));
     }
+
+    @Override
+    public String selectSubsectionsInChapterIds(RequestParams requestParams) {
+        return JSONObject.toJSONString(Result.success(null,subsectionMapper.selectSubsectionsInChapterIds(
+                requestParams.getChapterIds()
+        )));
+    }
 }

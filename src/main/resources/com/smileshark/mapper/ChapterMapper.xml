@@ -14,4 +14,15 @@
     <select id="selectChapterInfoByChapterId" resultMap="chapterMap">
         select * from chapter where chapter_id = #{chapterId}
     </select>
+    <select id="selectChaptersInCourseIds" resultType="chapter">
+        select chapter_id,chapter_name,chapter_title from chapter
+        <where>
+            <if test="courseIds.size>0">
+                course_id in
+                <foreach collection="courseIds" item="courseId" separator="," open="(" close=")">
+                    #{courseId}
+                </foreach>
+            </if>
+        </where>
+    </select>
 </mapper>

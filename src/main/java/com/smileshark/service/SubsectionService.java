@@ -5,4 +5,5 @@ import com.smileshark.common.RequestParams;
 public interface SubsectionService {
     String selectAllSubsectionsNameAndIdByChapterId(RequestParams requestParams);
     String selectAllSubsectionInfoBySubsectionId(RequestParams requestParams);
+    String selectSubsectionsInChapterIds(RequestParams requestParams);
 }

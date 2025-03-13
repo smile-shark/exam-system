@@ -19,4 +19,8 @@ public class SubsectionController {
     public String selectAllSubsectionInfoBySubsectionId(@RequestBody RequestParams requestParams){
         return subsectionService.selectAllSubsectionInfoBySubsectionId(requestParams);
     }
+    @RequestMapping("/teacher/subsections/list/name/id/by/chapterIds")
+    public String selectAllSubsectionsNameAndIdByChapterIds(@RequestBody RequestParams requestParams){
+        return subsectionService.selectSubsectionsInChapterIds(requestParams);
+    }
 }

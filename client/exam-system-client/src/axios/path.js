@@ -14,5 +14,8 @@ export default{
     subsectionListNameAndId:api+"/teacher/subsections/list/name/id",
     questionListByParams:api+"/teacher/question/list/byCourseChapterSubsectionContentType",
     subsectionInfo:api+"/teacher/subsection/info",
-    answerInfo:api+"/teacher/answer/info/by/questionId"
+    answerInfo:api+"/teacher/answer/info/by/questionId",
+    chapterListNameTitleAndIdInCourseId:api+"/teacher/chapter/list/name/title/id/in/courseIds",
+    subsectionListNameAndIdInChapterId:api+"/teacher/subsections/list/name/id/by/chapterIds",
+    pullQuestionListByParams:api+"/teacher/question/select/bySubsectionsAndTypeLimitNum"
 }

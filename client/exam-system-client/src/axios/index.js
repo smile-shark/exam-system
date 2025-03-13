@@ -12,9 +12,9 @@ const myAxios=axios.create({
 //获取数据之前
 myAxios.interceptors.response.use(
   resp=>{
-    if(resp.data.code==200){
+    if(resp.data.code==200&&resp.data.msg){
         Message.success(resp.data.msg)
-    }else{
+    }else if(resp.data.msg){
         Message.error(resp.data.msg)
     }
     return resp.data
@@ -97,4 +97,24 @@ export default {
         questionId:questionId
       })
     },
+    chapterListNameTitleAndIdInCourseId(courseIds){
+      return myAxios.post(path.chapterListNameTitleAndIdInCourseId,{
+        courseIds:courseIds
+      })
+    },
+    subsectionListNameAndIdInChapterId(chapterIds){
+      return myAxios.post(path.subsectionListNameAndIdInChapterId,{
+        chapterIds:chapterIds
+      })
+    },
+    pullQuestionListByParams(courseIds,chapterIds,subsectionIds,questionType0Count,questionType1Count,questionType2Count){
+      return myAxios.post(path.pullQuestionListByParams,{
+        courseIds:courseIds,
+        chapterIds:chapterIds,
+        subsectionIds:subsectionIds,
+        questionType0Count:questionType0Count,
+        questionType1Count:questionType1Count,
+        questionType2Count:questionType2Count
+      })
+    }
 }

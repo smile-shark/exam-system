@@ -15,4 +15,8 @@ public class ChapterController {
     public String selectAllChaptersNameTitleAndIdByCourseId(@RequestBody RequestParams requestParams) {
         return chapterService.selectAllChaptersNameTitleAndIdByCourseId(requestParams);
     }
+    @RequestMapping("/teacher/chapter/list/name/title/id/in/courseIds")
+    public String selectAllChaptersNameTitleAndIdInCourseId(@RequestBody RequestParams requestParams) {
+        return chapterService.selectAllChaptersNameTitleAndIdInCourseId(requestParams);
+    }
 }

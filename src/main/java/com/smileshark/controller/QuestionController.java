@@ -19,4 +19,8 @@ public class QuestionController {
     public String questionListByCourseChapterSubsectionContentType(@RequestBody RequestParams requestParams){
         return questionService.questionListByCourseChapterSubsectionContentType(requestParams);
     }
+    @RequestMapping("/teacher/question/select/bySubsectionsAndTypeLimitNum")
+    public String selectQuestionBySubsectionsAndTypeLimitNum(@RequestBody RequestParams requestParams){
+        return questionService.selectQuestionBySubsectionsAndTypeLimitNum(requestParams);
+    }
 }

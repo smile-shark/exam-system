@@ -22,4 +22,15 @@ public class ChapterServiceImp implements ChapterService {
                 )
         );
     }
+
+    @Override
+    public String selectAllChaptersNameTitleAndIdInCourseId(RequestParams requestParams) {
+        return JSONObject.toJSONString(
+                Result.success("查询成功",
+                        chapterMapper.selectChaptersInCourseIds(
+                                requestParams.getCourseIds()
+                        )
+                )
+        );
+    }
 }

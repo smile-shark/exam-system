@@ -8,4 +8,5 @@ import java.util.List;
 public interface QuestionService {
     String questionCount();
     String questionListByCourseChapterSubsectionContentType(RequestParams requestParams);
+    String selectQuestionBySubsectionsAndTypeLimitNum(RequestParams requestParams);
 }

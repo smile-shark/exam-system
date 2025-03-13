@@ -25,19 +25,21 @@
 					<el-submenu index="4">
 						<template slot="title"><i class="el-icon-tickets"></i>试卷管理</template>
 						<el-menu-item>试卷列表</el-menu-item>
-						<el-menu-item>试卷发布</el-menu-item>
+						<el-menu-item index="examPaperRelease">试卷发布</el-menu-item>
+						<el-menu-item index="createExamPaper">创建试卷</el-menu-item>
 					</el-submenu>
 				</el-menu>
 			</el-col>
 			<el-col :span="20" style="height: 100%;overflow: auto;">
 				<el-row>
-					<el-col :span="24" style="height: 8vh;display: flex;align-items: center;padding:20px;background-color: #eff2f7;">
+					<el-col :span="24" style="height: 8vh;display: flex;align-items: center;padding:20px;background-color: #eff2f7;position: relative;">
 						<el-breadcrumb separator-class="el-icon-arrow-right">
-						<el-breadcrumb-item :to="{ path: '/admin/home' }">首页</el-breadcrumb-item>
-						<el-breadcrumb-item v-for="(item, index) in breadcrumbList" :key="index" :to="item.to">
-							{{ item.name }}
-						</el-breadcrumb-item>
+							<el-breadcrumb-item :to="{ path: '/admin/home' }">首页</el-breadcrumb-item>
+							<el-breadcrumb-item v-for="(item, index) in breadcrumbList" :key="index" :to="item.to">
+								{{ item.name }}
+							</el-breadcrumb-item>
 						</el-breadcrumb>
+						<div style="display: inline-block;position: absolute;right: 20px;">{{ adminName }}</div>
 					</el-col>
 				</el-row>
 				<keep-alive>
@@ -49,11 +51,13 @@
 </template>
 
 <script>
+import api from '@/axios/index'
     export default {
 		data(){
 			return{
 				defaultActive: '/admin/home',
-				breadcrumbList: []
+				breadcrumbList: [],
+				adminName:''
 			}
 		},
 		watch: {
@@ -72,6 +76,11 @@
 				name: record.meta.breadcrumb,
 				to: record.path
 				}));
+			}
+		},
+		mounted(){
+			if(localStorage.adminInfo){
+				this.adminName=JSON.parse(localStorage.adminInfo).administratorName
 			}
 		}
     }
