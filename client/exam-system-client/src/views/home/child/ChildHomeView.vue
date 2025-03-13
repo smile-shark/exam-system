@@ -76,7 +76,6 @@ body {
   width: 100%;
   padding: 10px;
   /* border: 2px solid #ccc; */
-  background:url(https://cq.offcn.com/zg/gkcjwt/images/bj.png) no-repeat center center / cover;
 }
 
 /* 统计信息项 */

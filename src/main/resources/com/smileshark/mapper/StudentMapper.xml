@@ -8,4 +8,7 @@
     <select id="selectStudentByAccount" resultType="student">
         select * from student where student_account = #{account}
     </select>
+    <select id="selectStudentCount" resultType="int">
+        select count(student_id) from student
+    </select>
 </mapper>

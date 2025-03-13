@@ -10,4 +10,5 @@ import org.aspectj.lang.annotation.Pointcut;
 public interface StudentMapper {
     int insertStudent(@Param("student")Student student);
     Student selectStudentByAccount(@Param("account")String account);
+    int selectStudentCount();
 }

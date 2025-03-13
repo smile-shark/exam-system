@@ -43,5 +43,23 @@ export default {
         studentAccount:account,
         studentPassword:password
       })
+    },
+    adminLogin(account,password){
+      return myAxios.post(path.adminLogin,{
+        administratorAccount:account,
+        administratorPassword:password
+      })
+    },
+    getStudentCount(){
+      return myAxios.post(path.studentCount)
+    },
+    getCourseCount(){
+      return myAxios.post(path.courseCount)
+    },
+    getQuestionCount(){
+      return myAxios.post(path.questionCount)
+    },
+    getExamPaperCount(){
+      return myAxios.post(path.examPaperCount)
     }
 }

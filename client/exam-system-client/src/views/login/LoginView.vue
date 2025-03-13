@@ -7,7 +7,7 @@
 					<h2 class="overlaylongH2">登 录</h2>
 					<input v-model="loginAcount" type="text" placeholder="账号">
 					<input v-model="loginPassword" type="password" placeholder="密码">
-					<h3>忘记密码？</h3>
+					<h3><el-link>忘记密码？</el-link><el-link @click="routerTo('/admin/login')">管理员登录</el-link></h3>
 					<button class="inupbutton" @click.prevent="studentLogin">登 录</button>
 				</div>
 				<div class="overlaylong-Signup" v-if="disfiex == 1">
@@ -150,6 +150,9 @@ import api from '@/axios/index'
 						}, 1000);
 					}
 				})
+			},
+			routerTo(path){
+				this.$router.push(path)
 			}
 		},
 		mounted(){
