@@ -12,7 +12,7 @@
 					</el-menu-item>
 					<el-submenu index="2">
 						<template slot="title"><i class="el-icon-s-data"></i>数据管理</template>
-						<el-menu-item>题目管理</el-menu-item>
+						<el-menu-item index="adminQuestionManage">题目管理</el-menu-item>
 						<el-menu-item>题目导入</el-menu-item>
 						<el-menu-item>课程管理</el-menu-item>
 					</el-submenu>

@@ -61,5 +61,40 @@ export default {
     },
     getExamPaperCount(){
       return myAxios.post(path.examPaperCount)
-    }
+    },
+    getCourseListNameAndId(){
+      return myAxios.post(path.courseListNameAndId)
+    },
+    getChapterListNameTitleAndId(courseId){
+      return myAxios.post(path.chapterListNameTitleAndId,{
+        courseId:courseId
+      })
+    },
+    getSubsectionListNameAndId(chapterId){
+      return myAxios.post(path.subsectionListNameAndId,{
+        chapterId:chapterId
+      })  
+    },
+    getQuestionList(page,size,courseId,chapterId,subsectionId,questionTypes,questionContent,vague){
+      return myAxios.post(path.questionListByParams,{
+        vague:vague,
+        page:page,
+        size:size,
+        courseId:courseId,
+        chapterId:chapterId,
+        subsectionId:subsectionId,
+        questionTypes:questionTypes,
+        questionContent:questionContent
+      })
+    },
+    getSubsectionInfo(subsectionId){
+      return myAxios.post(path.subsectionInfo,{
+        subsectionId:subsectionId
+      })
+    },
+    getAnswerInfo(questionId){
+      return myAxios.post(path.answerInfo,{
+        questionId:questionId
+      })
+    },
 }

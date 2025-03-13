@@ -19,7 +19,7 @@ public class StudentController {
     public String login(@RequestBody RequestParams requestParams){
         return studentService.studentLogin(requestParams);
     }
-    @RequestMapping("/student/count")
+    @RequestMapping("/teacher/student/count")
     public String count(){
         return studentService.studentCount();
     }

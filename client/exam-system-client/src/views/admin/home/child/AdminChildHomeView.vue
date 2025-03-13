@@ -53,7 +53,6 @@ export default {
 .stats-container {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   padding: 10px;
   /* border: 2px solid #ccc; */
 }

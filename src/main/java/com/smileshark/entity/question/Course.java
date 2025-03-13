@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 public class Course {
-    private String curseId;
+    private String courseId;
     private String courseName;
     private String courseImage;
     private String courseDescribe;

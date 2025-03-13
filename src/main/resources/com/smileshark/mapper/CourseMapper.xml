@@ -4,4 +4,10 @@
     <select id="courseCount" resultType="int">
         select count(course_id) from course
     </select>
+    <select id="selectAllCoursesNameAndId" resultType="course">
+        select course_id, course_name from course
+    </select>
+    <select id="selectCourseByCourseId" resultType="course">
+        select * from course where course_id = #{courseId}
+    </select>
 </mapper>

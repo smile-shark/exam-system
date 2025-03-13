@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class ExamPaperController {
     private final ExamPaperService examPaperService;
-    @RequestMapping("/exam/paper/count")
+    @RequestMapping("/teacher/exam/paper/count")
     public String count(){
         return examPaperService.examPaperCount();
     }

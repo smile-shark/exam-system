@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smileshark.mapper.ChapterMapper">
+    <select id="selectAllChaptersNameTitleAndIdByCourseId" resultType="chapter">
+        select chapter_id,chapter_name,chapter_title from chapter where course_id = #{courseId} order by chapter_title
+    </select>
+    <select id="selectAllChaptersIdByCourseId" resultType="chapter">
+        select chapter_id from chapter where course_id = #{courseId}
+    </select>
+    <resultMap id="chapterMap" type="chapter">
+        <id property="chapterId" column="chapter_id"/>
+        <association property="course" column="course_id" select="com.smileshark.mapper.CourseMapper.selectCourseByCourseId"/>
+    </resultMap>
+    <select id="selectChapterInfoByChapterId" resultMap="chapterMap">
+        select * from chapter where chapter_id = #{chapterId}
+    </select>
+</mapper>

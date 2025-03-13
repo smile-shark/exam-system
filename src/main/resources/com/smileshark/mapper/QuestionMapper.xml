@@ -1,7 +1,68 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smileshark.mapper.QuestionMapper">
+    <sql id="questionContent">
+        <if test="questionContent!=null">
+           and question like #{questionContent}
+        </if>
+    </sql>
+    <sql id="questionTypes">
+        <if test="questionTypes.size>0">
+           and question_type in
+            <foreach
+                    collection="questionTypes"
+                    item="questionType"
+                    separator=","
+                    open="("
+                    close=")">
+                #{questionType}
+            </foreach>
+        </if>
+    </sql>
+    <sql id="subsections">
+        <if test="subsections.size>0">
+            and subsection_id in
+            <foreach
+                    collection="subsections"
+                    item="subsection"
+                    separator=","
+                    open="("
+                    close=")">
+                #{subsection.subsectionId}
+            </foreach>
+        </if>
+    </sql>
+    <sql id="subsectionId">
+        <if test="subsectionId!=null">
+            subsection_id = #{subsectionId}
+        </if>
+    </sql>
+
+
     <select id="questionCount" resultType="int">
         select count(question_id) from question
     </select>
-</mapper>
+    <select id="selectQuestionByParams" resultType="question">
+        select * from question
+        <where>
+            <include refid="questionContent"/>
+            <include refid="questionTypes"/>
+        </where>
+    </select>
+    <select id="selectQuestionByParamsInSubsectionIds" resultType="question">
+        select * from question
+        <where>
+            <include refid="questionContent"/>
+            <include refid="questionTypes"/>
+            <include refid="subsections"/>
+        </where>
+    </select>
+    <select id="selectQuestionByParamsAndSubsectionId" resultType="question">
+        select * from question
+        <where>
+            <include refid="subsectionId"/>
+            <include refid="questionTypes"/>
+            <include refid="questionContent"/>
+        </where>
+    </select>
+</mapper>   

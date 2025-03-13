@@ -9,8 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class CourseController {
     private final CourseService courseService;
-    @RequestMapping("/course/count")
+    @RequestMapping("/teacher/course/count")
     public String count(){
         return courseService.courseCount();
+    }
+    @RequestMapping("/teacher/course/list/name/id")
+    public String selectAllCoursesNameAndId(){
+        return courseService.selectAllCoursesNameAndId();
     }
 }

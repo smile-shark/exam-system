@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ServiceAsp {
 
-    @Pointcut("execution(* com.smileshark.service..*.*(..))")
+    @Pointcut("execution(String com.smileshark.service..*.*(..))")
     public void pointcut() {}
 
     @Around("pointcut()")

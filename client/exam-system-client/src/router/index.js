@@ -7,7 +7,7 @@ import MistakesCollectionView from '@/views/home/child/MistakesCollectionView.vu
 import AdminLoginView from '@/views/admin/login/AdminLoginView.vue'
 import AdminHomeView from '@/views/admin/home/AdminHomeView.vue'
 import AdminChildHomeView from '@/views/admin/home/child/AdminChildHomeView.vue'
-import path from '@/axios/path'
+import AdminQuestionManageView from '@/views/admin/home/child/AdminQuestionManageView.vue'
 
 
 Vue.use(VueRouter)
@@ -72,6 +72,11 @@ const routes = [
         name: 'adminChildHome',
         component: AdminChildHomeView,
         meta: { breadcrumb: '' }
+      },{
+        path: 'adminQuestionManage',
+        name: 'adminQuestionManage',
+        component: AdminQuestionManageView,
+        meta: { breadcrumb: '题目管理' }
       }
     ]
   }

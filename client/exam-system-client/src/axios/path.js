@@ -4,8 +4,15 @@ export default{
     studentSignUp:api+"/student/signup",
     studentLogin:api+"/student/login",
     adminLogin:api+"/administrator/login",
-    studentCount:api+"/student/count",
-    courseCount:api+"/course/count",
-    questionCount:api+"/question/count",
-    examPaperCount:api+"/exam/paper/count",
+
+    studentCount:api+"/teacher/student/count",
+    courseCount:api+"/teacher/course/count",
+    questionCount:api+"/teacher/question/count",
+    examPaperCount:api+"/teacher/exam/paper/count",
+    courseListNameAndId:api+"/teacher/course/list/name/id",
+    chapterListNameTitleAndId:api+"/teacher/chapter/list/name/title/id",
+    subsectionListNameAndId:api+"/teacher/subsections/list/name/id",
+    questionListByParams:api+"/teacher/question/list/byCourseChapterSubsectionContentType",
+    subsectionInfo:api+"/teacher/subsection/info",
+    answerInfo:api+"/teacher/answer/info/by/questionId"
 }

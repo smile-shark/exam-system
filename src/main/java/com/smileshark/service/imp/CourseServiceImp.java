@@ -15,4 +15,9 @@ public class CourseServiceImp implements CourseService {
     public String courseCount() {
         return JSONObject.toJSONString(Result.success("获取成功",courseMapper.courseCount()));
     }
+
+    @Override
+    public String selectAllCoursesNameAndId() {
+        return JSONObject.toJSONString(Result.success("获取成功",courseMapper.selectAllCoursesNameAndId()));
+    }
 }
