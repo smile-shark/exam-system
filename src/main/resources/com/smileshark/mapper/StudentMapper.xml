@@ -11,4 +11,11 @@
     <select id="selectStudentCount" resultType="int">
         select count(student_id) from student
     </select>
+    <resultMap id="studentAndTeacher" type="student">
+        <id property="studentId" column="student_id"/>
+        <association property="administrator" column="administrator_id" select="com.smileshark.mapper.AdministratorMapper.selectAdministratorById"/>
+    </resultMap>
+    <select id="selectAllStudent" resultMap="studentAndTeacher">
+        select student_id, administrator_id, student_account, student_name from student
+    </select>
 </mapper>

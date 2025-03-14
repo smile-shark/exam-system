@@ -72,8 +72,8 @@
                 label="问题"
                 width="800">
                 <template slot-scope="scope">
-                    <div style="overflow-x: hidden; white-space: nowrap; text-overflow: ellipsis;">
-                        {{ scope.row.question }}
+                    <div style="overflow-x: hidden; white-space: nowrap; text-overflow: ellipsis;" 
+                    v-html="scope.row.question">
                     </div>
                 </template>
                 </el-table-column>
@@ -120,8 +120,8 @@
             <el-form-item label="问题ID"> 
                 {{ dialogShowQuestion.questionId }}
             </el-form-item>
-            <el-form-item label="问题"> 
-                {{ dialogShowQuestion.question }}
+            <el-form-item label="问题">
+                <div v-html="dialogShowQuestion.question"></div> 
             </el-form-item>
             <el-form-item label="问题类型"> 
                 <span v-if="dialogShowQuestion.questionType===0">单选题</span>

@@ -12,8 +12,8 @@ public class ExamPaperRelease {
     private ExamPaper examPaper;
     private String AdministratorId;
     private Administrator administrator;
-    private Integer examPaperReleaseTime;
-    private Integer examStartTime;
-    private Integer examEndTime;
+    private Long examPaperReleaseTime;
+    private Long examStartTime;
+    private Long examEndTime;
     private String notes;
 }

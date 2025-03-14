@@ -33,4 +33,13 @@ public interface QuestionMapper {
             @Param("questionType") Integer questionType,
             @Param("limitNum") Integer limitNum
     );
+    Question selectQuestionBySubsectionsAndTypeLimitNumNotQuestionId(
+            @Param("subsections") List<Subsection> subsections,
+            @Param("questionType") Integer questionType,
+            @Param("questionId") String questionId
+    );
+    Question selectQuestionByTypeLimitNumNotQuestionId(
+            @Param("questionType") Integer questionType,
+            @Param("questionId") String questionId
+    );
 }

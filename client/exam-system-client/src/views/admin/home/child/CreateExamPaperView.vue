@@ -49,9 +49,9 @@
                     <el-input v-model="examPaper.questionCountType2" type="number" min="0" placeholder="请输入题目数量"></el-input>
                 </el-form-item>
                 <el-form-item label-width="40px">
-                    <el-button type="primary">生成试卷</el-button>
+                    <el-button type="primary" @click.prevent="createExamPaper">生成试卷</el-button>
                     <el-button type="primary" @click.prevent="getQuestions">拉取题目</el-button>
-                    <el-button>取消</el-button>
+                    <el-button @click.prevent="reset">重置</el-button>
                 </el-form-item>
                 </el-form>
             </el-col>
@@ -67,9 +67,9 @@
                 <div style="background-color: #f0eeed;min-height: 75vh;">
                     <!-- 三个table（单选，多选，判断） -->
                     <el-row>
-                        <el-col :span="24" v-if="questions.length>0">
+                        <el-col :span="24" v-if="questions.length>0" style="padding:10px">
                             <h2 v-if="examPaper.questionCountType0>0" style="padding:10px;">单选题</h2>
-                            <el-table :data="questions.filter(item=>item.questionType==0)" style="width: 100%;">
+                            <el-table v-if="examPaper.questionCountType0>0"  :data="questions.filter(item=>item.questionType==0)" style="width: 100%;">
                                 <el-table-column label="刷新"
                                 fixed="right"
                                 width="100">
@@ -82,14 +82,14 @@
                                 <el-table-column label="题目ID" prop="questionId" width="300"></el-table-column>
                                 <el-table-column label="题目">
                                    <template slot-scope="scope">
-                                    <div style="overflow-x: hidden;white-space: nowrap;text-overflow: ellipsis;">
-                                        {{ scope.row.question }}
+                                    <div style="overflow-x: hidden; white-space: nowrap; text-overflow: ellipsis;" 
+                                    v-html="scope.row.question">
                                     </div>
                                    </template>
                                 </el-table-column>
                             </el-table>
                             <h2 v-if="examPaper.questionCountType1>0" style="padding:10px;">多选题</h2>
-                            <el-table :data="questions.filter(item=>item.questionType==1)" style="width: 100%;">
+                            <el-table v-if="examPaper.questionCountType1>0" :data="questions.filter(item=>item.questionType==1)" style="width: 100%;">
                                 <el-table-column label="刷新"
                                 fixed="right"
                                 width="100">
@@ -109,7 +109,7 @@
                                 </el-table-column>
                             </el-table>
                             <h2 v-if="examPaper.questionCountType2>0" style="padding:10px;">判断题</h2>
-                            <el-table :data="questions.filter(item=>item.questionType==2)" style="width: 100%;">
+                            <el-table v-if="examPaper.questionCountType2>0" :data="questions.filter(item=>item.questionType==2)" style="width: 100%;">
                                 <el-table-column label="刷新"
                                 fixed="right"
                                 width="100">
@@ -144,7 +144,6 @@ export default {
                 courseIds:[],
                 chapterIds:[],
                 subsectionIds:[],
-                questionIds:[],
                 questionCountType0:0,
                 questionCountType1:0,
                 questionCountType2:0,
@@ -155,6 +154,7 @@ export default {
             chapters:[],
             subsections:[],
             questions:[],
+            isSubmit:false,
         }
     },
     methods:{
@@ -186,7 +186,7 @@ export default {
                 return
             }
             //试卷标题不能为'试卷标题'
-            if(this.examPaperTitle=='试卷标题'){
+            if(this.examPaperTitle==='试卷标题'){
                 this.$message.error('试卷标题不能为“试卷标题”')
                 return
             }
@@ -224,7 +224,49 @@ export default {
             return count
         },
         refreshQuestion(row){
-
+            api.questionListByParamsNotQuestionId(
+                this.examPaper.courseIds,
+                this.examPaper.chapterIds,
+                this.examPaper.subsectionIds,
+                row.questionType,
+                row.questionId
+            ).then(res=>{
+                // 添加题目
+                this.questions.push(res.data)
+            })
+            // 删除题目
+            this.questions.splice(this.questions.findIndex(item=>item.questionId==row.questionId),1)
+        },
+        createExamPaper(){
+            if(this.questions.length==0){
+                this.$message.error('请先拉取题目')
+                return
+            }
+            let adminId=JSON.parse(localStorage.adminInfo).administratorId
+            if(adminId&&!this.isSubmit){
+                // 点快了会创建很多要加个防抖
+                this.isSubmit=true
+                api.createExamPaper(adminId,this.examPaper.examPaperTitle,this.questions,this.examPaper.examPaperScore).then(res=>{
+                    if(res.msg=='创建成功'){
+                        // 全部重置
+                        this.reset()
+                        this.isSubmit=false
+                    }
+                })
+            }else{
+                this.$message.error('请先登录')
+                return
+            }
+        },
+        reset(){
+            this.examPaper={
+                questionCountType0:0,
+                questionCountType1:0,
+                questionCountType2:0,
+                examPaperTitle:'试卷标题',
+                examPaperScore:100,
+            }
+            this.questions=[]
         }
     },
     mounted(){

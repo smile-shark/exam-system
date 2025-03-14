@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smileshark.mapper.ExamPaperAllocationMapper">
+    <insert id="insertExamPaperAllocation">
+        insert into exam_paper_allocation(exam_paper_allocation_id, student_id, exam_paper_release_id)
+        values
+        (#{examPaperAllocation.examPaperAllocationId},
+         #{examPaperAllocation.studentId},
+         #{examPaperAllocation.examPaperReleaseId})
+    </insert>
+    <select id="allocationExamPaperCountByStudentIdAndState" resultType="int">
+        select count(*) from exam_paper_allocation where student_id=#{studentId}
+                                                     and exam_paper_allocation_state
+                                                             =#{examPaperAllocationState}
+    </select>
+    <select id="selectLastExamPaperAllocationByStudentId" resultType="examPaperAllocation">
+        select exam_paper_allocation_id from exam_paper_allocation
+                 inner join exam_paper_release
+                     on exam_paper_allocation.exam_paper_release_id = exam_paper_release.exam_paper_release_id
+                 where student_id=#{studentId} and exam_paper_allocation_state=2
+                 order by exam_start_time desc
+        limit 1
+    </select>
+    <select id="ExamCountByStudentId" resultType="int">
+        select count(student_id) from exam_paper_allocation where student_id=#{studentId} and exam_paper_allocation_state=2
+    </select>
+</mapper>

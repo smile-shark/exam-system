@@ -10,4 +10,5 @@ import java.util.List;
 public interface AdministratorMapper {
     List<Administrator> getAdministratorNameList();
     Administrator selectAdministratorByAccount(@Param("administratorAccount") String administratorAccount);
+    Administrator selectAdministratorById(@Param("administratorId") Integer administratorId);
 }

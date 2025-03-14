@@ -23,4 +23,8 @@ public class StudentController {
     public String count(){
         return studentService.studentCount();
     }
+    @RequestMapping("/teacher/student/select/selectAllStudent")
+    public String selectAllStudent(){
+        return studentService.selectAllStudent();
+    }
 }

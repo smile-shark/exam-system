@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smileshark.mapper.ExamPaperReleaseMapper">
+    <insert id="insertExamPaperRelease">
+        insert into exam_paper_release
+            (exam_paper_release_id,
+             exam_paper_id,
+             administrator_id,
+             exam_paper_release_time,
+             exam_start_time,
+             exam_end_time,
+             notes) VALUES
+            (#{examPaperRelease.examPaperReleaseId},
+             #{examPaperRelease.examPaperId},
+             #{examPaperRelease.administratorId},
+             #{examPaperRelease.examPaperReleaseTime},
+             #{examPaperRelease.examStartTime},
+             #{examPaperRelease.examEndTime},
+             #{examPaperRelease.notes})
+
+    </insert>
+</mapper>

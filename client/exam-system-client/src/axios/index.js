@@ -116,5 +116,79 @@ export default {
         questionType1Count:questionType1Count,
         questionType2Count:questionType2Count
       })
+    },
+    questionListByParamsNotQuestionId(courseIds,chapterIds,subsectionIds,questionType,questionId){
+      return myAxios.post(path.questionListByParamsNotQuestionId,{
+        courseIds:courseIds,
+        chapterIds:chapterIds,
+        subsectionIds:subsectionIds,
+        questionType:questionType,
+        questionId:questionId
+      })
+    },
+    createExamPaper(administratorId,examPaperTitle,questions,totalScore){
+      return myAxios.post(path.createExamPaper,{
+        administratorId:administratorId,
+        examPaperTitle:examPaperTitle,
+        questions:questions,
+        totalScore:totalScore
+      })
+    },
+    getExamPaperIdTitle(){
+      return myAxios.post(path.getExamPaperIdTitle)
+    },
+    getAllStudent(){
+      return myAxios.post(path.getAllStudent)
+    },
+    releaseExamPaper(examPaperId,administratorId,examStartTime,examEndTime,notes,students){
+      return myAxios.post(path.releaseExamPaper,{
+        examPaperId:examPaperId,
+        administratorId:administratorId,
+        examStartTime:examStartTime,
+        examEndTime:examEndTime,
+        notes:notes,
+        students:students
+      })
+    },
+    getExamPaperListByParams(administratorIds,examPaperStates,examPaperTitle,page,size,vague){
+      return myAxios.post(path.getExamPaperListByParams,{
+        administratorIds:administratorIds,
+        examPaperStates:examPaperStates,
+        examPaperTitle:examPaperTitle,
+        page:page,
+        size:size,
+        vague:vague
+      })
+    },
+    getExamPaperCountByState(studentId,examPaperAllocationState){
+      return myAxios.post(path.getExamPaperCountByState,{
+        studentId:studentId,
+        examPaperAllocationState:examPaperAllocationState
+      })
+    },
+    getAnswerQuestionCountByStudentId(studentId){
+      return myAxios.post(path.getAnswerQuestionCountByStudentId,{
+        studentId:studentId
+      })
+    },
+    getWoringQuestionCountByStudentId(studentId){
+      return myAxios.post(path.getWoringQuestionCountByStudentId,{
+        studentId:studentId
+      })
+    },
+    getLastExamScoreByStudentId(studentId){
+      return myAxios.post(path.getLastExamScoreByStudentId,{
+        studentId:studentId
+      })
+    },
+    getAvgScoreByStudentId(studentId){
+      return myAxios.post(path.getAvgScoreByStudentId,{
+        studentId:studentId
+      })
+    },
+    getExamCountByStudentId(studentId){
+      return myAxios.post(path.getExamCountByStudentId,{
+        studentId:studentId
+      })
     }
 }

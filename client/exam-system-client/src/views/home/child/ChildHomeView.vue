@@ -1,18 +1,79 @@
 <template>
     <div>
         <div class="exam-status">
-            <div class="status-card">待考试</div>
-            <div class="status-card">考试中</div>
-            <div class="status-card">已考完</div>
+            <div class="status-card">
+              <el-badge :value="examPaper0Count" :max="10" :hidden="examPaper0Count === 0">
+                <div style="width:70px">待考试</div>
+              </el-badge>
+            </div>
+            <div class="status-card">
+              <el-badge :value="examPaper1Count" :max="10" :hidden="examPaper1Count === 0">
+                <div style="width:70px">考试中</div>
+              </el-badge>
+            </div>
+            <div class="status-card">
+                <div style="width:70px">已考完</div>
+            </div>
         </div>
         <div class="stats-container">
-        <div class="stats-item">答题数<br><span class="value">100</span></div>
-        <div class="stats-item">错题数<br><span class="value">5</span></div>
-        <div class="stats-item">最近得分<br><span class="value">85</span></div>
-        <div class="stats-item">平均分<br><span class="value">90</span></div>
+        <div class="stats-item">答题数<br><span class="value">{{ answerQuesitonCount }}</span></div>
+        <div class="stats-item">错题数<br><span class="value">{{ wrongQuestionCount }}</span></div>
+        <div class="stats-item">最近得分<br><span class="value">{{ lastScore }}</span></div>
+        <div class="stats-item">平均分<br><span class="value">{{ averageScore }}</span></div>
+        <div class="stats-item">考试次数<br><span class="value">{{ examCount }}</span></div>
         </div>
     </div>
 </template>
+
+<script>
+import api from "@/axios/index"
+export default {
+    data(){
+      return{
+        examPaper0Count:0,
+        examPaper1Count:0,
+        answerQuesitonCount:0,
+        wrongQuestionCount:0,
+        lastScore:0,
+        averageScore:0,
+        examCount:0
+      }
+    },
+    methods:{
+
+    },
+    mounted(){
+      if(localStorage.studentInfo){
+        let studentId = JSON.parse(localStorage.studentInfo).studentId
+        api.getExamPaperCountByState(studentId,0).then(res=>{
+            this.examPaper0Count = res.data
+        })
+        api.getExamPaperCountByState(studentId,1).then(res=>{
+            this.examPaper1Count = res.data
+        })
+        api.getAnswerQuestionCountByStudentId(studentId).then(res=>{
+            this.answerQuesitonCount = res.data
+        })
+        api.getWoringQuestionCountByStudentId(studentId).then(res=>{
+            this.wrongQuestionCount = res.data
+        })
+        api.getLastExamScoreByStudentId(studentId).then(res=>{
+          this.lastScore=res.data
+        })
+        api.getAvgScoreByStudentId(studentId).then(res=>{
+          this.averageScore=res.data
+        })
+        api.getExamCountByStudentId(studentId).then(res=>{
+          this.examCount=res.data
+        })
+      }else{
+        this.$message.error('请先登录')
+        this.$router.push('/login')
+      }
+    }
+}
+</script>
+
 <style scoped>
 /* 基本重置 */
 * {
@@ -87,7 +148,7 @@ body {
   justify-content: center;
   color: #fff; /* 文字颜色 */
   background-color: #3498db; /* 背景颜色 */
-  margin:9%;
+  margin:5%;
   padding: 20px;
   border-radius: 5px; /* 圆角 */
   transition: transform 0.3s, box-shadow 0.3s;

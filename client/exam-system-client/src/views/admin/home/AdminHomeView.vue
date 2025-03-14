@@ -24,7 +24,7 @@
 					</el-submenu>
 					<el-submenu index="4">
 						<template slot="title"><i class="el-icon-tickets"></i>试卷管理</template>
-						<el-menu-item>试卷列表</el-menu-item>
+						<el-menu-item index="adminShowExamPaperList">试卷列表</el-menu-item>
 						<el-menu-item index="examPaperRelease">试卷发布</el-menu-item>
 						<el-menu-item index="createExamPaper">创建试卷</el-menu-item>
 					</el-submenu>

@@ -83,24 +83,7 @@ public class QuestionServiceImp implements QuestionService {
     @Override
     public String selectQuestionBySubsectionsAndTypeLimitNum(RequestParams requestParams) {
         List<Question> questions = new CopyOnWriteArrayList<>();
-        List<Subsection> subsections = new CopyOnWriteArrayList<>();
-        if(!requestParams.getSubsectionIds().isEmpty()){
-            for (String subsectionId : requestParams.getSubsectionIds()) {
-                subsections.add(new Subsection(){{
-                    setSubsectionId(subsectionId);
-                }});
-            }
-        }else if(!requestParams.getChapterIds().isEmpty()){
-            for (String chapterId : requestParams.getChapterIds()) {
-                subsections.addAll(subsectionMapper.selectAllSubsectionsIdByChapterId(chapterId));
-            }
-        }else if(!requestParams.getCourseIds().isEmpty()){
-            for (String courseId : requestParams.getCourseIds()) {
-                for (Chapter chapter : chapterMapper.selectAllChaptersIdByCourseId(courseId)) {
-                    subsections.addAll(subsectionMapper.selectAllSubsectionsIdByChapterId(chapter.getChapterId()));
-                }
-            }
-        }
+        List<Subsection> subsections = getSubsections(requestParams);
         if(requestParams.getQuestionType0Count()>0){
             if(subsections.isEmpty()){
                 questions.addAll(questionMapper.selectQuestionByTypeLimitNum(
@@ -144,5 +127,46 @@ public class QuestionServiceImp implements QuestionService {
             }
         }
         return JSONObject.toJSONString(Result.success("获取成功",questions));
+    }
+
+    @Override
+    public String selectQuestionBySubsectionsAndTypeLimitNumNotQuestionId(RequestParams requestParams) {
+        Question question;
+        List<Subsection> subsections = getSubsections(requestParams);
+        if(subsections.isEmpty()){
+            question = questionMapper.selectQuestionByTypeLimitNumNotQuestionId(
+                    requestParams.getQuestionType(),
+                    requestParams.getQuestionId()
+            );
+        }else{
+            question = questionMapper.selectQuestionBySubsectionsAndTypeLimitNumNotQuestionId(
+                    subsections,
+                    requestParams.getQuestionType(),
+                    requestParams.getQuestionId()
+            );
+        }
+        return JSONObject.toJSONString(Result.success("获取成功",question));
+    }
+
+    private List<Subsection> getSubsections(RequestParams requestParams){
+        List<Subsection> subsections = new CopyOnWriteArrayList<>();
+        if(!requestParams.getSubsectionIds().isEmpty()){
+            for (String subsectionId : requestParams.getSubsectionIds()) {
+                subsections.add(new Subsection(){{
+                    setSubsectionId(subsectionId);
+                }});
+            }
+        }else if(!requestParams.getChapterIds().isEmpty()){
+            for (String chapterId : requestParams.getChapterIds()) {
+                subsections.addAll(subsectionMapper.selectAllSubsectionsIdByChapterId(chapterId));
+            }
+        }else if(!requestParams.getCourseIds().isEmpty()){
+            for (String courseId : requestParams.getCourseIds()) {
+                for (Chapter chapter : chapterMapper.selectAllChaptersIdByCourseId(courseId)) {
+                    subsections.addAll(subsectionMapper.selectAllSubsectionsIdByChapterId(chapter.getChapterId()));
+                }
+            }
+        }
+        return subsections;
     }
 }

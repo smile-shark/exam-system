@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smileshark.mapper.AnswerRecordMapper">
+    <select id="answerRecordCountByStudentId" resultType="int">
+        select count(student_id) from answer_record where student_id=#{studentId}
+    </select>
+    <select id="wrongQuestionRecordCountByStudentId" resultType="int">
+        select count(student_id) from answer_record where student_id=#{studentId} and is_true=false
+    </select>
+</mapper>

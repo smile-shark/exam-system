@@ -1,6 +1,9 @@
 package com.smileshark.common;
 
+import com.smileshark.entity.question.Question;
+import com.smileshark.entity.user.Student;
 import lombok.Data;
+import org.apache.ibatis.javassist.runtime.Inner;
 import org.springframework.data.relational.core.sql.In;
 import org.springframework.stereotype.Component;
 
@@ -30,4 +33,17 @@ public class RequestParams {
     private Integer questionType0Count;
     private Integer questionType1Count;
     private Integer questionType2Count;
+    private Integer questionType;
+    private List<Question> questions;
+    private String examPaperTitle;
+    private Double totalScore;
+    private String examPaperId;
+    private String examStartTime;
+    private String examEndTime;
+    private String notes;
+    private List<Student> students;
+    private List<String> administratorIds;
+    private List<Integer> examPaperStates;
+    private String studentId;
+    private Integer examPaperAllocationState;
 }

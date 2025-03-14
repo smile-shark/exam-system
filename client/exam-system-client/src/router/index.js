@@ -10,7 +10,8 @@ import AdminChildHomeView from '@/views/admin/home/child/AdminChildHomeView.vue'
 import AdminQuestionManageView from '@/views/admin/home/child/AdminQuestionManageView.vue'
 import CreateExamPaperView from '@/views/admin/home/child/CreateExamPaperView.vue'
 import ExamPaperReleaseView from '@/views/admin/home/child/ExamPaperReleaseView.vue'
-
+import AdminShowExamPaperListView from '@/views/admin/home/child/AdminShowExamPaperListView.vue'
+import PendingExamPagerListView from '@/views/home/child/PendingExamPagerListView.vue'
 
 Vue.use(VueRouter)
 const routes = [
@@ -45,6 +46,12 @@ const routes = [
         name: 'mistakesCollection',
         component: MistakesCollectionView,
         meta: { breadcrumb: '错题集' }
+      },
+      {
+        path: 'pendingExamPagerList',
+        name: 'pendingExamPagerList',
+        component: PendingExamPagerListView,
+        meta: { breadcrumb: '待考试试卷列表' }
       }
     ]
   },
@@ -89,6 +96,11 @@ const routes = [
         name: 'examPaperRelease',
         component: ExamPaperReleaseView,
         meta: { breadcrumb: '发布试卷' }
+      },{
+        path: 'adminShowExamPaperList',
+        name: 'adminShowExamPaperList',
+        component: AdminShowExamPaperListView,
+        meta: { breadcrumb: '试卷列表' }
       }
     ]
   }

@@ -4,4 +4,45 @@
     <select id="examPaperCount" resultType="int">
         select count(exam_paper_id) from exam_paper
     </select>
+    <insert id="insertExamPaper">
+        insert into exam_paper
+            (exam_paper_id, administrator_id, exam_paper_title, exam_paper_create_time, question_count,total_score)
+        values
+            (#{examPaper.examPaperId},
+             #{examPaper.administratorId},
+            #{examPaper.examPaperTitle},
+             #{examPaper.examPaperCreateTime},
+             #{examPaper.questionCount},
+             #{examPaper.totalScore})
+    </insert>
+    <select id="selectExamPaperByTitle" resultType="examPaper">
+        select * from exam_paper where exam_paper_title like #{examPaperTitle}
+    </select>
+    <select id="selectAllExamPaperIdTitle" resultType="examPaper">
+        select exam_paper_id, exam_paper_title from exam_paper
+    </select>
+    <resultMap id="examPaperAndAdmin" type="examPaper">
+        <id property="examPaperId" column="exam_paper_id"/>
+        <association property="administrator" column="administrator_id" select="com.smileshark.mapper.AdministratorMapper.selectAdministratorById"/>
+    </resultMap>
+    <select id="selectExamPaperByParams" resultMap="examPaperAndAdmin">
+        select * from exam_paper
+        <where>
+            <if test="administratorIds!= null and administratorIds.size() > 0">
+                and administrator_id in
+                <foreach collection="administratorIds" item="administratorId" open="(" close=")" separator=",">
+                    #{administratorId}
+                </foreach>
+            </if>
+            <if test="examPaperStates!=null and examPaperStates.size() > 0">
+                and exam_paper_state in
+                <foreach collection="examPaperStates" item="examPaperState" open="(" close=")" separator=",">
+                    #{examPaperState}
+                </foreach>
+            </if>
+            <if test="examPaperTitle!=null and examPaperTitle != ''">
+                and exam_paper_title like #{examPaperTitle}
+            </if>
+        </where>
+    </select>
 </mapper>

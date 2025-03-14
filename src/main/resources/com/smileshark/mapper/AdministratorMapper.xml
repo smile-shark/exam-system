@@ -10,4 +10,7 @@
     <select id="selectAdministratorByAccount" resultType="administrator">
         select * from administrator where administrator_account = #{administratorAccount}
     </select>
+    <select id="selectAdministratorById" resultType="administrator">
+        select administrator_id, administrator_name from administrator where administrator_id = #{administratorId}
+    </select>
 </mapper>

@@ -11,7 +11,8 @@ public class ExamPaper {
     private String administratorId;
     private Administrator administrator;
     private String examPaperTitle;
-    private Integer examPaperCreateTime;
+    private Long examPaperCreateTime;
     private Integer questionCount;
     private Integer examPaperState;
+    private Double totalScore;
 }

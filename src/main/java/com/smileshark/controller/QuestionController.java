@@ -23,4 +23,8 @@ public class QuestionController {
     public String selectQuestionBySubsectionsAndTypeLimitNum(@RequestBody RequestParams requestParams){
         return questionService.selectQuestionBySubsectionsAndTypeLimitNum(requestParams);
     }
+    @RequestMapping("/teacher/question/select/bySubsectionsAndTypeLimitNumNotQuestionId")
+    public String selectQuestionBySubsectionsAndTypeLimitNumNotQuestionId(@RequestBody RequestParams requestParams){
+        return questionService.selectQuestionBySubsectionsAndTypeLimitNumNotQuestionId(requestParams);
+    }
 }

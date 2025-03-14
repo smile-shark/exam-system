@@ -17,5 +17,18 @@ export default{
     answerInfo:api+"/teacher/answer/info/by/questionId",
     chapterListNameTitleAndIdInCourseId:api+"/teacher/chapter/list/name/title/id/in/courseIds",
     subsectionListNameAndIdInChapterId:api+"/teacher/subsections/list/name/id/by/chapterIds",
-    pullQuestionListByParams:api+"/teacher/question/select/bySubsectionsAndTypeLimitNum"
+    pullQuestionListByParams:api+"/teacher/question/select/bySubsectionsAndTypeLimitNum",
+    questionListByParamsNotQuestionId:api+"/teacher/question/select/bySubsectionsAndTypeLimitNumNotQuestionId",
+    createExamPaper:api+"/teacher/exam/paper/insert",
+    getExamPaperIdTitle:api+"/teacher/exam/paper/select/selectAllExamPaperIdTitle",
+    getAllStudent:api+"/teacher/student/select/selectAllStudent",
+    releaseExamPaper:api+"/teacher/release/examPaper/insertExamPaperRelease",
+    getExamPaperListByParams:api+"/teacher/exam/paper/select/selectExamPaperByParams",
+    
+    getExamPaperCountByState:api+"/student/count/allocationExamPaperCountByStudentIdAndState",
+    getAnswerQuestionCountByStudentId:api+"/student/answerRecordCountByStudentId",
+    getWoringQuestionCountByStudentId:api+"/student/wrongQuestionRecordCountByStudentId",
+    getLastExamScoreByStudentId:api+"/student/lastScoreByExamPaperAllocationId",
+    getAvgScoreByStudentId:api+"/student/avgScoreByStudentId",
+    getExamCountByStudentId:api+"/student/count/ExamCountByStudentId"
 }

@@ -11,5 +11,4 @@ public class QuestionOnTestPaper {
     private Question question;
     private String examPaperId;
     private ExamPaper examPaper;
-    private Integer questionOrderNumber;
 }

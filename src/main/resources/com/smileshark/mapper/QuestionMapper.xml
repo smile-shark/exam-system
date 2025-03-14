@@ -88,4 +88,33 @@
         ORDER BY RAND()
         LIMIT #{limitNum};
     </select>
+    <select id="selectQuestionBySubsectionsAndTypeLimitNumNotQuestionId" resultType="question">
+        SELECT *
+        FROM question
+        <where>
+            <include refid="subsections"/>
+            <if test="questionType!=null">
+                and question_type=#{questionType}
+            </if>
+            <if test="questionId!=null">
+                and question_id!=#{questionId}
+            </if>
+        </where>
+        ORDER BY RAND()
+        LIMIT 1;
+    </select>
+    <select id="selectQuestionByTypeLimitNumNotQuestionId" resultType="question">
+        SELECT *
+        FROM question
+        <where>
+            <if test="questionType!=null">
+                and question_type=#{questionType}
+            </if>
+            <if test="questionId!=null">
+                and question_id!=#{questionId}
+            </if>
+        </where>
+        ORDER BY RAND()
+        LIMIT 1;
+    </select>
 </mapper>   

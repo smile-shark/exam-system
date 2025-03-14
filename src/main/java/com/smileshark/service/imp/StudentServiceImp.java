@@ -58,4 +58,9 @@ public class StudentServiceImp implements StudentService {
     public String studentCount() {
         return JSONObject.toJSONString(Result.success("获取成功",studentMapper.selectStudentCount()));
     }
+
+    @Override
+    public String selectAllStudent() {
+        return JSONObject.toJSONString(Result.success("获取成功",studentMapper.selectAllStudent()));
+    }
 }
