@@ -3,6 +3,8 @@ package com.smileshark.entity.question;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Data
 @Component
 public class Question {
@@ -11,4 +13,5 @@ public class Question {
     private Subsection subsection;
     private String question;
     private Integer questionType;
+    private List<Answer> answers;
 }

@@ -45,4 +45,17 @@
             </if>
         </where>
     </select>
+    <select id="selectExamPaperByExamPaperId" resultType="examPaper">
+        select * from exam_paper where exam_paper_id = #{examPaperId}
+    </select>
+    <resultMap id="examPaperMapToExam" type="examPaper">
+        <id property="examPaperId" column="exam_paper_id"/>
+        <collection
+                property="questionOnTestPapers"
+                column="exam_paper_id"
+                select="com.smileshark.mapper.QuestionOnTestPaperMapper.selectByExamPaperId"/>
+    </resultMap>
+    <select id="selectExamPaperByExamPaperIdToExam" resultMap="examPaperMapToExam">
+        select * from exam_paper where exam_paper_id = #{examPaperId}
+    </select>
 </mapper>

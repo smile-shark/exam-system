@@ -5,4 +5,11 @@
         insert into question_on_test_paper(question_id, exam_paper_id)
         values (#{questionOnTestPaper.questionId},#{questionOnTestPaper.examPaperId})
     </insert>
+    <resultMap id="questionOnTestMapperMap" type="questionOnTestPaper">
+        <association property="question" column="question_id"
+                     select="com.smileshark.mapper.QuestionMapper.selectQuestionByQuestionId"/>
+    </resultMap>
+    <select id="selectByExamPaperId" resultMap="questionOnTestMapperMap">
+        select * from question_on_test_paper where exam_paper_id = #{examPaperId}
+    </select>
 </mapper>

@@ -30,5 +30,7 @@ export default{
     getWoringQuestionCountByStudentId:api+"/student/wrongQuestionRecordCountByStudentId",
     getLastExamScoreByStudentId:api+"/student/lastScoreByExamPaperAllocationId",
     getAvgScoreByStudentId:api+"/student/avgScoreByStudentId",
-    getExamCountByStudentId:api+"/student/count/ExamCountByStudentId"
+    getExamCountByStudentId:api+"/student/count/ExamCountByStudentId",
+    getExamPaperListByStudentIdAndState:api+"/student/list/selectExamPaperAllocationsByStudentIdParamState",
+    getExamPaperByExamPaperAllocationId:api+"/student/exam/selectExamPaperAllocationByExamPaperAllocationId"
 }

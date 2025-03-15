@@ -42,4 +42,5 @@ public interface QuestionMapper {
             @Param("questionType") Integer questionType,
             @Param("questionId") String questionId
     );
+    Question selectQuestionByQuestionId(@Param("questionId") String questionId);
 }

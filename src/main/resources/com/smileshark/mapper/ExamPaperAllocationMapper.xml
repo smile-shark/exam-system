@@ -24,4 +24,37 @@
     <select id="ExamCountByStudentId" resultType="int">
         select count(student_id) from exam_paper_allocation where student_id=#{studentId} and exam_paper_allocation_state=2
     </select>
+    <resultMap id="examPaperAllocationMap" type="examPaperAllocation">
+        <id property="examPaperAllocationId" column="exam_paper_allocation_id"/>
+        <association property="examPaperRelease" column="exam_paper_release_id"
+                     select="com.smileshark.mapper.ExamPaperReleaseMapper.selectExamPaperReleaseByExamPaperReleaseId"/>
+    </resultMap>
+    <select id="selectExamPaperAllocationsByStudentIdParamState" resultMap="examPaperAllocationMap">
+        select *
+        from exam_paper_allocation
+        where student_id=#{studentId} and exam_paper_allocation_state=#{examPaperAllocationState}
+    </select>
+    <update id="updateExamPaperAllocationStateTo1">
+        update exam_paper_allocation
+            join exam_paper_release on exam_paper_allocation.exam_paper_release_id
+                = exam_paper_release.exam_paper_release_id
+        set exam_paper_allocation_state=1
+        where #{nowTimes} &gt;= exam_start_time and #{nowTimes} &lt;= exam_end_time and exam_paper_allocation_state=0
+    </update>
+    <update id="updateExamPaperAllocationStateTo3">
+        update exam_paper_allocation
+            join exam_paper_release on exam_paper_allocation.exam_paper_release_id
+                = exam_paper_release.exam_paper_release_id
+        set exam_paper_allocation_state=3
+        where #{nowTimes} &gt;= exam_end_time and exam_paper_allocation_state!=2
+    </update>
+    <resultMap id="examPaperAllocationMapToExam" type="examPaperAllocation">
+        <id property="examPaperAllocationId" column="exam_paper_allocation_id"/>
+        <association property="examPaperRelease" column="exam_paper_release_id"
+                     select="com.smileshark.mapper.ExamPaperReleaseMapper.selectExamPaperReleaseByExamPaperReleaseIdToExam"/>
+    </resultMap>
+    <select id="selectExamPaperAllocationByExamPaperAllocationId" resultMap="examPaperAllocationMapToExam">
+        select * from exam_paper_allocation where exam_paper_allocation_id=#{examPaperAllocationId}
+        and exam_paper_allocation_state=1
+    </select>
 </mapper>

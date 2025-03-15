@@ -17,6 +17,22 @@
              #{examPaperRelease.examStartTime},
              #{examPaperRelease.examEndTime},
              #{examPaperRelease.notes})
-
     </insert>
+    <resultMap id="examPaperReleaseMap" type="examPaperRelease">
+        <id property="examPaperReleaseId" column="exam_paper_release_id"/>
+        <association property="examPaper" column="exam_paper_id" select="com.smileshark.mapper.ExamPaperMapper.selectExamPaperByExamPaperId"/>
+    </resultMap>
+    <select id="selectExamPaperReleaseByExamPaperReleaseId" resultMap="examPaperReleaseMap">
+        select * from exam_paper_release where exam_paper_release_id = #{examPaperReleaseId}
+    </select>
+    <resultMap id="examPaperReleaseMapToExam" type="examPaperRelease">
+        <id property="examPaperReleaseId" column="exam_paper_release_id"/>
+        <association
+                property="examPaper"
+                column="exam_paper_id"
+                select="com.smileshark.mapper.ExamPaperMapper.selectExamPaperByExamPaperIdToExam"/>
+    </resultMap>
+    <select id="selectExamPaperReleaseByExamPaperReleaseIdToExam" resultMap="examPaperReleaseMapToExam">
+        select * from exam_paper_release where exam_paper_release_id = #{examPaperReleaseId}
+    </select>
 </mapper>

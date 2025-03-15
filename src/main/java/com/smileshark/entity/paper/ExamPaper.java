@@ -4,6 +4,8 @@ import com.smileshark.entity.user.Administrator;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Data
 @Component
 public class ExamPaper {
@@ -15,4 +17,5 @@ public class ExamPaper {
     private Integer questionCount;
     private Integer examPaperState;
     private Double totalScore;
+    private List<QuestionOnTestPaper> questionOnTestPapers;
 }

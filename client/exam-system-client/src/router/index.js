@@ -12,6 +12,8 @@ import CreateExamPaperView from '@/views/admin/home/child/CreateExamPaperView.vu
 import ExamPaperReleaseView from '@/views/admin/home/child/ExamPaperReleaseView.vue'
 import AdminShowExamPaperListView from '@/views/admin/home/child/AdminShowExamPaperListView.vue'
 import PendingExamPagerListView from '@/views/home/child/PendingExamPagerListView.vue'
+import ExamPageView from '@/views/home/child/ExamPageView.vue'
+import ExamPaperView from '@/views/home/child/ExamPaperView.vue'
 
 Vue.use(VueRouter)
 const routes = [
@@ -52,8 +54,20 @@ const routes = [
         name: 'pendingExamPagerList',
         component: PendingExamPagerListView,
         meta: { breadcrumb: '待考试试卷列表' }
+      },
+      {
+        path: 'examPage',
+        name: 'examPage',
+        component: ExamPageView,
+        meta: { breadcrumb: '考试中试卷列表' }
       }
     ]
+  },
+  {
+    path:'/examPaperPage/:examPaperAllocationId',
+    name:'examPaperPage',
+    component: ExamPaperView,
+    meta: { breadcrumb: '考试试卷' }
   },
   {
     path: '/admin',

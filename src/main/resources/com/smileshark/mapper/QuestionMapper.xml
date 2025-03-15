@@ -117,4 +117,14 @@
         ORDER BY RAND()
         LIMIT 1;
     </select>
+    <resultMap id="questionAndAnswerNotHaveIsTrue" type="question">
+        <id property="questionId" column="question_id"/>
+        <collection
+                property="answers"
+                column="question_id"
+                select="com.smileshark.mapper.AnswerMapper.selectAnswerByQuestionIdNotHaveIsTrue"/>
+    </resultMap>
+    <select id="selectQuestionByQuestionId" resultMap="questionAndAnswerNotHaveIsTrue">
+        select * from question where question_id = #{questionId}
+    </select>
 </mapper>   

@@ -1,12 +1,12 @@
 <template>
     <div>
         <div class="exam-status">
-            <div class="status-card">
+            <div class="status-card" @click="routerPush('pendingExamPagerList')">
               <el-badge :value="examPaper0Count" :max="10" :hidden="examPaper0Count === 0">
                 <div style="width:70px">待考试</div>
               </el-badge>
             </div>
-            <div class="status-card">
+            <div class="status-card" @click="routerPush('examPage')">
               <el-badge :value="examPaper1Count" :max="10" :hidden="examPaper1Count === 0">
                 <div style="width:70px">考试中</div>
               </el-badge>
@@ -40,7 +40,9 @@ export default {
       }
     },
     methods:{
-
+      routerPush(path){
+        this.$router.push(path)
+      }
     },
     mounted(){
       if(localStorage.studentInfo){

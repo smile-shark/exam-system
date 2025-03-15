@@ -20,16 +20,17 @@
   <el-row>
     <el-col :span="24">
       <el-menu
-        :default-active="activeIndex2"
+        :default-active="routerIndex"
+        router
         class="el-menu-demo"
         mode="horizontal"
         background-color="#37b5f8"
         text-color="#fff"
         active-text-color="#004d99">
-        <el-menu-item index="1" @click="routerPush('/home/childHome')">首 页</el-menu-item>
-        <el-menu-item index="2" @click="routerPush('/home/mistakesCollection')">错 题 集</el-menu-item>
-        <el-menu-item index="3">收 藏</el-menu-item>
-        <el-menu-item index="4">设 置</el-menu-item>
+        <el-menu-item index="/home/childHome">首 页</el-menu-item>
+        <el-menu-item index="mistakesCollection">错 题 集</el-menu-item>
+        <el-menu-item>收 藏</el-menu-item>
+        <el-menu-item>设 置</el-menu-item>
       </el-menu>
     </el-col>
   </el-row>
@@ -46,7 +47,7 @@ import router from '@/router';
 export default {
   data(){
     return{
-      activeIndex2: '1',
+      routerIndex: '/home/childHome',
       studentName:''
     }
   },

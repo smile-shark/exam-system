@@ -17,4 +17,6 @@ public interface ExamPaperMapper {
             @Param("examPaperStates")List<Integer> examPaperStates,
             @Param("examPaperTitle")String examPaperTitle
     );
+    ExamPaper selectExamPaperByExamPaperId(@Param("examPaperId")String examPaperId);
+    ExamPaper selectExamPaperByExamPaperIdToExam(@Param("examPaperId")String examPaperId);
 }

@@ -7,20 +7,32 @@
         </el-row>
         <el-row>
             <el-col :span="24" style="padding-left:1%;padding-right: 1%;">
-                <h1 style="text-align: center;">待考试列表</h1>
+                <h1 style="text-align: center;">考试中试卷列表</h1>
                 <el-empty description="没有考试" v-if="examPaperList.length==0"></el-empty>
                 <el-card shadow="hover" v-for="(item,index) in examPaperList" :key="index" class="my-card-style">
-                    <div style="font-size: 30px;font-weight: bold;">{{  item.examPaperRelease.examPaper.examPaperTitle }}</div>
-                    <div>开始时间：{{ timestampToString(item.examPaperRelease.examStartTime) }}</div>
-                    <div>结束时间：{{ timestampToString(item.examPaperRelease.examEndTime) }}</div>
-                    <div>考试时长：{{ formatTimestampUTC(item.examPaperRelease.examEndTime-item.examPaperRelease.examStartTime) }}</div>
-                    <div>满分：{{ item.examPaperRelease.examPaper.totalScore }} 分</div>
-                    <div>题目数量：{{ item.examPaperRelease.examPaper.questionCount }} 道</div>
-                    <div v-if="item.examPaperAllocationState==0">考试状态：未开始</div>
-                    <div v-if="item.examPaperAllocationState==1">考试状态：考试中</div>
-                    <div v-if="item.examPaperAllocationState==2">考试状态：已完成</div>
-                    <div v-if="item.examPaperAllocationState==3">考试状态：缺考</div>
-                    <div>备注：{{ item.examPaperRelease.notes }}</div>
+                    <el-row>
+                        <el-col :span="12">
+                            <div style="font-size: 30px;font-weight: bold;">{{  item.examPaperRelease.examPaper.examPaperTitle }}</div>
+                            <div>开始时间：{{ timestampToString(item.examPaperRelease.examStartTime) }}</div>
+                            <div>结束时间：{{ timestampToString(item.examPaperRelease.examEndTime) }}</div>
+                            <div>考试时长：{{ formatTimestampUTC(item.examPaperRelease.examEndTime-item.examPaperRelease.examStartTime) }}</div>
+                            <div>满分：{{ item.examPaperRelease.examPaper.totalScore }} 分</div>
+                            <div>题目数量：{{ item.examPaperRelease.examPaper.questionCount }} 道</div>
+                            <div v-if="item.examPaperAllocationState==0">考试状态：未开始</div>
+                            <div v-if="item.examPaperAllocationState==1">考试状态：考试中</div>
+                            <div v-if="item.examPaperAllocationState==2">考试状态：已完成</div>
+                            <div v-if="item.examPaperAllocationState==3">考试状态：缺考</div>
+                            <div>备注：{{ item.examPaperRelease.notes }}</div>
+                        </el-col>
+                        <el-col :span="12" style="display: flex;justify-content: flex-end;align-items: center;
+                        padding:7%">
+                            <el-badge is-dot style="padding:0">
+                                <el-button type="primary" @click="routerToExam(item.examPaperAllocationId)">
+                                    进入考试
+                                </el-button>
+                            </el-badge>
+                        </el-col>
+                    </el-row>
                 </el-card>
             </el-col>
         </el-row>
@@ -80,7 +92,7 @@ export default {
             }
             if(localStorage.studentInfo){
                 let studentId=JSON.parse(localStorage.studentInfo).studentId
-                api.getExamPaperListByStudentIdAndState(studentId,0,this.page,this.size).then(res=>{
+                api.getExamPaperListByStudentIdAndState(studentId,1,this.page,this.size).then(res=>{
                     console.log(res)
                     this.total=res.data.total
                     this.examPaperList=res.data.list
@@ -89,6 +101,15 @@ export default {
                 this.$message.error('请先登录')
                 this.$router.push('/login')
             }
+        },
+        routerToExam(examPaperAllocationId){
+            const path=this.$router.resolve({
+                name:'examPaperPage',
+                params:{
+                    examPaperAllocationId:examPaperAllocationId
+                }
+            });
+            window.open(path.href,'_blank')
         }
     },
     mounted(){

@@ -170,20 +170,26 @@ import api from "@/axios/index"
             },
             this.studentsSelected=[]
         },
-        examTime(){
+        examTime() {
             // 考试的用时 hh:mm:ss
-            // 如果两个没有选择，就返回 00:00:00
-            if(!this.release.examStartTime||!this.release.examEndTime){
-                return "00:00:00"
+            // 如果两个时间没有选择，就返回 00:00:00
+            if (!this.release.examStartTime || !this.release.examEndTime) {
+                return "00:00:00";
             }
 
-            let startTime=new Date(this.release.examStartTime)
-            let endTime=new Date(this.release.examEndTime)
-            let time=Math.abs(endTime-startTime)
-            let hours=Math.floor(time/3600000)
-            let minutes=Math.floor((time-hours*3600000)/60000)
-            let seconds=Math.floor((time-hours*3600000-minutes*60000)/1000)
-            return hours+":"+minutes+":"+seconds    
+            let startTime = new Date(this.release.examStartTime);
+            let endTime = new Date(this.release.examEndTime);
+            let time = Math.abs(endTime - startTime);
+            let hours = Math.floor(time / 3600000);
+            let minutes = Math.floor((time - hours * 3600000) / 60000);
+            let seconds = Math.floor((time - hours * 3600000 - minutes * 60000) / 1000);
+
+            // 确保小时、分钟和秒数都是两位数
+            hours = hours.toString().padStart(2, '0');
+            minutes = minutes.toString().padStart(2, '0');
+            seconds = seconds.toString().padStart(2, '0');
+
+            return `${hours}:${minutes}:${seconds}`;
         }
     },
     mounted(){

@@ -4,4 +4,7 @@
     <select id="selectAnswerByQuestionId" resultType="answer">
         select * from answer where question_id=#{questionId}
     </select>
+    <select id="selectAnswerByQuestionIdNotHaveIsTrue" resultType="answer">
+        select answer_id, question_id, answer from answer where question_id=#{questionId}
+    </select>
 </mapper>

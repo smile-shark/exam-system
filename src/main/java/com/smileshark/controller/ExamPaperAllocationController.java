@@ -19,4 +19,12 @@ public class ExamPaperAllocationController {
     public String examCountByStudentId(@RequestBody RequestParams requestParams) {
         return examPaperAllocationService.ExamCountByStudentId(requestParams);
     }
+    @RequestMapping("/student/list/selectExamPaperAllocationsByStudentIdParamState")
+    public String selectExamPaperAllocationsByStudentIdParamState(@RequestBody RequestParams requestParams) {
+        return examPaperAllocationService.selectExamPaperAllocationsByStudentIdParamState(requestParams);
+    }
+    @RequestMapping("/student/exam/selectExamPaperAllocationByExamPaperAllocationId")
+    public String selectExamPaperAllocationByExamPaperAllocationId(@RequestBody RequestParams requestParams) {
+        return examPaperAllocationService.selectExamPaperAllocationByExamPaperAllocationId(requestParams);
+    }
 }

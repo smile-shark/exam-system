@@ -46,4 +46,5 @@ public class RequestParams {
     private List<Integer> examPaperStates;
     private String studentId;
     private Integer examPaperAllocationState;
+    private String examPaperAllocationId;
 }

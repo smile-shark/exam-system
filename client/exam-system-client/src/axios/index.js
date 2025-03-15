@@ -190,5 +190,18 @@ export default {
       return myAxios.post(path.getExamCountByStudentId,{
         studentId:studentId
       })
+    },
+    getExamPaperListByStudentIdAndState(studentId,examPaperAllocationState,page,size){
+      return myAxios.post(path.getExamPaperListByStudentIdAndState,{
+        studentId:studentId,
+        examPaperAllocationState:examPaperAllocationState,
+        page:page,
+        size:size
+      })
+    },
+    getExamPaperByExamPaperAllocationId(examPaperAllocationId){
+      return myAxios.post(path.getExamPaperByExamPaperAllocationId,{
+        examPaperAllocationId:examPaperAllocationId
+      })
     }
 }
