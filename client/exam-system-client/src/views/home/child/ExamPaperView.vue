@@ -33,7 +33,7 @@
                         :id="item.question.questionId"
                         style="padding:10px;border-bottom: 1px solid #e6e6e6;margin-top: 10px;">
                         <div>
-                            <span style="color:#0195d3">{{ index+1 }} 【单选】</span>
+                            <span style="color:#409eff">{{ index+1 }} 【单选】</span>
                             <span v-html="item.question.question"></span>
                         </div>
                         <div 
@@ -54,7 +54,7 @@
                         :id="item.question.questionId"
                         style="padding:10px;border-bottom: 1px solid #e6e6e6;margin-top: 10px;">
                         <div>
-                            <span style="color:#0195d3">{{ index+1 }} 【多选】</span>
+                            <span style="color:#409eff">{{ index+1 }} 【多选】</span>
                             <span v-html="item.question.question"></span>
                         </div>
                         <el-checkbox-group  v-model="item.question.selectedIds">
@@ -73,7 +73,7 @@
                         :id="item.question.questionId"
                         style="padding:10px;border-bottom: 1px solid #e6e6e6;margin-top: 10px;">
                         <div>
-                            <span style="color:#0195d3">{{ index+1 }} 【判断】</span>
+                            <span style="color:#409eff">{{ index+1 }} 【判断】</span>
                             <span v-html="item.question.question"></span>
                         </div>
                         <div 
@@ -158,7 +158,7 @@
                         <div style="font-size: 14px;">
                             <span style="display: inline-block;width:10px;height: 10px;background-color: #d2d2d2;"></span>
                             未做&nbsp;&nbsp;
-                            <span style="display: inline-block;width:10px;height: 10px;background-color:#0195d3;"></span>
+                            <span style="display: inline-block;width:10px;height: 10px;background-color:#409eff;"></span>
                             已做
                         </div>
                     </div>
@@ -239,11 +239,13 @@ export default {
             this.formattedTime = this.formatTimestampNow(this.examPaperAllocation.examPaperRelease.examEndTime);
         },
         toQuestionPosition(questionId){
-            window.location.hash=`#${questionId}`
+            const element=document.getElementById(questionId)
+            if(element){
+                element.scrollIntoView({behavior: "smooth"})
+            }
         }
     },
     mounted(){
-        console.log(this.$router.params)
         api.getExamPaperByExamPaperAllocationId(this.$route.params.examPaperAllocationId).then(res=>{
             //  初始化selectedIds为空数组
             res.data.examPaperRelease.examPaper.questionOnTestPapers.forEach(item=>{
@@ -296,5 +298,8 @@ export default {
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
+}
+html {
+  scroll-behavior: smooth;
 }
 </style>

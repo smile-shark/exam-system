@@ -255,7 +255,7 @@ export default {
                 })
             }else{
                 this.$message.error('请先登录')
-                return
+                this.router.push('/login')
             }
         },
         reset(){
