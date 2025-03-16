@@ -57,4 +57,34 @@
         select * from exam_paper_allocation where exam_paper_allocation_id=#{examPaperAllocationId}
         and exam_paper_allocation_state=1
     </select>
+    <update id="updateExamPaperAllocationStateToFinish">
+        update exam_paper_allocation
+        set exam_paper_allocation_state=2
+        where exam_paper_allocation_id=#{examPaperAllocationId}
+    </update>
+    <resultMap id="examPaperAllocationMapAndScore" type="examPaperAllocation">
+        <id property="examPaperAllocationId" column="exam_paper_allocation_id"/>
+        <association property="examPaperRelease" column="exam_paper_release_id"
+                     select="com.smileshark.mapper.ExamPaperReleaseMapper.selectExamPaperReleaseByExamPaperReleaseId"/>
+        <association property="score" column="exam_paper_allocation_id"
+                     select="com.smileshark.mapper.ScoreMapper.selectScoreByExamPaperAllocationId"/>
+    </resultMap>
+    <select id="selectExamPaperAllocationsByStudentIdFinish" resultMap="examPaperAllocationMapAndScore">
+        select *
+        from exam_paper_allocation
+        inner join exam_paper_release on exam_paper_release.exam_paper_release_id = exam_paper_allocation.exam_paper_release_id
+        where student_id=#{studentId} and exam_paper_allocation_state in (2,3)
+        order by exam_start_time desc
+    </select>
+    <resultMap id="examPaperAllocationMapToExamReview" type="examPaperAllocation">
+        <id property="examPaperAllocationId" column="exam_paper_allocation_id"/>
+        <association property="examPaperRelease" column="exam_paper_release_id"
+                     select="com.smileshark.mapper.ExamPaperReleaseMapper.selectExamPaperReleaseByExamPaperReleaseIdToExam"/>
+        <collection property="answerRecords" column="exam_paper_allocation_id"
+                    select="com.smileshark.mapper.AnswerRecordMapper.selectAnswerRecordByExamPaperAllocationId"/>
+    </resultMap>
+    <select id="selectExamPaperAllocationByExamPaperAllocationIdReview" resultMap="examPaperAllocationMapToExamReview">
+        select * from exam_paper_allocation where exam_paper_allocation_id=#{examPaperAllocationId}
+                                              and exam_paper_allocation_state in (2,3)
+    </select>
 </mapper>

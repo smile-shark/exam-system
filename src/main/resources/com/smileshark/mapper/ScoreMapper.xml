@@ -7,4 +7,17 @@
     <select id="avgScoreByStudentId" resultType="java.lang.Double">
         select avg(score) from score where student_id=#{studentId}
     </select>
+    <insert id="insertScore">
+        insert into score
+        (student_id, exam_paper_release_id, exam_paper_allocation_id, score, finish_time)
+        values
+        (#{score.studentId},
+         #{score.examPaperReleaseId},
+         #{score.examPaperAllocationId},
+         #{score.score},
+         #{score.finishTime})
+    </insert>
+    <select id="selectScoreByExamPaperAllocationId" resultType="score">
+        select * from score where exam_paper_allocation_id=#{examPaperAllocationId}
+    </select>
 </mapper>

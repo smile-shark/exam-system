@@ -39,11 +39,23 @@
                         <div 
                         v-for="(answer,index) in item.question.answers" 
                         :key="index" style="margin:10px">
-                            <el-radio v-model="item.question.selectedId" :label="answer.answerId">
-                                <span 
+                            <el-radio v-model="item.question.selectedId" :label="answer.answerId" disabled>
+                                <span :style="item.question.selectedId==answer.answerId?{color:
+                                    item.answerRecord.isTrue?'#67C23A':'#F56C6C',fontWeight:'bold'}:{color:'auto'}"
                                     v-html="answer.answer">
                                 </span>
                             </el-radio>
+                        </div>
+                        <div style="background-color: #e6e6e6;border-radius: 5px;padding:20px;;">
+                            <i class="el-icon-document-copy"></i>
+                            <span style="color:#999999;font-weight: bold;margin-left: 10px;">
+                                正确答案：
+                            </span>
+                            <div v-for="(answer,index) in item.answerRecord.question.answers" 
+                            style="margin-top: 10px;;"
+                            :key="index">
+                                <span v-if="answer.isTrue" style="font-weight: bold;color:#0a95d3;" v-html="answer.answer"></span>
+                            </div>
                         </div>
                     </div>
                     <h2 v-if="examPaperAllocation.examPaperRelease.examPaper.questionOnTestPapers.filter(item=>item.question.questionType==1).length>0">
@@ -59,11 +71,28 @@
                         </div>
                         <el-checkbox-group  v-model="item.question.selectedIds">
                             <div  v-for="(answer) in item.question.answers" :key="answer.answerId" style="margin:10px">
-                                <el-checkbox :label="answer.answerId">
-                                    <span v-html="answer.answer"></span>
+                                <el-checkbox :label="answer.answerId" disabled>
+                                    <span :style="item.question.selectedIds.includes(answer.answerId)?{color:
+                                        item.answerRecord.isTrue?'#67C23A':'#F56C6C',fontWeight:'bold'}:{color:'auto'}"
+                                    v-html="answer.answer"></span>
                                 </el-checkbox>
                             </div>
                         </el-checkbox-group>
+                        <div style="background-color: #e6e6e6;border-radius: 5px;padding:20px;;">
+                            <i class="el-icon-document-copy"></i>
+                            <span style="color:#999999;font-weight: bold;margin-left: 10px;">
+                                正确答案：
+                            </span>
+                            <div v-for="(answer,index) in item.answerRecord.question.answers" 
+                            style="margin-top: 10px;"
+                            :key="index">
+                                <div v-if="answer.isTrue">
+                                    <span  style="font-weight: bold;color:#0a95d3;" v-html="answer.answer">
+                                    </span>
+                                    <hr/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <h2 v-if="examPaperAllocation.examPaperRelease.examPaper.questionOnTestPapers.filter(item=>item.question.questionType==2).length>0">
                         判断题
@@ -79,23 +108,29 @@
                         <div 
                         v-for="(answer,index) in item.question.answers" 
                         :key="index" style="margin:10px">
-                            <el-radio v-model="item.question.selectedId" :label="answer.answerId">
-                                <span 
+                            <el-radio v-model="item.question.selectedId" :label="answer.answerId" disabled>
+                                <span :style="item.question.selectedId==answer.answerId?{color:
+                                    item.answerRecord.isTrue?'#67C23A':'#F56C6C',fontWeight:'bold'}:{color:'auto'}"
                                     v-html="answer.answer">
                                 </span>
                             </el-radio>
+                        </div>
+                        <div style="background-color: #e6e6e6;border-radius: 5px;padding:20px;;">
+                            <i class="el-icon-document-copy"></i>
+                            <span style="color:#999999;font-weight: bold;margin-left: 10px;">
+                                正确答案：
+                            </span>
+                            <div v-for="(answer,index) in item.answerRecord.question.answers" 
+                            style="margin-top: 10px;;"
+                            :key="index">
+                                <span v-if="answer.isTrue" style="font-weight: bold;color:#0a95d3;" v-html="answer.answer"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </el-col>
             <el-col :span="6" >
                 <div style="position: fixed;">
-                    <div class="box-border" >
-                        <i class="el-icon-time"></i> 考试剩余时间
-                        <span style="color:#5eb95e;font-weight: bold;"> 
-                        {{ formattedTime }} 
-                        </span>
-                    </div>
                     <div class="box-border exam-card-box">
                         <div style="font-weight: bold;font-size: 1.1rem;">
                             答题卡
@@ -111,9 +146,9 @@
                                 <div class="calendar ">
                                     <div v-for="(item,index) in examPaperAllocation.examPaperRelease.examPaper.questionOnTestPapers.filter(item=>item.question.questionType==0)" 
                                         :key="index"
-                                        :style="item.question.selectedId?
-                                        {backgroundColor:'#409eff',color:'white'}:
-                                        {backgroundColor:'#f1f1f1',color:'#afafaf'}"
+                                        :style="item.answerRecord.isTrue?
+                                        {backgroundColor:'#67C23A',color:'white'}:
+                                        {backgroundColor:'#F56C6C',color:'white'}"
                                         @click="toQuestionPosition(item.question.questionId)">
                                         {{ index+1 }}
                                     </div>       
@@ -126,9 +161,9 @@
                                 <div class="calendar ">
                                     <div v-for="(item,index) in examPaperAllocation.examPaperRelease.examPaper.questionOnTestPapers.filter(item=>item.question.questionType==1)" 
                                         :key="index"
-                                        :style="item.question.selectedIds.length>0?
-                                        {backgroundColor:'#409eff',color:'white'}:
-                                        {backgroundColor:'#f1f1f1',color:'#afafaf'}"
+                                        :style="item.answerRecord.isTrue?
+                                        {backgroundColor:'#67C23A',color:'white'}:
+                                        {backgroundColor:'#F56C6C',color:'white'}"
                                         @click="toQuestionPosition(item.question.questionId)">
                                         {{ index+1 }}
                                     </div>       
@@ -141,9 +176,9 @@
                                 <div class="calendar ">
                                     <div v-for="(item,index) in examPaperAllocation.examPaperRelease.examPaper.questionOnTestPapers.filter(item=>item.question.questionType==2)" 
                                         :key="index"
-                                        :style="item.question.selectedId?
-                                        {backgroundColor:'#409eff',color:'white'}:
-                                        {backgroundColor:'#f1f1f1',color:'#afafaf'}"
+                                        :style="item.answerRecord.isTrue?
+                                        {backgroundColor:'#67C23A',color:'white'}:
+                                        {backgroundColor:'#F56C6C',color:'white'}"
                                         @click="toQuestionPosition(item.question.questionId)">
                                         {{ index+1 }}
                                     </div>       
@@ -151,15 +186,15 @@
                             </div>
                         </div>
                         <div style="display: flex;justify-content: center;align-items: center;">
-                            <el-button type="primary" icon="el-icon-s-order" @click.prevent="submitAnswers">
+                            <!-- <el-button type="primary" icon="el-icon-s-order" @click.prevent="submitAnswers">
                                 提交答卷
-                            </el-button>
+                            </el-button> -->
                         </div>
                         <div style="font-size: 14px;">
-                            <span style="display: inline-block;width:10px;height: 10px;background-color: #d2d2d2;"></span>
-                            未做&nbsp;&nbsp;
-                            <span style="display: inline-block;width:10px;height: 10px;background-color:#409eff;"></span>
-                            已做
+                            <span style="display: inline-block;width:10px;height: 10px;background-color: #F56C6C;"></span>
+                            错误&nbsp;&nbsp;
+                            <span style="display: inline-block;width:10px;height: 10px;background-color: #67C23A;"></span>
+                            正确
                         </div>
                     </div>
                 </div>
@@ -264,11 +299,23 @@ export default {
         }
     },
     mounted(){
-        api.getExamPaperByExamPaperAllocationId(this.$route.params.examPaperAllocationId).then(res=>{
-            //  初始化selectedIds为空数组
+        api.getReviewExamPaperByExamPaperAllocationId(this.$route.params.examPaperAllocationId).then(res=>{
+            
             res.data.examPaperRelease.examPaper.questionOnTestPapers.forEach(item=>{
-                item.question.selectedIds = []
+                if (item.question.questionType == 1) {
+                    // 多选题
+                    item.question.selectedIds = res.data.answerRecords
+                        .filter(answerRecord => answerRecord.question.questionId == item.question.questionId)
+                        .flatMap(answerRecord => answerRecord.studentSelectedAnswers.map(answer => answer.answerId));
+                } else {
+                    // 单选题
+                    const selectedAnswer = res.data.answerRecords
+                        .find(answerRecord => answerRecord.question.questionId == item.question.questionId)?.studentSelectedAnswers[0];
+                    item.question.selectedId = selectedAnswer ? selectedAnswer.answerId : null;
+                }
+                item.answerRecord=res.data.answerRecords.find(answerRecord => answerRecord.question.questionId == item.question.questionId)
             })
+            console.log(res.data)
             this.examPaperAllocation = res.data
         })
         

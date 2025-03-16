@@ -11,8 +11,8 @@
                 <div style="width:70px">考试中</div>
               </el-badge>
             </div>
-            <div class="status-card">
-                <div style="width:70px">已考完</div>
+            <div class="status-card" @click="routerPush('finishExamPageList')">
+                <div style="width:120px">已结束考试</div>
             </div>
         </div>
         <div class="stats-container">

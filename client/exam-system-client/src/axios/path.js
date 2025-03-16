@@ -32,5 +32,8 @@ export default{
     getAvgScoreByStudentId:api+"/student/avgScoreByStudentId",
     getExamCountByStudentId:api+"/student/count/ExamCountByStudentId",
     getExamPaperListByStudentIdAndState:api+"/student/list/selectExamPaperAllocationsByStudentIdParamState",
-    getExamPaperByExamPaperAllocationId:api+"/student/exam/selectExamPaperAllocationByExamPaperAllocationId"
+    getExamPaperByExamPaperAllocationId:api+"/student/exam/selectExamPaperAllocationByExamPaperAllocationId",
+    submitAnswers:api+"/student/submit/insertAnswerRecord",
+    getExamPaperListFinish:api+"/student/list/selectExamPaperAllocationsByStudentIdFinish",
+    getReviewExamPaperByExamPaperAllocationId:api+"/student/review/selectExamPaperAllocationByExamPaperAllocationIdReview"
 }

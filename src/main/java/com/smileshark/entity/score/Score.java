@@ -16,5 +16,5 @@ public class Score {
     private String examPaperAllocationId;
     private ExamPaperAllocation examPaperAllocation;
     private Double score;
-    private Integer finishTime;
+    private Long finishTime;
 }

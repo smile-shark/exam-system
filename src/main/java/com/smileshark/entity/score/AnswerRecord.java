@@ -7,6 +7,8 @@ import com.smileshark.entity.user.Student;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Data
 @Component
 public class AnswerRecord {
@@ -15,10 +17,9 @@ public class AnswerRecord {
     private ExamPaperAllocation examPaperAllocation;
     private String questionId;
     private Question question;
-    private String answerId;
-    private Answer answer;
     private String studentId;
     private Student student;
     private Integer answerRecordTime;
     private Boolean isTrue;
+    private List<StudentSelectedAnswer> studentSelectedAnswers;
 }

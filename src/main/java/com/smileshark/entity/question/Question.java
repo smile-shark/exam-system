@@ -14,4 +14,6 @@ public class Question {
     private String question;
     private Integer questionType;
     private List<Answer> answers;
+    private String selectedId;
+    private List<String> selectedIds;
 }

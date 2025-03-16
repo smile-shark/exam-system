@@ -58,4 +58,27 @@ public class ExamPaperAllocationServiceImp implements ExamPaperAllocationService
         }
         return JSONObject.toJSONString(result);
     }
+
+    @Override
+    public String selectExamPaperAllocationsByStudentIdFinish(RequestParams requestParams) {
+        Page<ExamPaperAllocation> page = PageHelper.startPage(requestParams.getPage(), requestParams.getSize());
+        List<ExamPaperAllocation> examPaperAllocations = examPaperAllocationMapper.selectExamPaperAllocationsByStudentIdFinish(
+                requestParams.getStudentId()
+        );
+        return JSONObject.toJSONString(Result.success(null,
+                PageInfo.of(page)
+        ));
+    }
+
+    @Override
+    public String selectExamPaperAllocationByExamPaperAllocationIdReview(RequestParams requestParams) {
+        Result result = Result.error();
+        ExamPaperAllocation examPaperAllocation = examPaperAllocationMapper.selectExamPaperAllocationByExamPaperAllocationIdReview(requestParams.getExamPaperAllocationId());
+        if(examPaperAllocation == null){
+            result.setMsg("没有该试卷的记录");
+        }else{
+            result=Result.success("获取成功",examPaperAllocation);
+        }
+        return JSONObject.toJSONString(result);
+    }
 }

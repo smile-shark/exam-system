@@ -127,4 +127,24 @@
     <select id="selectQuestionByQuestionId" resultMap="questionAndAnswerNotHaveIsTrue">
         select * from question where question_id = #{questionId}
     </select>
+    <resultMap id="questionAndAnswerHaveIsTrue" type="question">
+        <id property="questionId" column="question_id"/>
+        <collection
+                property="answers"
+                column="question_id"
+                select="com.smileshark.mapper.AnswerMapper.selectAnswerByQuestionIdOnlyHaveTrue"/>
+    </resultMap>
+    <select id="selectQuestionByQuestionIdHaveReallyAnswer" resultMap="questionAndAnswerHaveIsTrue">
+        select * from question where question_id = #{questionId}
+    </select>
+    <resultMap id="questionAndAllAnswer" type="question">
+        <id property="questionId" column="question_id"/>
+        <collection
+                property="answers"
+                column="question_id"
+                select="com.smileshark.mapper.AnswerMapper.selectAnswerByQuestionId"/>
+    </resultMap>
+    <select id="selectQuestionByQuestionIdAllAnswer" resultMap="questionAndAllAnswer">
+        select * from question where question_id = #{questionId}
+    </select>
 </mapper>   

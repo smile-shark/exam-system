@@ -14,6 +14,10 @@ import AdminShowExamPaperListView from '@/views/admin/home/child/AdminShowExamPa
 import PendingExamPagerListView from '@/views/home/child/PendingExamPagerListView.vue'
 import ExamPageView from '@/views/home/child/ExamPageView.vue'
 import ExamPaperView from '@/views/home/child/ExamPaperView.vue'
+import ResultPageView from '@/views/home/child/ResultPageView.vue'
+import FinishExamPageListView from '@/views/home/child/FinishExamPageListView.vue'
+import ExamPaperReviewPageView from '@/views/home/child/ExamPaperReviewPageView.vue'
+import path from '@/axios/path'
 
 Vue.use(VueRouter)
 const routes = [
@@ -60,6 +64,12 @@ const routes = [
         name: 'examPage',
         component: ExamPageView,
         meta: { breadcrumb: '考试中试卷列表' }
+      },
+      {
+        path: 'finishExamPageList',
+        name: 'finishExamPageList',
+        component: FinishExamPageListView,
+        meta: { breadcrumb: '已结束试卷列表' }
       }
     ]
   },
@@ -68,6 +78,18 @@ const routes = [
     name:'examPaperPage',
     component: ExamPaperView,
     meta: { breadcrumb: '考试试卷' }
+  },
+  {
+    path: '/resultPage',
+    name:'resultPage',
+    component: ResultPageView,
+    meta: { breadcrumb: '考试结果' }
+  },
+  {
+    path: '/reviewPage/:examPaperAllocationId',
+    name:'reviewPage',
+    component: ExamPaperReviewPageView,
+    meta: { breadcrumb: '试卷回顾' }
   },
   {
     path: '/admin',

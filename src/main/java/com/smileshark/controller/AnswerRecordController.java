@@ -19,4 +19,8 @@ public class AnswerRecordController {
     public String wrongQuestionRecordCountByStudentId(@RequestBody RequestParams requestParams) {
         return answerRecordService.wrongQuestionRecordCountByStudentId(requestParams);
     }
+    @RequestMapping("/student/submit/insertAnswerRecord")
+    public String submitAnswerRecord(@RequestBody RequestParams requestParams) {
+        return answerRecordService.insertAnswerRecord(requestParams);
+    }
 }

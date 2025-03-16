@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smileshark.mapper.StudentSelectedAnswerMapper">
+    <insert id="insertStudentSelectedAnswer">
+        insert into student_selected_answer
+        (answer_id, answer_record_id)
+        values
+        (#{studentSelectedAnswer.answerId},
+         #{studentSelectedAnswer.answerRecordId})
+    </insert>
+    <select id="selectStudentSelectedAnswerByAnswerRecordId" resultType="studentSelectedAnswer">
+        select * from student_selected_answer where answer_record_id=#{answerRecordId}
+    </select>
+</mapper>

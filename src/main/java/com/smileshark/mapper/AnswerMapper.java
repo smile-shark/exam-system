@@ -10,4 +10,6 @@ import java.util.List;
 public interface AnswerMapper {
     List<Answer> selectAnswerByQuestionId(@Param("questionId") String questionId);
     List<Answer> selectAnswerByQuestionIdNotHaveIsTrue(@Param("questionId") String questionId);
+    List<Answer> selectAnswerByQuestionIdOnlyHaveTrue(@Param("questionId") String questionId);
+
 }

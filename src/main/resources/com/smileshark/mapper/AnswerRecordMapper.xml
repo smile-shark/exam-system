@@ -7,4 +7,26 @@
     <select id="wrongQuestionRecordCountByStudentId" resultType="int">
         select count(student_id) from answer_record where student_id=#{studentId} and is_true=false
     </select>
+    <insert id="insertAnswerRecord">
+        insert into answer_record
+            (exam_paper_allocation_id, question_id, student_id, answer_record_id, is_true)
+        values
+            (#{answerRecord.examPaperAllocationId},
+             #{answerRecord.questionId},
+             #{answerRecord.studentId},
+             #{answerRecord.answerRecordId},
+             #{answerRecord.isTrue})
+    </insert>
+    <resultMap id="answerRecordMap" type="answerRecord">
+        <id property="answerRecordId" column="answer_record_id"/>
+        <association property="studentSelectedAnswers"
+                     column="answer_record_id"
+                     select="com.smileshark.mapper.StudentSelectedAnswerMapper.selectStudentSelectedAnswerByAnswerRecordId"/>
+        <association property="question"
+                     column="question_id"
+                     select="com.smileshark.mapper.QuestionMapper.selectQuestionByQuestionIdAllAnswer"/>
+    </resultMap>
+    <select id="selectAnswerRecordByExamPaperAllocationId" resultMap="answerRecordMap">
+        select * from answer_record where exam_paper_allocation_id=#{examPaperAllocationId}
+    </select>
 </mapper>

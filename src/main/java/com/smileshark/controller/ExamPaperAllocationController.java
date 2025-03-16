@@ -27,4 +27,12 @@ public class ExamPaperAllocationController {
     public String selectExamPaperAllocationByExamPaperAllocationId(@RequestBody RequestParams requestParams) {
         return examPaperAllocationService.selectExamPaperAllocationByExamPaperAllocationId(requestParams);
     }
+    @RequestMapping("/student/list/selectExamPaperAllocationsByStudentIdFinish")
+    public String selectExamPaperAllocationsByStudentIdFinish(@RequestBody RequestParams requestParams) {
+        return examPaperAllocationService.selectExamPaperAllocationsByStudentIdFinish(requestParams);
+    }
+    @RequestMapping("/student/review/selectExamPaperAllocationByExamPaperAllocationIdReview")
+    public String selectExamPaperAllocationByExamPaperAllocationIdReview(@RequestBody RequestParams requestParams) {
+        return examPaperAllocationService.selectExamPaperAllocationByExamPaperAllocationIdReview(requestParams);
+    }
 }

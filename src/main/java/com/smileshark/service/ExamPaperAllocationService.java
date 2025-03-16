@@ -7,4 +7,6 @@ public interface ExamPaperAllocationService {
     String ExamCountByStudentId(RequestParams requestParams);
     String selectExamPaperAllocationsByStudentIdParamState(RequestParams requestParams);
     String selectExamPaperAllocationByExamPaperAllocationId(RequestParams requestParams);
+    String selectExamPaperAllocationsByStudentIdFinish(RequestParams requestParams);
+    String selectExamPaperAllocationByExamPaperAllocationIdReview(RequestParams requestParams);
 }

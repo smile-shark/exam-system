@@ -26,5 +26,16 @@ public interface ExamPaperAllocationMapper {
     int updateExamPaperAllocationStateTo3(
             @Param("nowTimes") long nowTimes
     );
-    ExamPaperAllocation selectExamPaperAllocationByExamPaperAllocationId(@Param("examPaperAllocationId") String examPaperAllocationId);
+    ExamPaperAllocation selectExamPaperAllocationByExamPaperAllocationId(
+            @Param("examPaperAllocationId") String examPaperAllocationId
+    );
+    int updateExamPaperAllocationStateToFinish(
+            @Param("examPaperAllocationId")String examPaperAllocationId
+    );
+    List<ExamPaperAllocation> selectExamPaperAllocationsByStudentIdFinish(
+            @Param("studentId") String studentId
+    );
+    ExamPaperAllocation selectExamPaperAllocationByExamPaperAllocationIdReview(
+            @Param("examPaperAllocationId") String examPaperAllocationId
+    );
 }

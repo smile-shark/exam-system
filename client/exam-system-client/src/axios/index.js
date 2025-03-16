@@ -203,5 +203,22 @@ export default {
       return myAxios.post(path.getExamPaperByExamPaperAllocationId,{
         examPaperAllocationId:examPaperAllocationId
       })
-    }
+    },
+    submitAnswers(examPaperAllocation){
+      return myAxios.post(path.submitAnswers,{
+        examPaperAllocation:examPaperAllocation
+      })
+    },
+    getExamPaperListFinish(studentId,page,size){
+      return myAxios.post(path.getExamPaperListFinish,{
+        studentId:studentId,
+        page:page,
+        size:size
+      })
+    },
+    getReviewExamPaperByExamPaperAllocationId(examPaperAllocationId){
+      return myAxios.post(path.getReviewExamPaperByExamPaperAllocationId,{
+        examPaperAllocationId:examPaperAllocationId
+      })
+    },
 }
