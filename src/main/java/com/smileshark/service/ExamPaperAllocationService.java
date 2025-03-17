@@ -9,4 +9,5 @@ public interface ExamPaperAllocationService {
     String selectExamPaperAllocationByExamPaperAllocationId(RequestParams requestParams);
     String selectExamPaperAllocationsByStudentIdFinish(RequestParams requestParams);
     String selectExamPaperAllocationByExamPaperAllocationIdReview(RequestParams requestParams);
+    String selectExamPaperAllocationsInStudentIdAndBetweenTime(RequestParams requestParams);
 }

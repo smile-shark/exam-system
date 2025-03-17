@@ -87,4 +87,32 @@
         select * from exam_paper_allocation where exam_paper_allocation_id=#{examPaperAllocationId}
                                               and exam_paper_allocation_state in (2,3)
     </select>
+    <resultMap id="examPaperAllocationAndStudentScoreMap" type="examPaperAllocation">
+        <id property="examPaperAllocationId" column="exam_paper_allocation_id"/>
+        <association property="student" column="student_id"
+            select="com.smileshark.mapper.StudentMapper.selectStudentByStudentId"/>
+        <association property="score" column="exam_paper_allocation_id"
+                     select="com.smileshark.mapper.ScoreMapper.selectScoreByExamPaperAllocationId"/>
+        <association property="examPaperRelease" column="exam_paper_release_id"
+                     select="com.smileshark.mapper.ExamPaperReleaseMapper.selectExamPaperReleaseByExamPaperReleaseId"/>
+    </resultMap>
+    <select id="selectExamPaperAllocationsInStudentIdAndBetweenTime" resultMap="examPaperAllocationAndStudentScoreMap">
+        select exam_paper_allocation_id, student_id, exam_paper_allocation.exam_paper_release_id, exam_paper_allocation_state ,exam_start_time
+        from exam_paper_allocation
+        inner join exam_paper_release
+        on exam_paper_release.exam_paper_release_id = exam_paper_allocation.exam_paper_release_id
+        <where>
+            exam_paper_allocation_state in (2,3)
+            <if test="studentIds.size>0">
+                and student_id  in
+                 <foreach collection="studentIds" separator="," item="studentId" open="(" close=")">
+                     #{studentId}
+                 </foreach>
+            </if>
+            <if test="startTime!=null and endTime!=null">
+              and  exam_start_time between #{startTime} and #{endTime}
+            </if>
+        </where>
+        order by exam_start_time desc
+    </select>
 </mapper>

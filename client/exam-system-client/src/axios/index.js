@@ -221,4 +221,18 @@ export default {
         examPaperAllocationId:examPaperAllocationId
       })
     },
+    getStudentScoreListByStudents(students,examStartTime,examEndTime){
+      return myAxios.post(path.getStudentScoreListByStudents,{
+        students:students,
+        examStartTime:examStartTime,
+        examEndTime:examEndTime
+      })
+    },
+    getStudentScoreListByStudentsNew(students,examStartTime,examEndTime){
+      return myAxios.post(path.getStudentScoreListByStudentsNew,{
+        students:students,
+        examStartTime:examStartTime,
+        examEndTime:examEndTime
+      })
+    }
 }

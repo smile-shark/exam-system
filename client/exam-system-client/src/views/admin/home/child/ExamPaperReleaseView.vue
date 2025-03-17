@@ -64,7 +64,7 @@
                                     {{ scope.row.administrator.administratorName }}
                                 </template>
                             </el-table-column>
-                         </el-table>
+                         </el-table>    
                          <el-button @click="toggleSelection()" style="margin: 20px;">取消选择</el-button>
                     </el-col>
                 </el-row>
@@ -159,7 +159,7 @@ import api from "@/axios/index"
             } else {
             this.$refs.table.clearSelection();
             }
-            this.studentsSelected = this.$refs.table.getSelection();
+            this.studentsSelected = []
         },
         reset(){
             this.release={

@@ -35,4 +35,8 @@ public class ExamPaperAllocationController {
     public String selectExamPaperAllocationByExamPaperAllocationIdReview(@RequestBody RequestParams requestParams) {
         return examPaperAllocationService.selectExamPaperAllocationByExamPaperAllocationIdReview(requestParams);
     }
+    @RequestMapping("/teacher/list/selectExamPaperAllocationsInStudentIdAndBetweenTime")
+    public String selectExamPaperAllocationsInStudentIdAndBetweenTime(@RequestBody RequestParams requestParams) {
+        return examPaperAllocationService.selectExamPaperAllocationsInStudentIdAndBetweenTime(requestParams);
+    }
 }

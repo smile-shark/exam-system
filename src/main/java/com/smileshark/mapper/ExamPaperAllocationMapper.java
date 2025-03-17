@@ -38,4 +38,9 @@ public interface ExamPaperAllocationMapper {
     ExamPaperAllocation selectExamPaperAllocationByExamPaperAllocationIdReview(
             @Param("examPaperAllocationId") String examPaperAllocationId
     );
+    List<ExamPaperAllocation> selectExamPaperAllocationsInStudentIdAndBetweenTime(
+            @Param("studentIds") List<String> studentIds,
+            @Param("startTime") long startTime,
+            @Param("endTime") long endTime
+    );
 }

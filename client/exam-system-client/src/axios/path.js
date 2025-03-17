@@ -24,6 +24,8 @@ export default{
     getAllStudent:api+"/teacher/student/select/selectAllStudent",
     releaseExamPaper:api+"/teacher/release/examPaper/insertExamPaperRelease",
     getExamPaperListByParams:api+"/teacher/exam/paper/select/selectExamPaperByParams",
+    getStudentScoreListByStudents:api+"/teacher/list/selectExamPaperAllocationsInStudentIdAndBetweenTime",
+    getStudentScoreListByStudentsNew:api+"/teacher/list/selectStudentInStudentIds",
     
     getExamPaperCountByState:api+"/student/count/allocationExamPaperCountByStudentIdAndState",
     getAnswerQuestionCountByStudentId:api+"/student/answerRecordCountByStudentId",

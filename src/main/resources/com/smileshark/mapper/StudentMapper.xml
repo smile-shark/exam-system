@@ -18,4 +18,18 @@
     <select id="selectAllStudent" resultMap="studentAndTeacher">
         select student_id, administrator_id, student_account, student_name from student
     </select>
+    <select id="selectStudentByStudentId" resultType="student">
+        select student_id,student_name from student where student_id = #{studentId}
+    </select>
+    <select id="selectStudentInStudentIds" resultType="student">
+        select student_id, student_name from student
+        <where>
+            <if test="studentIds.size>0">
+                and student_id in
+                 <foreach collection="studentIds" item="studentId" open="(" separator="," close=")">
+                     #{studentId}
+                 </foreach>
+            </if>
+        </where>
+    </select>
 </mapper>

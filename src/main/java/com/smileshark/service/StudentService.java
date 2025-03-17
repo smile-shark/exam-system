@@ -7,4 +7,5 @@ public interface StudentService {
     String studentLogin(RequestParams requestParams);
     String studentCount();
     String selectAllStudent();
+    String selectStudentInStudentIds(RequestParams requestParams);
 }

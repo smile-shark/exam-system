@@ -17,6 +17,7 @@ import ExamPaperView from '@/views/home/child/ExamPaperView.vue'
 import ResultPageView from '@/views/home/child/ResultPageView.vue'
 import FinishExamPageListView from '@/views/home/child/FinishExamPageListView.vue'
 import ExamPaperReviewPageView from '@/views/home/child/ExamPaperReviewPageView.vue'
+import AdminStudentScoreView from '@/views/admin/home/child/AdminStudentScoreView.vue'
 import path from '@/axios/path'
 
 Vue.use(VueRouter)
@@ -137,6 +138,11 @@ const routes = [
         name: 'adminShowExamPaperList',
         component: AdminShowExamPaperListView,
         meta: { breadcrumb: '试卷列表' }
+      },{
+        path: 'adminStudentScore',
+        name: 'adminStudentScore',
+        component: AdminStudentScoreView,
+        meta: { breadcrumb: '学生成绩' }
       }
     ]
   }

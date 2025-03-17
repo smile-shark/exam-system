@@ -27,4 +27,8 @@ public class StudentController {
     public String selectAllStudent(){
         return studentService.selectAllStudent();
     }
+    @RequestMapping("/teacher/list/selectStudentInStudentIds")
+    public String selectStudentInStudentIds(@RequestBody RequestParams requestParams){
+        return studentService.selectStudentInStudentIds(requestParams);
+    }
 }

@@ -8,8 +8,10 @@ import com.smileshark.common.RequestParams;
 import com.smileshark.common.Result;
 import com.smileshark.entity.paper.ExamPaper;
 import com.smileshark.entity.paper.ExamPaperAllocation;
+import com.smileshark.entity.user.Student;
 import com.smileshark.mapper.ExamPaperAllocationMapper;
 import com.smileshark.service.ExamPaperAllocationService;
+import com.smileshark.utils.DateStrToLongUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -80,5 +82,18 @@ public class ExamPaperAllocationServiceImp implements ExamPaperAllocationService
             result=Result.success("获取成功",examPaperAllocation);
         }
         return JSONObject.toJSONString(result);
+    }
+
+    @Override
+    public String selectExamPaperAllocationsInStudentIdAndBetweenTime(RequestParams requestParams) {
+        return JSONObject.toJSONString(Result.success("查询成功",
+                examPaperAllocationMapper.selectExamPaperAllocationsInStudentIdAndBetweenTime(
+                        requestParams.getStudents().stream()
+                                .map(Student::getStudentId)
+                                .toList(),
+                        DateStrToLongUtil.dateStrToLong(requestParams.getExamStartTime()),
+                        DateStrToLongUtil.dateStrToLong(requestParams.getExamEndTime())
+                )
+        ));
     }
 }

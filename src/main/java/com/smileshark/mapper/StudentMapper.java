@@ -14,4 +14,6 @@ public interface StudentMapper {
     Student selectStudentByAccount(@Param("account")String account);
     int selectStudentCount();
     List<Student> selectAllStudent();
+    Student selectStudentByStudentId(@Param("studentId")String studentId);
+    List<Student> selectStudentInStudentIds(@Param("studentIds")List<String> studentIds);
 }
