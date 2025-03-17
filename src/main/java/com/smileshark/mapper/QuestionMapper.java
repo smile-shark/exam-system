@@ -45,4 +45,5 @@ public interface QuestionMapper {
     Question selectQuestionByQuestionId(@Param("questionId") String questionId);
     Question selectQuestionByQuestionIdHaveReallyAnswer(@Param("questionId") String questionId);
     Question selectQuestionByQuestionIdAllAnswer(@Param("questionId") String questionId);
+    int insertQuestion(@Param("questions")List<Question> questions);
 }

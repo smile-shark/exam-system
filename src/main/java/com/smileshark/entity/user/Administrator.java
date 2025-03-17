@@ -10,4 +10,5 @@ public class Administrator {
     private String administratorAccount;
     private String administratorPassword;
     private String administratorName;
+    private String token;
 }

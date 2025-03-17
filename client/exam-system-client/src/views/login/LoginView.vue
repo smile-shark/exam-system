@@ -145,6 +145,7 @@ import api from '@/axios/index'
 				api.studentLogin(this.loginAcount,this.loginPassword).then(res=>{
 					if(res.msg=='登录成功'){
 						localStorage.setItem('studentInfo',JSON.stringify(res.data))
+						localStorage.studentToken=res.data.token
 						setTimeout(() => {
 							this.$router.push('/home')
 						}, 1000);

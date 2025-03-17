@@ -10,4 +10,12 @@
     <select id="selectAnswerByQuestionIdOnlyHaveTrue" resultType="answer">
         select * from answer where question_id=#{questionId} and is_true=true
     </select>
+    <insert id="insertAnswer">
+        insert into answer
+        (answer_id, question_id, answer, is_true)
+        values
+        <foreach collection="answers" item="answer" separator=",">
+            (#{answer.answerId},#{answer.questionId},#{answer.answer},#{answer.isTrue})
+        </foreach>
+    </insert>
 </mapper>

@@ -6,6 +6,8 @@ import com.smileshark.common.Result;
 import com.smileshark.entity.user.Administrator;
 import com.smileshark.mapper.AdministratorMapper;
 import com.smileshark.service.AdministratorService;
+import com.smileshark.utils.AESUtils;
+import com.smileshark.utils.JwtUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -23,8 +25,9 @@ public class AdministratorServiceImp implements AdministratorService {
         Result result = Result.error();
         Administrator administrator = administratorMapper.selectAdministratorByAccount(requestParams.getAdministratorAccount());
         if(administrator != null){
-            if(administrator.getAdministratorPassword().equals(requestParams.getAdministratorPassword())){
+            if(administrator.getAdministratorPassword().equals(AESUtils.decrypt(requestParams.getAdministratorPassword()))){
                 administrator.setAdministratorPassword(null);
+                administrator.setToken(JwtUtils.createJwt(administrator));
                 result=Result.success("登录成功").setData(administrator);
             }else {
                 result.setMsg("密码错误");

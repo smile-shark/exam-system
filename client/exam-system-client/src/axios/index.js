@@ -1,14 +1,28 @@
 import axios from "axios";
 import path from "./path";
 import { Message } from "element-ui";
+import router from "@/router";
+import CryptoJS from "crypto-js";
+
+const AESKEY='www.examSystem.com'
 
 const myAxios=axios.create({
-  timeout:6000,
-  headers:{
-    token:localStorage.token 
-  },
+  timeout:6000
 })
+// 请求拦截器
+myAxios.interceptors.request.use(config => {
+  // 动态获取 localStorage 中的 token
+  const adminToken = localStorage.getItem("adminToken");
+  const studentToken = localStorage.getItem("studentToken");
 
+  // 设置请求头
+  config.headers["AdminToken"] = adminToken || "";
+  config.headers["StudentToken"] = studentToken || "";
+
+  return config;
+}, error => {
+  return Promise.reject(error);
+});
 //获取数据之前
 myAxios.interceptors.response.use(
   resp=>{
@@ -16,7 +30,15 @@ myAxios.interceptors.response.use(
         Message.success(resp.data.msg)
     }else if(resp.data.msg){
         Message.error(resp.data.msg)
+        if(resp.data.msg=='请重新登录'){
+          setTimeout(() => {
+            router.push('/login')
+          }, 1000);
+        }
     }
+    // 先将数据转为字符串，处理后再转回去
+    resp.data=JSON.parse(JSON.stringify(resp.data).replaceAll('/oss/api/ImageViewer/','https://ai.cqzuxia.com/oss/api/ImageViewer/'))
+
     return resp.data
   },
   error=>{
@@ -33,7 +55,7 @@ export default {
     studentSignUp(account,password,name,adminId){
       return myAxios.post(path.studentSignUp,{
         studentAccount:account,
-        studentPassword:password,
+        studentPassword:CryptoJS.AES.encrypt(password,AESKEY).toString(),
         studentName:name,
         administratorId:adminId
       })
@@ -41,13 +63,13 @@ export default {
     studentLogin(account,password){
       return myAxios.post(path.studentLogin,{
         studentAccount:account,
-        studentPassword:password
+        studentPassword:CryptoJS.AES.encrypt(password,AESKEY).toString()
       })
     },
     adminLogin(account,password){
       return myAxios.post(path.adminLogin,{
         administratorAccount:account,
-        administratorPassword:password
+        administratorPassword:CryptoJS.AES.encrypt(password,AESKEY).toString()
       })
     },
     getStudentCount(){
@@ -233,6 +255,12 @@ export default {
         students:students,
         examStartTime:examStartTime,
         examEndTime:examEndTime
+      })
+    },
+    insertQuestions(questions,subsectionId){
+      return myAxios.post(path.insertQuestions,{
+        questions:questions,
+        subsectionId:subsectionId
       })
     }
 }

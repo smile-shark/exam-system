@@ -147,4 +147,14 @@
     <select id="selectQuestionByQuestionIdAllAnswer" resultMap="questionAndAllAnswer">
         select * from question where question_id = #{questionId}
     </select>
+    <insert id="insertQuestion">
+        insert into question
+        (question_id, subsection_id, question, question_type)
+        values
+            <if test="questions.size>0">
+                <foreach collection="questions" item="question" separator=",">
+                    (#{question.questionId}, #{question.subsectionId}, #{question.question}, #{question.questionType})
+                </foreach>
+            </if>
+    </insert>
 </mapper>   

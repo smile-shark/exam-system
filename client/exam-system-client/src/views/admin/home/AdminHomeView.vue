@@ -13,14 +13,13 @@
 					<el-submenu index="2">
 						<template slot="title"><i class="el-icon-s-data"></i>数据管理</template>
 						<el-menu-item index="adminQuestionManage">题目管理</el-menu-item>
-						<el-menu-item>题目导入</el-menu-item>
-						<el-menu-item>课程管理</el-menu-item>
+						<el-menu-item index="importQuestions">题目导入</el-menu-item>
+						<el-menu-item index="adminCourseManage">课程管理</el-menu-item>
 					</el-submenu>
 					<el-submenu index="3">
 						<template slot="title"><i class="el-icon-user"></i>学生管理</template>
 						<el-menu-item>学生账号信息</el-menu-item>
 						<el-menu-item index="adminStudentScore">学生成绩</el-menu-item>
-						<el-menu-item>学生成绩统计</el-menu-item>
 					</el-submenu>
 					<el-submenu index="4">
 						<template slot="title"><i class="el-icon-tickets"></i>试卷管理</template>
@@ -39,7 +38,9 @@
 								{{ item.name }}
 							</el-breadcrumb-item>
 						</el-breadcrumb>
-						<div style="display: inline-block;position: absolute;right: 20px;">{{ adminName }}</div>
+						<div style="display: inline-block;position: absolute;right: 20px;color:#3477f4">{{ adminName }} 
+							<el-link @click="$router.push('/admin')">退出</el-link>
+						</div>
 					</el-col>
 				</el-row>
 				<keep-alive>

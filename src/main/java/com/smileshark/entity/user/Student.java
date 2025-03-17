@@ -16,4 +16,5 @@ public class Student {
     private String studentPassword;
     private String studentName;
     private List<ExamPaperAllocation> examPaperAllocations;
+    private String token;
 }

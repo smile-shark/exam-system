@@ -27,4 +27,8 @@ public class QuestionController {
     public String selectQuestionBySubsectionsAndTypeLimitNumNotQuestionId(@RequestBody RequestParams requestParams){
         return questionService.selectQuestionBySubsectionsAndTypeLimitNumNotQuestionId(requestParams);
     }
+    @RequestMapping("/teacher/insert/questions/insertQuestion")
+    public String insertQuestion(@RequestBody RequestParams requestParams){
+        return questionService.insertQuestion(requestParams);
+    }
 }

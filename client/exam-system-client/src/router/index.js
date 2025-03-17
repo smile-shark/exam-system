@@ -18,7 +18,8 @@ import ResultPageView from '@/views/home/child/ResultPageView.vue'
 import FinishExamPageListView from '@/views/home/child/FinishExamPageListView.vue'
 import ExamPaperReviewPageView from '@/views/home/child/ExamPaperReviewPageView.vue'
 import AdminStudentScoreView from '@/views/admin/home/child/AdminStudentScoreView.vue'
-import path from '@/axios/path'
+import ImportQuestionsView from '@/views/admin/home/child/ImportQuestionsView.vue'
+import AdminCourseManageView from '@/views/admin/home/child/AdminCourseManageView.vue'
 
 Vue.use(VueRouter)
 const routes = [
@@ -143,6 +144,16 @@ const routes = [
         name: 'adminStudentScore',
         component: AdminStudentScoreView,
         meta: { breadcrumb: '学生成绩' }
+      },{
+        path: 'importQuestions',
+        name: 'importQuestions',
+        component: ImportQuestionsView,
+        meta: { breadcrumb: '题目导入' }
+      },{
+        path: 'adminCourseManage',
+        name: 'adminCourseManage',
+        component: AdminCourseManageView,
+        meta: { breadcrumb: '课程管理' }
       }
     ]
   }

@@ -9,6 +9,7 @@ import com.smileshark.mapper.StudentMapper;
 import com.smileshark.service.StudentService;
 import com.smileshark.utils.CreateId;
 import com.smileshark.utils.DateStrToLongUtil;
+import com.smileshark.utils.JwtUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -49,6 +50,7 @@ public class StudentServiceImp implements StudentService {
         if(student!=null){
             if(student.getStudentPassword().equals(requestParams.getStudentPassword())){
                 student.setStudentPassword(null);
+                student.setToken(JwtUtils.createJwt(student));
                 result=Result.success("登录成功",student);
             }else {
                 result.setMsg("密码错误");

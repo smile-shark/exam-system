@@ -10,4 +10,5 @@ public interface QuestionService {
     String questionListByCourseChapterSubsectionContentType(RequestParams requestParams);
     String selectQuestionBySubsectionsAndTypeLimitNum(RequestParams requestParams);
     String selectQuestionBySubsectionsAndTypeLimitNumNotQuestionId(RequestParams requestParams);
+    String insertQuestion(RequestParams requestParams);
 }

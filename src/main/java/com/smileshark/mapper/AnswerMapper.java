@@ -11,5 +11,5 @@ public interface AnswerMapper {
     List<Answer> selectAnswerByQuestionId(@Param("questionId") String questionId);
     List<Answer> selectAnswerByQuestionIdNotHaveIsTrue(@Param("questionId") String questionId);
     List<Answer> selectAnswerByQuestionIdOnlyHaveTrue(@Param("questionId") String questionId);
-
+    int insertAnswer(@Param("answers")List<Answer> answers);
 }

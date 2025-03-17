@@ -22,7 +22,8 @@
                 </template>
                 </el-input>
             </el-form-item>
-            <el-form-item>
+            <el-form-item style="display: flex;justify-content: center;align-items: center;">
+                <el-link style="font-size: .8rem;" @click="$router.push('/login')">返回学生登录</el-link>
             </el-form-item>
             <el-button type="primary" style="width:100%" @click="submitLogin">登录</el-button>
         </el-form>
@@ -71,6 +72,7 @@ export default {
           api.adminLogin(this.loginForm.username,this.loginForm.password).then(res=>{
             if(res.msg=="登录成功"){
                 localStorage.adminInfo=JSON.stringify(res.data)
+                localStorage.adminToken=res.data.token
                 setTimeout(()=>{
                     this.$router.push("/admin/home")
                 },1000)
@@ -90,7 +92,7 @@ export default {
         padding: 15px 35px 15px 35px;
         /* background: aliceblue; */
         background: url(@/assets/logo.png) no-repeat;
-        background-position-y:-130%;
+        background-position-y:-70%;
         border:1px solid rgb(17, 31, 189);
         box-shadow: 0 0 25px #4a96dc;
     }
