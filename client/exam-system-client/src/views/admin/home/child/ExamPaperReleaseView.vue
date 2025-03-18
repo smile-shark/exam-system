@@ -28,7 +28,13 @@
                         </el-date-picker>
                     </el-form-item>
                     <el-form-item label="考试时长：">
-                        {{ examTime() }}
+                        <span>{{ marks[release.duration] }}</span><br>
+                        <el-slider
+                        :max="9"
+                        v-model="release.duration"
+                        :step="1"
+                        :show-stop="true">
+                        </el-slider>
                     </el-form-item>
                     <el-form-item label="备注：">
                         <el-input
@@ -82,11 +88,24 @@ import api from "@/axios/index"
                 examPaperId:'',
                 examStartTime:'',
                 examEndTime:'',
-                notes:''
+                notes:'',
+                duration:1
             },
             students:[],
             studentsSelected:[],
-            isRelease:false
+            isRelease:false,
+            marks:{
+                0:'15分钟',
+                1:'30分钟',
+                2:'45分钟',
+                3:'60分钟',
+                4:'1小时15分钟',
+                5:'1小时30分钟',
+                6:'1小时45分钟',
+                7:'2小时',
+                8:'2小时15分钟',
+                9:'2小时30分钟'
+            }
         }
     },
     methods:{
@@ -131,6 +150,11 @@ import api from "@/axios/index"
                 this.$message.error("备注不能为空！")
                 return
             }
+            // 时长不能为空
+            if(!this.release.duration){
+                this.$message.error("时长不能为空！")
+                return
+            }
             if(localStorage.adminInfo&&!this.isRelease){
                 let administratorId=JSON.parse(localStorage.adminInfo).administratorId
                 this.isRelease=true
@@ -140,7 +164,8 @@ import api from "@/axios/index"
                     this.release.examStartTime,
                     this.release.examEndTime,
                     this.release.notes,
-                    this.studentsSelected).then(res=>{
+                    this.studentsSelected,
+                    this.release.duration).then(res=>{
                         this.reset()
                         this.isRelease=false
                     })
@@ -157,7 +182,7 @@ import api from "@/axios/index"
                 this.$refs.table.toggleRowSelection(row);
             });
             } else {
-            this.$refs.table.clearSelection();
+                this.$refs.table.clearSelection();
             }
             this.studentsSelected = []
         },
@@ -166,31 +191,12 @@ import api from "@/axios/index"
                 examPaperId:'',
                 examStartTime:'',
                 examEndTime:'',
-                notes:''
+                notes:'',
+                duration:1
             },
+            this.toggleSelection()
             this.studentsSelected=[]
         },
-        examTime() {
-            // 考试的用时 hh:mm:ss
-            // 如果两个时间没有选择，就返回 00:00:00
-            if (!this.release.examStartTime || !this.release.examEndTime) {
-                return "00:00:00";
-            }
-
-            let startTime = new Date(this.release.examStartTime);
-            let endTime = new Date(this.release.examEndTime);
-            let time = Math.abs(endTime - startTime);
-            let hours = Math.floor(time / 3600000);
-            let minutes = Math.floor((time - hours * 3600000) / 60000);
-            let seconds = Math.floor((time - hours * 3600000 - minutes * 60000) / 1000);
-
-            // 确保小时、分钟和秒数都是两位数
-            hours = hours.toString().padStart(2, '0');
-            minutes = minutes.toString().padStart(2, '0');
-            seconds = seconds.toString().padStart(2, '0');
-
-            return `${hours}:${minutes}:${seconds}`;
-        }
     },
     mounted(){
         api.getExamPaperIdTitle().then(res=>{

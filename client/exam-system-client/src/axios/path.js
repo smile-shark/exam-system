@@ -52,5 +52,6 @@ export default{
     getExamPaperByExamPaperAllocationId:api+"/student/exam/selectExamPaperAllocationByExamPaperAllocationId",
     submitAnswers:api+"/student/submit/insertAnswerRecord",
     getExamPaperListFinish:api+"/student/list/selectExamPaperAllocationsByStudentIdFinish",
-    getReviewExamPaperByExamPaperAllocationId:api+"/student/review/selectExamPaperAllocationByExamPaperAllocationIdReview"
+    getReviewExamPaperByExamPaperAllocationId:api+"/student/review/selectExamPaperAllocationByExamPaperAllocationIdReview",
+    getMistakesCollectionByStudentId:api+"/student/list/selectAnswerRecordByStudentIdIsFalse"
 }

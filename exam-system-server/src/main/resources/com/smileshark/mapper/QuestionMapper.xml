@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smileshark.mapper.QuestionMapper">
+    <sql id="questionContent">
+        <if test="questionContent!=null">
+           and question like #{questionContent}
+        </if>
+    </sql>
+    <sql id="questionTypes">
+        <if test="questionTypes.size>0">
+           and question_type in
+            <foreach
+                    collection="questionTypes"
+                    item="questionType"
+                    separator=","
+                    open="("
+                    close=")">
+                #{questionType}
+            </foreach>
+        </if>
+    </sql>
+    <sql id="subsections">
+        <if test="subsections.size>0">
+            and subsection_id in
+            <foreach
+                    collection="subsections"
+                    item="subsection"
+                    separator=","
+                    open="("
+                    close=")">
+                #{subsection.subsectionId}
+            </foreach>
+        </if>
+    </sql>
+    <sql id="subsectionId">
+        <if test="subsectionId!=null">
+            and subsection_id = #{subsectionId}
+        </if>
+    </sql>
+
+
+    <select id="questionCount" resultType="int">
+        select count(question_id) from question
+    </select>
+    <select id="selectQuestionByParams" resultType="question">
+        select * from question
+        <where>
+            <include refid="questionContent"/>
+            <include refid="questionTypes"/>
+        </where>
+    </select>
+    <select id="selectQuestionByParamsInSubsectionIds" resultType="question">
+        select * from question
+        <where>
+            <include refid="questionContent"/>
+            <include refid="questionTypes"/>
+            <include refid="subsections"/>
+        </where>
+    </select>
+    <select id="selectQuestionByParamsAndSubsectionId" resultType="question">
+        select * from question
+        <where>
+            <include refid="subsectionId"/>
+            <include refid="questionTypes"/>
+            <include refid="questionContent"/>
+        </where>
+    </select>
+    <select id="selectQuestionBySubsectionsAndTypeLimitNum" resultType="question">
+        SELECT *
+        FROM question
+        <where>
+            <include refid="subsections"/>
+            <if test="questionType!=null">
+                and question_type=#{questionType}
+            </if>
+        </where>
+        ORDER BY RAND()
+        LIMIT #{limitNum};
+    </select>
+    <select id="selectQuestionByTypeLimitNum" resultType="question">
+        SELECT *
+        FROM question
+        <where>
+            <if test="questionType!=null">
+                and question_type=#{questionType}
+            </if>
+        </where>
+        ORDER BY RAND()
+        LIMIT #{limitNum};
+    </select>
+    <select id="selectQuestionBySubsectionsAndTypeLimitNumNotQuestionId" resultType="question">
+        SELECT *
+        FROM question
+        <where>
+            <include refid="subsections"/>
+            <if test="questionType!=null">
+                and question_type=#{questionType}
+            </if>
+            <if test="questionId!=null">
+                and question_id!=#{questionId}
+            </if>
+        </where>
+        ORDER BY RAND()
+        LIMIT 1;
+    </select>
+    <select id="selectQuestionByTypeLimitNumNotQuestionId" resultType="question">
+        SELECT *
+        FROM question
+        <where>
+            <if test="questionType!=null">
+                and question_type=#{questionType}
+            </if>
+            <if test="questionId!=null">
+                and question_id!=#{questionId}
+            </if>
+        </where>
+        ORDER BY RAND()
+        LIMIT 1;
+    </select>
+    <resultMap id="questionAndAnswerNotHaveIsTrue" type="question">
+        <id property="questionId" column="question_id"/>
+        <collection
+                property="answers"
+                column="question_id"
+                select="com.smileshark.mapper.AnswerMapper.selectAnswerByQuestionIdNotHaveIsTrue"/>
+    </resultMap>
+    <select id="selectQuestionByQuestionId" resultMap="questionAndAnswerNotHaveIsTrue">
+        select * from question where question_id = #{questionId}
+    </select>
+    <resultMap id="questionAndAnswerHaveIsTrue" type="question">
+        <id property="questionId" column="question_id"/>
+        <collection
+                property="answers"
+                column="question_id"
+                select="com.smileshark.mapper.AnswerMapper.selectAnswerByQuestionIdOnlyHaveTrue"/>
+    </resultMap>
+    <select id="selectQuestionByQuestionIdHaveReallyAnswer" resultMap="questionAndAnswerHaveIsTrue">
+        select * from question where question_id = #{questionId}
+    </select>
+    <resultMap id="questionAndAllAnswer" type="question">
+        <id property="questionId" column="question_id"/>
+        <collection
+                property="answers"
+                column="question_id"
+                select="com.smileshark.mapper.AnswerMapper.selectAnswerByQuestionId"/>
+    </resultMap>
+    <select id="selectQuestionByQuestionIdAllAnswer" resultMap="questionAndAllAnswer">
+        select * from question where question_id = #{questionId}
+    </select>
+    <insert id="insertQuestion">
+        insert into question
+        (question_id, subsection_id, question, question_type)
+        values
+            <if test="questions.size>0">
+                <foreach collection="questions" item="question" separator=",">
+                    (#{question.questionId}, #{question.subsectionId}, #{question.question}, #{question.questionType})
+                </foreach>
+            </if>
+    </insert>
+    <delete id="deleteQuestionByQuestionId">
+        delete from question where question_id = #{questionId}
+    </delete>
+    <update id="updateQuestionByQuestionId">
+        update question set question=#{question.question},question_type=#{question.questionType} where question_id=#{question.questionId}
+    </update>
+</mapper>   

@@ -11,6 +11,7 @@
     "core-js": "^3.41.0",
     "crypto-js": "^4.2.0",
     "element-ui": "^2.15.14",
+    "fast-json-parse": "^1.0.3",
     "file-saver": "^2.0.5",
     "style-loader": "^4.0.0",
     "vue": "^2.6.14",

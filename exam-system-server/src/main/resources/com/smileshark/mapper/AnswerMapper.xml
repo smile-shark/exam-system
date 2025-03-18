@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smileshark.mapper.AnswerMapper">
+    <select id="selectAnswerByQuestionId" resultType="answer">
+        select * from answer where question_id=#{questionId}
+    </select>
+    <select id="selectAnswerByQuestionIdNotHaveIsTrue" resultType="answer">
+        select answer_id, question_id, answer from answer where question_id=#{questionId}
+    </select>
+    <select id="selectAnswerByQuestionIdOnlyHaveTrue" resultType="answer">
+        select * from answer where question_id=#{questionId} and is_true=true
+    </select>
+    <insert id="insertAnswer">
+        insert into answer
+        (answer_id, question_id, answer, is_true)
+        values
+        <foreach collection="answers" item="answer" separator=",">
+            (#{answer.answerId},#{answer.questionId},#{answer.answer},#{answer.isTrue})
+        </foreach>
+    </insert>
+    <delete id="deleteAnswerByQuestionId">
+        delete from answer where question_id=#{questionId}
+    </delete>
+    <update id="updateAnswerByAnswerId">
+        update answer set answer=#{answer.answer},is_true=#{answer.isTrue} where answer_id=#{answer.answerId}
+    </update>
+</mapper>

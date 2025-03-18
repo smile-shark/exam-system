@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smileshark.mapper.ExamPaperAllocationMapper">
+    <insert id="insertExamPaperAllocation">
+        insert into exam_paper_allocation(exam_paper_allocation_id, student_id, exam_paper_release_id)
+        values
+        (#{examPaperAllocation.examPaperAllocationId},
+         #{examPaperAllocation.studentId},
+         #{examPaperAllocation.examPaperReleaseId})
+    </insert>
+    <select id="allocationExamPaperCountByStudentIdAndState" resultType="int">
+        select count(*) from exam_paper_allocation where student_id=#{studentId}
+                                                     and exam_paper_allocation_state
+                                                             =#{examPaperAllocationState}
+    </select>
+    <select id="selectLastExamPaperAllocationByStudentId" resultType="examPaperAllocation">
+        select exam_paper_allocation_id from exam_paper_allocation
+                 inner join exam_paper_release
+                     on exam_paper_allocation.exam_paper_release_id = exam_paper_release.exam_paper_release_id
+                 where student_id=#{studentId} and exam_paper_allocation_state=2
+                 order by exam_start_time desc
+        limit 1
+    </select>
+    <select id="ExamCountByStudentId" resultType="int">
+        select count(student_id) from exam_paper_allocation where student_id=#{studentId} and exam_paper_allocation_state=2
+    </select>
+    <resultMap id="examPaperAllocationMap" type="examPaperAllocation">
+        <id property="examPaperAllocationId" column="exam_paper_allocation_id"/>
+        <association property="examPaperRelease" column="exam_paper_release_id"
+                     select="com.smileshark.mapper.ExamPaperReleaseMapper.selectExamPaperReleaseByExamPaperReleaseId"/>
+    </resultMap>
+    <select id="selectExamPaperAllocationsByStudentIdParamState" resultMap="examPaperAllocationMap">
+        select *
+        from exam_paper_allocation
+        where student_id=#{studentId} and exam_paper_allocation_state=#{examPaperAllocationState}
+    </select>
+    <update id="updateExamPaperAllocationStateTo1">
+        update exam_paper_allocation
+            join exam_paper_release on exam_paper_allocation.exam_paper_release_id
+                = exam_paper_release.exam_paper_release_id
+        set exam_paper_allocation_state=1
+        where #{nowTimes} &gt;= exam_start_time and #{nowTimes} &lt;= exam_end_time and exam_paper_allocation_state=0
+    </update>
+    <update id="updateExamPaperAllocationStateTo3">
+        update exam_paper_allocation
+            join exam_paper_release on exam_paper_allocation.exam_paper_release_id
+                = exam_paper_release.exam_paper_release_id
+        set exam_paper_allocation_state=3
+        where #{nowTimes} &gt;= exam_end_time and exam_paper_allocation_state!=2
+    </update>
+    <resultMap id="examPaperAllocationMapToExam" type="examPaperAllocation">
+        <id property="examPaperAllocationId" column="exam_paper_allocation_id"/>
+        <association property="examPaperRelease" column="exam_paper_release_id"
+                     select="com.smileshark.mapper.ExamPaperReleaseMapper.selectExamPaperReleaseByExamPaperReleaseIdToExam"/>
+    </resultMap>
+    <select id="selectExamPaperAllocationByExamPaperAllocationId" resultMap="examPaperAllocationMapToExam">
+        select * from exam_paper_allocation where exam_paper_allocation_id=#{examPaperAllocationId}
+        and exam_paper_allocation_state=1
+    </select>
+    <update id="updateExamPaperAllocationStateToFinish">
+        update exam_paper_allocation
+        set exam_paper_allocation_state=2
+        where exam_paper_allocation_id=#{examPaperAllocationId}
+    </update>
+    <resultMap id="examPaperAllocationMapAndScore" type="examPaperAllocation">
+        <id property="examPaperAllocationId" column="exam_paper_allocation_id"/>
+        <association property="examPaperRelease" column="exam_paper_release_id"
+                     select="com.smileshark.mapper.ExamPaperReleaseMapper.selectExamPaperReleaseByExamPaperReleaseId"/>
+        <association property="score" column="exam_paper_allocation_id"
+                     select="com.smileshark.mapper.ScoreMapper.selectScoreByExamPaperAllocationId"/>
+    </resultMap>
+    <select id="selectExamPaperAllocationsByStudentIdFinish" resultMap="examPaperAllocationMapAndScore">
+        select *
+        from exam_paper_allocation
+        inner join exam_paper_release on exam_paper_release.exam_paper_release_id = exam_paper_allocation.exam_paper_release_id
+        where student_id=#{studentId} and exam_paper_allocation_state in (2,3)
+        order by exam_start_time desc
+    </select>
+    <resultMap id="examPaperAllocationMapToExamReview" type="examPaperAllocation">
+        <id property="examPaperAllocationId" column="exam_paper_allocation_id"/>
+        <association property="examPaperRelease" column="exam_paper_release_id"
+                     select="com.smileshark.mapper.ExamPaperReleaseMapper.selectExamPaperReleaseByExamPaperReleaseIdToExam"/>
+        <collection property="answerRecords" column="exam_paper_allocation_id"
+                    select="com.smileshark.mapper.AnswerRecordMapper.selectAnswerRecordByExamPaperAllocationId"/>
+    </resultMap>
+    <select id="selectExamPaperAllocationByExamPaperAllocationIdReview" resultMap="examPaperAllocationMapToExamReview">
+        select * from exam_paper_allocation where exam_paper_allocation_id=#{examPaperAllocationId}
+                                              and exam_paper_allocation_state in (2,3)
+    </select>
+    <resultMap id="examPaperAllocationAndStudentScoreMap" type="examPaperAllocation">
+        <id property="examPaperAllocationId" column="exam_paper_allocation_id"/>
+        <association property="student" column="student_id"
+            select="com.smileshark.mapper.StudentMapper.selectStudentByStudentId"/>
+        <association property="score" column="exam_paper_allocation_id"
+                     select="com.smileshark.mapper.ScoreMapper.selectScoreByExamPaperAllocationId"/>
+        <association property="examPaperRelease" column="exam_paper_release_id"
+                     select="com.smileshark.mapper.ExamPaperReleaseMapper.selectExamPaperReleaseByExamPaperReleaseId"/>
+    </resultMap>
+    <select id="selectExamPaperAllocationsInStudentIdAndBetweenTime" resultMap="examPaperAllocationAndStudentScoreMap">
+        select exam_paper_allocation_id, student_id, exam_paper_allocation.exam_paper_release_id, exam_paper_allocation_state ,exam_start_time
+        from exam_paper_allocation
+        inner join exam_paper_release
+        on exam_paper_release.exam_paper_release_id = exam_paper_allocation.exam_paper_release_id
+        <where>
+            exam_paper_allocation_state in (2,3)
+            <if test="studentIds.size>0">
+                and student_id  in
+                 <foreach collection="studentIds" separator="," item="studentId" open="(" close=")">
+                     #{studentId}
+                 </foreach>
+            </if>
+            <if test="startTime!=null and endTime!=null">
+              and  exam_start_time between #{startTime} and #{endTime}
+            </if>
+        </where>
+        order by exam_start_time desc
+    </select>
+</mapper>

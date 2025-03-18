@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smileshark.mapper.SubsectionMapper">
+    <select id="selectAllSubsectionsNameAndIdByChapterId" resultType="subsection">
+        select subsection_id, subsection_name from subsection where chapter_id = #{chapterId}
+    </select>
+    <select id="selectAllSubsectionsIdByChapterId" resultType="subsection">
+        select subsection_id from subsection where chapter_id = #{chapterId}
+    </select>
+    <resultMap id="subsectionMap" type="subsection">
+        <id property="subsectionId" column="subsection_id"/>
+        <association property="chapter" column="chapter_id" select="com.smileshark.mapper.ChapterMapper.selectChapterInfoByChapterId"/>
+    </resultMap>
+    <select id="selectAllSubsectionInfoBySubsectionId" resultMap="subsectionMap">
+        select * from subsection where subsection_id = #{subsectionId}
+    </select>
+    <select id="selectSubsectionsInChapterIds" resultType="subsection">
+        select subsection_id, subsection_name from subsection
+        <where>
+            <if test="chapterIds.size>0">
+                chapter_id in
+                <foreach collection="chapterIds" item="chapterId" separator="," open="(" close=")">
+                    #{chapterId}
+                </foreach>
+            </if>
+        </where>
+    </select>
+    <insert id="insertSubsection">
+        insert into subsection
+        (subsection_id, chapter_id, subsection_name)
+        values
+            <foreach collection="subsections" item="subsection" separator=",">
+            (#{subsection.subsectionId}, #{subsection.chapterId}, #{subsection.subsectionName})
+            </foreach>
+    </insert>
+    <update id="updateSubsection">
+        update subsection
+        set subsection_name=#{subsection.subsectionName}
+        where subsection_id=#{subsection.subsectionId}
+    </update>
+    <delete id="deleteSubsectionBySubsectionId">
+        delete from subsection where subsection_id = #{subsectionId}
+    </delete>
+</mapper>

@@ -13,7 +13,7 @@
                     <div style="font-size: 30px;font-weight: bold;">{{  item.examPaperRelease.examPaper.examPaperTitle }}</div>
                     <div>开始时间：{{ timestampToString(item.examPaperRelease.examStartTime) }}</div>
                     <div>结束时间：{{ timestampToString(item.examPaperRelease.examEndTime) }}</div>
-                    <div>考试时长：{{ formatTimestampUTC(item.examPaperRelease.examEndTime-item.examPaperRelease.examStartTime) }}</div>
+                    <div>考试时长：{{ formatTimestampUTC(item.examPaperRelease.duration) }}</div>
                     <div>满分：{{ item.examPaperRelease.examPaper.totalScore }} 分</div>
                     <div>题目数量：{{ item.examPaperRelease.examPaper.questionCount }} 道</div>
                     <div v-if="item.examPaperAllocationState==0">考试状态：未开始</div>

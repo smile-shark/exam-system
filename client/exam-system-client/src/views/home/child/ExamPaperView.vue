@@ -9,7 +9,7 @@
                     <div style="color: #999999;">
                         <div>
                             <span> 答题时间：{{ formatTimesToMinutes(
-                                examPaperAllocation.examPaperRelease.examEndTime-examPaperAllocation.examPaperRelease.examStartTime
+                                examPaperAllocation.examPaperRelease.duration
                             ) }} 分钟</span>
                             <span> 总题数： {{ examPaperAllocation.examPaperRelease.examPaper.questionCount }} 题</span>
                             <span> 总分： {{ examPaperAllocation.examPaperRelease.examPaper.totalScore }} 分</span>
@@ -204,7 +204,8 @@ export default {
                 examPaperAllocationId:'',
                 studentId:'',
             },
-            formattedTime: "",
+            formattedTime: "00:00:00",
+            timestamp:0,
         }
     },
     methods:{
@@ -218,10 +219,8 @@ export default {
             const seconds = String(date.getSeconds()).padStart(2, '0');
             return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
         },
-        formatTimestampNow(timestamp) {
-            const now = new Date(); // 当前时间
-            const date = new Date(timestamp); // 传入的时间戳
-            const need = date - now; // 时间差（毫秒）
+        formatTimestampNow() {
+            const need = this.timestamp; // 时间差（毫秒）
 
             // 将时间差转换为小时、分钟和秒
             const totalSeconds = Math.floor(need / 1000); // 总秒数
@@ -236,7 +235,9 @@ export default {
         },
         updateTime() {
         // 每秒更新 formattedTime
-            this.formattedTime = this.formatTimestampNow(this.examPaperAllocation.examPaperRelease.examEndTime);
+            this.formattedTime = this.formatTimestampNow();
+            this.timestamp = this.timestamp - 1000; // 时间差减一秒
+            localStorage.timestamp=this.timestamp
         },
         toQuestionPosition(questionId){
             const element=document.getElementById(questionId)
@@ -258,6 +259,7 @@ export default {
                 if(res.success){
                     // 转跳结果页面
                     localStorage.score=res.data
+                    localStorage.removeItem('timestamp')
                     this.$router.push('/resultPage')
                 }
             })
@@ -270,6 +272,10 @@ export default {
                 item.question.selectedIds = []
             })
             this.examPaperAllocation = res.data
+            if(!localStorage.timestamp){
+                localStorage.timestamp=res.data.examPaperRelease.duration
+            }
+            this.timestamp = localStorage.timestamp
         })
         
         setInterval(this.updateTime, 1000); // 每秒更新一次

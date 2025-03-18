@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smileshark.mapper.AdministratorMapper">
+    <select id="getAdministratorNameList" resultType="administrator">
+        select administrator_id,administrator_name from administrator
+    </select>
+    <select id="selectAdministratorByAccount" resultType="administrator">
+        select * from administrator where administrator_account = #{administratorAccount}
+    </select>
+    <select id="selectAdministratorById" resultType="administrator">
+        select administrator_id, administrator_name from administrator where administrator_id = #{administratorId}
+    </select>
+</mapper>

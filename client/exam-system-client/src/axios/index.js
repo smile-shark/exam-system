@@ -3,6 +3,7 @@ import path from "./path";
 import { Message } from "element-ui";
 import router from "@/router";
 import CryptoJS from "crypto-js";
+import {fastJsonParse} from 'fast-json-parse'
 
 const AESKEY='www.examSystem.com'
 
@@ -25,29 +26,51 @@ myAxios.interceptors.request.use(config => {
 });
 //获取数据之前
 myAxios.interceptors.response.use(
-  resp=>{
-    if(resp.data.code==200&&resp.data.msg){
-        Message.success(resp.data.msg)
-    }else if(resp.data.msg){
-        Message.error(resp.data.msg)
-        if(resp.data.msg=='请重新登录'){
-          setTimeout(() => {
-            router.push('/login')
-          }, 1000);
-        }
-    }
-    // 先将数据转为字符串，处理后再转回去
-    if(!JSON.stringify(resp.data).includes('ai.cqzuxia.com')){
-      resp.data=JSON.parse(JSON.stringify(resp.data).replaceAll('/oss/api/ImageViewer/','https://ai.cqzuxia.com/oss/api/ImageViewer/'))
+  resp => {
+    if (resp.data.code == 200 && resp.data.msg) {
+      Message.success(resp.data.msg);
+    } else if (resp.data.msg) {
+      Message.error(resp.data.msg);
+      if (resp.data.msg == '请重新登录') {
+        setTimeout(() => {
+          router.push('/login');
+        }, 1000);
+      }
     }
 
-    return resp.data
+    // 解析 JSONPath
+    const resolveJsonPath = (data, path) => {
+      try {
+        // 去掉 $ 和 .，然后分割路径
+        const keys = path.replace(/^\$\.?/, '').split('.');
+        let result = data;
+        for (const key of keys) {
+          // 处理数组索引，例如 list[0]
+          if (key.includes('[')) {
+            const arrayKey = key.split('[')[0];
+            const index = key.match(/\[(\d+)\]/)[1];
+            result = result[arrayKey][index];
+          } else {
+            result = result[key];
+          }
+        }
+        return result;
+      } catch (error) {
+        console.warn(`无法解析 $ref: ${path}`, error);
+        return null;
+      }
+    };
+    // 处理 URL 替换
+    if (!JSON.stringify(resp.data).includes('ai.cqzuxia.com')) {
+      resp.data = JSON.parse(JSON.stringify(resp.data).replaceAll('/oss/api/ImageViewer/', 'https://ai.cqzuxia.com/oss/api/ImageViewer/'));
+    }
+    return resp.data;
   },
-  error=>{
-    console.log(error)
-    return Promise.reject(error)
+  error => {
+    console.log(error);
+    return Promise.reject(error);
   }
-)
+);
 
 // 接口集合
 export default {
@@ -164,14 +187,15 @@ export default {
     getAllStudent(){
       return myAxios.post(path.getAllStudent)
     },
-    releaseExamPaper(examPaperId,administratorId,examStartTime,examEndTime,notes,students){
+    releaseExamPaper(examPaperId,administratorId,examStartTime,examEndTime,notes,students,duration){
       return myAxios.post(path.releaseExamPaper,{
         examPaperId:examPaperId,
         administratorId:administratorId,
         examStartTime:examStartTime,
         examEndTime:examEndTime,
         notes:notes,
-        students:students
+        students:students,
+        duration:duration
       })
     },
     getExamPaperListByParams(administratorIds,examPaperStates,examPaperTitle,page,size,vague){
@@ -344,6 +368,13 @@ export default {
     deleteStudentByStudentId(studentId){
       return myAxios.post(path.deleteStudentByStudentId,{
         studentId:studentId
+      })
+    },
+    getMistakesCollectionByStudentId(studentId,page,size){
+      return myAxios.post(path.getMistakesCollectionByStudentId,{
+        studentId:studentId,
+        page:page,
+        size:size
       })
     }
 }

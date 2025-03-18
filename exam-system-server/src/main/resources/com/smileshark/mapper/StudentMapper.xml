@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smileshark.mapper.StudentMapper">
+    <insert id="insertStudent">
+        insert into student (student_id, administrator_id, student_account, student_password, student_name)
+        VALUES (#{student.studentId},#{student.administratorId},#{student.studentAccount},#{student.studentPassword},#{student.studentName})
+    </insert>
+    <select id="selectStudentByAccount" resultType="student">
+        select * from student where student_account = #{account}
+    </select>
+    <select id="selectStudentCount" resultType="int">
+        select count(student_id) from student
+    </select>
+    <resultMap id="studentAndTeacher" type="student">
+        <id property="studentId" column="student_id"/>
+        <association property="administrator" column="administrator_id" select="com.smileshark.mapper.AdministratorMapper.selectAdministratorById"/>
+    </resultMap>
+    <select id="selectAllStudent" resultMap="studentAndTeacher">
+        select student_id, administrator_id, student_account, student_name from student
+    </select>
+    <select id="selectStudentByStudentId" resultType="student">
+        select student_id,student_name from student where student_id = #{studentId}
+    </select>
+    <select id="selectStudentInStudentIds" resultType="student">
+        select student_id, student_name from student
+        <where>
+            <if test="studentIds.size>0">
+                and student_id in
+                 <foreach collection="studentIds" item="studentId" open="(" separator="," close=")">
+                     #{studentId}
+                 </foreach>
+            </if>
+        </where>
+    </select>
+    <select id="selectStudentByStudentNameOrAccount" resultType="student">
+        select * from student
+        <where>
+            <if test="student!=null">
+                and student_name like #{student.studentName}
+                and student_account like #{student.studentAccount}
+            </if>
+        </where>
+    </select>
+    <delete id="deleteStudentByStudentId">
+        delete from student
+        where student_id=#{studentId}
+    </delete>
+</mapper>

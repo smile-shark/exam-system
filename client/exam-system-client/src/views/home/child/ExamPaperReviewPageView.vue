@@ -9,7 +9,7 @@
                     <div style="color: #999999;">
                         <div>
                             <span> 答题时间：{{ formatTimesToMinutes(
-                                examPaperAllocation.examPaperRelease.examEndTime-examPaperAllocation.examPaperRelease.examStartTime
+                                examPaperAllocation.examPaperRelease.duration
                             ) }} 分钟</span>
                             <span> 总题数： {{ examPaperAllocation.examPaperRelease.examPaper.questionCount }} 题</span>
                             <span> 总分： {{ examPaperAllocation.examPaperRelease.examPaper.totalScore }} 分</span>

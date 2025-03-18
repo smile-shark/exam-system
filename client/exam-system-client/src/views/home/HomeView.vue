@@ -29,7 +29,6 @@
         active-text-color="#004d99">
         <el-menu-item index="/home/childHome">首 页</el-menu-item>
         <el-menu-item index="mistakesCollection">错 题 集</el-menu-item>
-        <el-menu-item>收 藏</el-menu-item>
         <el-menu-item>设 置</el-menu-item>
       </el-menu>
     </el-col>

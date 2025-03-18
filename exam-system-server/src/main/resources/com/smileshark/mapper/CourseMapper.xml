@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smileshark.mapper.CourseMapper">
+    <select id="courseCount" resultType="int">
+        select count(course_id) from course
+    </select>
+    <select id="selectAllCoursesNameAndId" resultType="course">
+        select course_id, course_name from course
+    </select>
+    <select id="selectCourseByCourseId" resultType="course">
+        select * from course where course_id = #{courseId}
+    </select>
+    <resultMap id="courseAndChaptersMap" type="course">
+        <id property="courseId" column="course_id"/>
+        <association property="chapters"
+                     column="course_id"
+                     select="com.smileshark.mapper.ChapterMapper.selectChaptersByCourseIdAndSubsections"/>
+    </resultMap>
+    <select id="selectAllCoursesAndChapters" resultMap="courseAndChaptersMap">
+        select * from course where course_name like #{courseName}
+    </select>
+    <insert id="insertCourse">
+        insert into course
+        (course_id, course_name, course_image, course_describe)
+        values
+            (#{course.courseId}, #{course.courseName}, #{course.courseImage}, #{course.courseDescribe})
+    </insert>
+    <update id="updateCourse">
+        update course set course_name=#{course.courseName},
+                          course_image=#{course.courseImage},
+                          course_describe=#{course.describe}
+        where course_id=#{course.courseId}
+    </update>
+    <delete id="deleteCourseByCourseId">
+        delete from course where course_id=#{courseId}
+    </delete>
+</mapper>

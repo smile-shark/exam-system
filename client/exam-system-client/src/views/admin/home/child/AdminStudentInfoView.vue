@@ -26,7 +26,7 @@
         </el-row>
         <el-row>
             <el-col :span="24" style="padding:20px">
-                <el-table :data="students" width="100%">
+                <el-table :data="students" width="100%" height="550">
                     <el-table-column label="学生ID" prop="studentId" width="300"></el-table-column>
                     <el-table-column label="学生名称" prop="studentName"></el-table-column>
                     <el-table-column label="学生账号" prop="studentAccount"></el-table-column>
