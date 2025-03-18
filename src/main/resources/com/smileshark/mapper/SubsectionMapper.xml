@@ -25,4 +25,12 @@
             </if>
         </where>
     </select>
+    <insert id="insertSubsection">
+        insert into subsection
+        (subsection_id, chapter_id, subsection_name)
+        values
+            <foreach collection="subsections" item="subsection" separator=",">
+            (#{subsection.subsectionId}, #{subsection.chapterId}, #{subsection.subsectionName})
+            </foreach>
+    </insert>
 </mapper>

@@ -161,14 +161,77 @@
                 </el-table>
             </el-form-item>
         </el-form>
-
-
         <span slot="footer" class="dialog-footer">
             <el-button type="primary" @click="dialogShowQuestion.show = false">确 定</el-button>
         </span>
         </el-dialog>
 
-
+        <!-- 编辑 -->
+        <el-dialog
+        title="详细问题"
+        :visible.sync="dialogUpdateQuestion.show"
+        width="50%">
+        <el-form>
+            <el-form-item label="问题ID"> 
+                {{ dialogUpdateQuestion.questionId }}
+            </el-form-item>
+            <el-form-item label="问题">
+                <el-input v-model="dialogUpdateQuestion.question"></el-input>
+            </el-form-item>
+            <el-form-item label="问题类型"> 
+                <el-select v-model="dialogUpdateQuestion.questionType">
+                    <el-option :value="0" label="单选题"></el-option>
+                    <el-option :value="1" label="多选题"></el-option>
+                    <el-option :value="2" label="判断题"></el-option>
+                </el-select>
+            </el-form-item>
+            <el-form-item label="课程"> 
+                {{ dialogUpdateQuestion.courseName }}
+            </el-form-item>
+            <el-form-item label="章节"> 
+                {{ dialogUpdateQuestion.chapterTitle }} {{ dialogUpdateQuestion.chapterName }}
+            </el-form-item>
+            <el-form-item label="小节"> 
+                {{ dialogUpdateQuestion.subsectionName }}
+            </el-form-item>
+            <el-form-item label="答案">
+                <el-table
+                :data="dialogUpdateQuestion.answers"
+                style="width: 100%;">
+                    <el-table-column 
+                    prop="answerId"
+                    label="答案ID"
+                    width="300"></el-table-column>
+                    <el-table-column label="答案">
+                        <template slot-scope="scope">
+                            <div style="overflow-x: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                                <el-input v-model="scope.row.answer"></el-input>
+                            </div>
+                        </template>
+                    </el-table-column>
+                    <el-table-column label="是否正确">
+                        <template slot-scope="scope">
+                            <span v-if="scope.row.isTrue">正确</span>
+                            <span v-else>错误</span>
+                        </template>
+                    </el-table-column>
+                    <el-table-column label="修改">
+                        <template slot-scope="scope">
+                            <el-switch
+                                v-model="scope.row.isTrue"
+                                active-color="#13ce66"
+                                inactive-color="#ff4949">
+                            </el-switch>
+                        </template>
+                    </el-table-column>
+                </el-table>
+            </el-form-item>
+        </el-form>
+        <span slot="footer" class="dialog-footer">
+            <el-button @click="dialogUpdateQuestion.show = false">取 消</el-button>
+            <el-button type="warning" @click="updateQuestionSubmit">确 定</el-button>
+        </span>
+        </el-dialog>
     </div>
 </template>
 <script>
@@ -177,6 +240,17 @@ export default{
     data(){
         return{
             dialogShowQuestion:{
+                show:false,
+                questionId:'',
+                question:'',
+                questionType:0,
+                courseName:'',
+                chapterName:'',
+                chapterTitle:'',
+                subsectionName:'',
+                answers:[]
+            },
+            dialogUpdateQuestion:{
                 show:false,
                 questionId:'',
                 question:'',
@@ -279,6 +353,54 @@ export default{
             api.getQuestionList(this.page,this.size,this.courseId,this.chapterId,this.subsectionId,types,this.questionContent,this.vague).then(res=>{
                 this.questions=res.data.list
                 this.questionCount=res.data.total
+            })
+        },
+        deleteQuestion(row){
+            // 删除之前提示一下，不然点错了
+            this.$confirm('此操作将永久删除该题目, 是否继续?').then(() => {
+                api.deleteQuestion(row.questionId).then(res=>{
+                    this.serachQuestionList(this.page)
+                })
+            }).catch(() => {
+                this.$message({
+                    type: 'info',
+                    message: '已取消删除'
+                })
+            })
+        },
+        editQuestion(row){
+            // 通过subsectionId获取小节信息及章节、课程信息
+            api.getSubsectionInfo(row.subsectionId).then(res=>{
+                this.dialogUpdateQuestion.subsectionName=res.data.subsectionName
+                this.dialogUpdateQuestion.chapterName=res.data.chapter.chapterName
+                this.dialogUpdateQuestion.chapterTitle=res.data.chapter.chapterTitle
+                this.dialogUpdateQuestion.courseName=res.data.chapter.course.courseName
+            })
+
+            // 通过questionId获取答案信息
+            api.getAnswerInfo(row.questionId).then(res=>{
+                this.dialogUpdateQuestion.answers=res.data
+            })
+
+            this.dialogUpdateQuestion.questionId=row.questionId
+            this.dialogUpdateQuestion.question=row.question
+            this.dialogUpdateQuestion.questionType=row.questionType
+
+            this.dialogUpdateQuestion.show=true
+        },
+        updateQuestionSubmit(){
+            api.updateQuestion(this.dialogUpdateQuestion).then(res=>{
+                this.dialogUpdateQuestion.show=false
+                // 清理dialogUpdateQuestion数据
+                this.dialogUpdateQuestion.questionId=''
+                this.dialogUpdateQuestion.question=''
+                this.dialogUpdateQuestion.questionType=0
+                this.dialogUpdateQuestion.courseName=''
+                this.dialogUpdateQuestion.chapterName=''
+                this.dialogUpdateQuestion.chapterTitle=''
+                this.dialogUpdateQuestion.subsectionName=''
+                this.dialogUpdateQuestion.answers=[]
+                this.serachQuestionList(this.page)
             })
         }
     },

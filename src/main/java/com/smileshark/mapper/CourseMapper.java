@@ -11,4 +11,6 @@ public interface CourseMapper {
     int courseCount();
     List<Course> selectAllCoursesNameAndId();
     Course selectCourseByCourseId(@Param("courseId") String courseId);
+    List<Course> selectAllCoursesAndChapters(@Param("courseName")String courseName);
+    int insertCourse(@Param("course") Course course);
 }

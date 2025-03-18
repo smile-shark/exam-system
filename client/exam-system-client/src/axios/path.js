@@ -27,6 +27,10 @@ export default{
     getStudentScoreListByStudents:api+"/teacher/list/selectExamPaperAllocationsInStudentIdAndBetweenTime",
     getStudentScoreListByStudentsNew:api+"/teacher/list/selectStudentInStudentIds",
     insertQuestions:api+"/teacher/insert/questions/insertQuestion",
+    getAllCourses:api+"/teacher/course/list/selectAllCoursesAndChapters",
+    insertCourse:api+"/teacher/course/insert/insertCourse",
+    deleteQuestion:api+"/teacher/delete/question/deleteQuestionByQuestionId",
+    updateQuestion:api+"/teacher/update/question/updateQuestionByQuestionId",
     
     getExamPaperCountByState:api+"/student/count/allocationExamPaperCountByStudentIdAndState",
     getAnswerQuestionCountByStudentId:api+"/student/answerRecordCountByStudentId",

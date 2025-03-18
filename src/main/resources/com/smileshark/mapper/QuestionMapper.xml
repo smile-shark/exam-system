@@ -157,4 +157,10 @@
                 </foreach>
             </if>
     </insert>
+    <delete id="deleteQuestionByQuestionId">
+        delete from question where question_id = #{questionId}
+    </delete>
+    <update id="updateQuestionByQuestionId">
+        update question set question=#{question.question},question_type=#{question.questionType} where question_id=#{question.questionId}
+    </update>
 </mapper>   

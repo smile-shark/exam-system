@@ -37,7 +37,9 @@ myAxios.interceptors.response.use(
         }
     }
     // 先将数据转为字符串，处理后再转回去
-    resp.data=JSON.parse(JSON.stringify(resp.data).replaceAll('/oss/api/ImageViewer/','https://ai.cqzuxia.com/oss/api/ImageViewer/'))
+    if(!JSON.stringify(resp.data).includes('ai.cqzuxia.com')){
+      resp.data=JSON.parse(JSON.stringify(resp.data).replaceAll('/oss/api/ImageViewer/','https://ai.cqzuxia.com/oss/api/ImageViewer/'))
+    }
 
     return resp.data
   },
@@ -261,6 +263,34 @@ export default {
       return myAxios.post(path.insertQuestions,{
         questions:questions,
         subsectionId:subsectionId
+      })
+    },
+    getAllCourses(page,size,courseName,vague){
+      return myAxios.post(path.getAllCourses,{
+        page:page,
+        size:size,
+        courseName:courseName,
+        vague:vague
+      })
+    },
+    insertCourse(course){
+      return myAxios.post(path.insertCourse,{
+        course:course
+      })
+    },
+    deleteQuestion(questionId){
+      return myAxios.post(path.deleteQuestion,{
+        questionId:questionId
+      })
+    },
+    updateQuestion(question){
+      return myAxios.post(path.updateQuestion,{
+        question:{
+          questionId:question.questionId,
+          questionName:question.questionName,
+          questionType:question.questionType,
+          answers:question.answers
+        }
       })
     }
 }

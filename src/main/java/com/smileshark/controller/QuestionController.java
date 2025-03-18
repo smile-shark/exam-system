@@ -31,4 +31,12 @@ public class QuestionController {
     public String insertQuestion(@RequestBody RequestParams requestParams){
         return questionService.insertQuestion(requestParams);
     }
+    @RequestMapping("/teacher/delete/question/deleteQuestionByQuestionId")
+    public String deleteQuestionByQuestionId(@RequestBody RequestParams requestParams){
+        return questionService.deleteQuestionByQuestionId(requestParams);
+    }
+    @RequestMapping("/teacher/update/question/updateQuestionByQuestionId")
+    public String updateQuestionByQuestionId(@RequestBody RequestParams requestParams){
+        return questionService.updateQuestionByQuestionId(requestParams);
+    }
 }

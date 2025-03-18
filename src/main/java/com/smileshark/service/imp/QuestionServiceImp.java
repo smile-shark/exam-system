@@ -173,6 +173,23 @@ public class QuestionServiceImp implements QuestionService {
         return JSONObject.toJSONString(Result.success("插入成功"));
     }
 
+    @Override
+    public String deleteQuestionByQuestionId(RequestParams requestParams) {
+        answerMapper.deleteAnswerByQuestionId(requestParams.getQuestionId());
+        questionMapper.deleteQuestionByQuestionId(requestParams.getQuestionId());
+        return JSONObject.toJSONString(Result.success("删除成功"));
+    }
+
+    @Override
+    public String updateQuestionByQuestionId(RequestParams requestParams) {
+        Question question = requestParams.getQuestion();
+        questionMapper.updateQuestionByQuestionId(question);
+        for (Answer answer : question.getAnswers()) {
+            answerMapper.updateAnswerByAnswerId(answer);
+        }
+        return JSONObject.toJSONString(Result.success("更新成功"));
+    }
+
     private List<Subsection> getSubsections(RequestParams requestParams) {
         List<Subsection> subsections = new CopyOnWriteArrayList<>();
         if (!requestParams.getSubsectionIds().isEmpty()) {

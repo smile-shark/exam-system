@@ -10,4 +10,19 @@
     <select id="selectCourseByCourseId" resultType="course">
         select * from course where course_id = #{courseId}
     </select>
+    <resultMap id="courseAndChaptersMap" type="course">
+        <id property="courseId" column="course_id"/>
+        <association property="chapters"
+                     column="course_id"
+                     select="com.smileshark.mapper.ChapterMapper.selectChaptersByCourseIdAndSubsections"/>
+    </resultMap>
+    <select id="selectAllCoursesAndChapters" resultMap="courseAndChaptersMap">
+        select * from course where course_name like #{courseName}
+    </select>
+    <insert id="insertCourse">
+        insert into course
+        (course_id, course_name, course_image, course_describe)
+        values
+            (#{course.courseId}, #{course.courseName}, #{course.courseImage}, #{course.courseDescribe})
+    </insert>
 </mapper>

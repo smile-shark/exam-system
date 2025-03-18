@@ -25,4 +25,23 @@
             </if>
         </where>
     </select>
+    <resultMap id="chaptersAndSubsectionsMap" type="chapter">
+        <id property="chapterId" column="chapter_id"/>
+        <association property="subsections"
+                     column="chapter_id"
+                     select="com.smileshark.mapper.SubsectionMapper.selectAllSubsectionsNameAndIdByChapterId"/>
+    </resultMap>
+    <select id="selectChaptersByCourseIdAndSubsections" resultMap="chaptersAndSubsectionsMap">
+        select *
+        from chapter
+        where course_id = #{courseId}
+    </select>
+    <insert id="insertChapter">
+        insert into chapter
+        (chapter_id, course_id, chapter_title, chapter_name, `order`)
+        values
+        <foreach collection="chapters" item="chapter" separator=",">
+            (#{chapter.chapterId}, #{chapter.courseId}, #{chapter.chapterTitle}, #{chapter.chapterName}, #{chapter.order})
+        </foreach>
+    </insert>
 </mapper>

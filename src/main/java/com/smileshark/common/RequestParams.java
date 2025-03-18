@@ -1,6 +1,7 @@
 package com.smileshark.common;
 
 import com.smileshark.entity.paper.ExamPaperAllocation;
+import com.smileshark.entity.question.Course;
 import com.smileshark.entity.question.Question;
 import com.smileshark.entity.user.Student;
 import lombok.Data;
@@ -49,4 +50,7 @@ public class RequestParams {
     private Integer examPaperAllocationState;
     private String examPaperAllocationId;
     private ExamPaperAllocation examPaperAllocation;
+    private String courseName;
+    private Course course;
+    private Question question;
 }
