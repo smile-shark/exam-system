@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  exam-system:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: exam-system
+    ports:
+      - "8081:8080"
+    networks:
+     - smileshark
+  exam-system-client:
+    image: nginx
+    container_name: exam-system-client
+    restart: always
+    ports:
+      - "8887:80"
+    volumes:
+      - ./docker-project/exam-system-client/html:/usr/share/nginx/html
+      - ./docker-project/exam-system-client/nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - smileshark
+networks:
+  smileshark:
+     external: true
