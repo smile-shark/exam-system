@@ -32,4 +32,17 @@
             </if>
         </where>
     </select>
+    <select id="selectStudentByStudentNameOrAccount" resultType="student">
+        select * from student
+        <where>
+            <if test="student!=null">
+                and student_name like #{student.studentName}
+                and student_account like #{student.studentAccount}
+            </if>
+        </where>
+    </select>
+    <delete id="deleteStudentByStudentId">
+        delete from student
+        where student_id=#{studentId}
+    </delete>
 </mapper>

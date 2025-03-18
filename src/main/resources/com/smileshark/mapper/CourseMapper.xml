@@ -25,4 +25,13 @@
         values
             (#{course.courseId}, #{course.courseName}, #{course.courseImage}, #{course.courseDescribe})
     </insert>
+    <update id="updateCourse">
+        update course set course_name=#{course.courseName},
+                          course_image=#{course.courseImage},
+                          course_describe=#{course.describe}
+        where course_id=#{course.courseId}
+    </update>
+    <delete id="deleteCourseByCourseId">
+        delete from course where course_id=#{courseId}
+    </delete>
 </mapper>

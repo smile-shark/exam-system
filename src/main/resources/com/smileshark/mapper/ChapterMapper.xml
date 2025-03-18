@@ -44,4 +44,12 @@
             (#{chapter.chapterId}, #{chapter.courseId}, #{chapter.chapterTitle}, #{chapter.chapterName}, #{chapter.order})
         </foreach>
     </insert>
+    <update id="updateChapter">
+        update chapter
+        set chapter_title=#{chapter.chapterTitle},chapter_name=#{chapter.chapterName}
+        where chapter_id=#{chapter.chapterId}
+    </update>
+    <delete id="deleteChapter">
+        delete from chapter where chapter_id = #{chapterId}
+    </delete>
 </mapper>

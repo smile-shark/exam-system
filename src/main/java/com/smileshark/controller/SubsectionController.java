@@ -23,4 +23,16 @@ public class SubsectionController {
     public String selectAllSubsectionsNameAndIdByChapterIds(@RequestBody RequestParams requestParams){
         return subsectionService.selectSubsectionsInChapterIds(requestParams);
     }
+    @RequestMapping("/teacher/subsection/insert/insertSubsection")
+    public String insertSubsection(@RequestBody RequestParams requestParams){
+        return subsectionService.insertSubsection(requestParams);
+    }
+    @RequestMapping("/teacher/subsection/update/updateSubsection")
+    public String updateSubsection(@RequestBody RequestParams requestParams){
+        return subsectionService.updateSubsection(requestParams);
+    }
+    @RequestMapping("/teacher/subsection/delete/deleteSubsectionBySubsectionId")
+    public String deleteSubsectionBySubsectionId(@RequestBody RequestParams requestParams){
+        return subsectionService.deleteSubsectionBySubsectionId(requestParams);
+    }
 }

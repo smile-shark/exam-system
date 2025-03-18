@@ -13,6 +13,7 @@ import com.smileshark.mapper.ChapterMapper;
 import com.smileshark.mapper.CourseMapper;
 import com.smileshark.mapper.SubsectionMapper;
 import com.smileshark.service.CourseService;
+import com.smileshark.utils.ChapterTitleUtil;
 import com.smileshark.utils.CreateId;
 import com.smileshark.utils.VagueUtil;
 import lombok.RequiredArgsConstructor;
@@ -69,113 +70,7 @@ public class CourseServiceImp implements CourseService {
             String chapterId = CreateId.createId();
             chapter.setCourseId(courseId);
             chapter.setChapterId(chapterId);
-            switch (chapter.getChapterTitle()){
-                case "第一章":
-                    chapter.setOrder(1);
-                    break;
-                case "第二章":
-                    chapter.setOrder(2);
-                    break;
-                case "第三章":
-                    chapter.setOrder(3);
-                    break;
-                case "第四章":
-                    chapter.setOrder(4);
-                    break;
-                case "第五章":
-                    chapter.setOrder(5);
-                    break;
-                case "第六章":
-                    chapter.setOrder(6);
-                    break;
-                case "第七章":
-                    chapter.setOrder(7);
-                    break;
-                case "第八章":
-                    chapter.setOrder(8);
-                    break;
-                case "第九章":
-                    chapter.setOrder(9);
-                    break;
-                case "第十章":
-                    chapter.setOrder(10);
-                    break;
-                case "第十一章":
-                    chapter.setOrder(11);
-                    break;
-                case "第十二章":
-                    chapter.setOrder(12);
-                    break;
-                case "第十三章":
-                    chapter.setOrder(13);
-                    break;
-                case "第十四章":
-                    chapter.setOrder(14);
-                    break;
-                case "第十五章":
-                    chapter.setOrder(15);
-                    break;
-                case "第十六章":
-                    chapter.setOrder(16);
-                    break;
-                case "第十七章":
-                    chapter.setOrder(17);
-                    break;
-                case "第十八章":
-                    chapter.setOrder(18);
-                    break;
-                case "第十九章":
-                    chapter.setOrder(19);
-                    break;
-                case "第二十章":
-                    chapter.setOrder(20);
-                    break;
-                case "第二十一章":
-                    chapter.setOrder(21);
-                    break;
-                case "第二十二章":
-                    chapter.setOrder(22);
-                    break;
-                case "第二十三章":
-                    chapter.setOrder(23);
-                    break;
-                case "第二十四章":
-                    chapter.setOrder(24);
-                    break;
-                case "第二十五章":
-                    chapter.setOrder(25);
-                    break;
-                case "第二十六章":
-                    chapter.setOrder(26);
-                    break;
-                case "第二十七章":
-                    chapter.setOrder(27);
-                    break;
-                case "第二十八章":
-                    chapter.setOrder(28);
-                    break;
-                case "第二十九章":
-                    chapter.setOrder(29);
-                    break;
-                case "第三十章":
-                    chapter.setOrder(30);
-                    break;
-                case "第三十一章":
-                    chapter.setOrder(31);
-                    break;
-                case "第三十二章":
-                    chapter.setOrder(32);
-                    break;
-                case "第三十三章":
-                    chapter.setOrder(33);
-                    break;
-                case "第三十四章":
-                    chapter.setOrder(34);
-                    break;
-                default:
-                    chapter.setOrder(0);
-                    break;
-            }
+            chapter.setOrder(ChapterTitleUtil.getChapterTitle(chapter.getChapterTitle()));
             for (Subsection subsection : chapter.getSubsections()) {
                 String subsectionId = CreateId.createId();
                 subsection.setChapterId(chapterId);
@@ -184,8 +79,8 @@ public class CourseServiceImp implements CourseService {
             }
         }
         if(courseMapper.insertCourse(course)>0){
-            if(chapterMapper.insertChapter(chapters)>0){
-                if(subsectionMapper.insertSubsection(subsections)>0){
+            if(chapterMapper.insertChapters(chapters)>0){
+                if(subsectionMapper.insertSubsections(subsections)>0){
                     result = Result.success("插入成功");
                 }
             }
@@ -193,5 +88,17 @@ public class CourseServiceImp implements CourseService {
             result.setMsg("插入失败");
         }
         return JSONObject.toJSONString(result);
+    }
+
+    @Override
+    public String updateCourse(RequestParams requestParams) {
+        int i = courseMapper.updateCourse(requestParams.getCourse());
+        return JSONObject.toJSONString(Result.success("更新成功"));
+    }
+
+    @Override
+    public String deleteCourseByCourseId(RequestParams requestParams) {
+        int i = courseMapper.deleteCourseByCourseId(requestParams.getCourseId());
+        return JSONObject.toJSONString(Result.success("删除成功"));
     }
 }

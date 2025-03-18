@@ -7,4 +7,6 @@ public interface CourseService {
     String selectAllCoursesNameAndId();
     String selectAllCoursesAndChapters(RequestParams requestParams);
     String insertCourse(RequestParams requestParams);
+    String updateCourse(RequestParams requestParams);
+    String deleteCourseByCourseId(RequestParams requestParams);
 }

@@ -12,5 +12,7 @@ public interface SubsectionMapper {
     List<Subsection> selectAllSubsectionsIdByChapterId(@Param("chapterId")String chapterId);
     Subsection selectAllSubsectionInfoBySubsectionId(@Param("subsectionId")String subsectionId);
     List<Subsection> selectSubsectionsInChapterIds(@Param("chapterIds")List<String> chapterIds);
-    int insertSubsection(@Param("subsections")List<Subsection> subsections);
+    int insertSubsections(@Param("subsections")List<Subsection> subsections);
+    int updateSubsection(@Param("subsection") Subsection subsection);
+    int deleteSubsectionBySubsectionId(@Param("subsectionId")String subsectionId);
 }

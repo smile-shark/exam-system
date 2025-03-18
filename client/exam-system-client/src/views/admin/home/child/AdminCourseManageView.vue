@@ -22,7 +22,7 @@
                         <br>
                         <el-form v-for="(chapter,index) in course.chapters" :key="index" :data="chapter">
                             <el-form-item label="章节标题" label-width="100px">
-                                <el-input v-model="chapter.chapterName" placeholder="请输入章节标题（第*章）"></el-input>
+                                <el-input v-model="chapter.chapterTitle" placeholder="请输入章节标题（第*章）"></el-input>
                             </el-form-item>
                             <el-form-item label="章节名称" label-width="100px">
                                 <el-input v-model="chapter.chapterName" placeholder="请输入章节名称"></el-input>
@@ -148,6 +148,97 @@
                 </el-table-column>
             </el-table>
         </el-dialog>
+
+        <!-- 添加章节 -->
+        <el-dialog title="添加章节" :visible.sync="addChapterGroup.show" width="40%">
+            <el-form :model="addChapterGroup.chapter">
+                <el-form-item label="章节标题" label-width="100px">
+                    <el-input v-model="addChapterGroup.chapter.chapterTitle" placeholder="请输入章节标题（第*章）"></el-input>
+                </el-form-item>
+                <el-form-item label="章节名称" label-width="100px">
+                    <el-input v-model="addChapterGroup.chapter.chapterName" placeholder="请输入章节名称"></el-input>
+                </el-form-item>
+                <el-form-item label="添加小节">
+                    <br>
+                    <el-form-item v-for="(subsection, index) in addChapterGroup.chapter.subsections" :key="index" label="小节名称" label-width="120px">
+                    <el-input v-model="subsection.subsectionName" placeholder="请输入小节名称"></el-input>
+                    </el-form-item>
+                </el-form-item>
+                <el-form-item label-width="120px">
+                    <el-button size="mini" type="primary" icon="el-icon-plus" @click="addChapterGroup.chapter.subsections.push(
+                        { subsectionName: '' })">
+                    添加小节
+                    </el-button>
+                    <el-button size="mini" type="warning" icon="el-icon-minus" @click="addChapterGroup.chapter.subsections.pop()">
+                    删除小节
+                    </el-button>
+                </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button type="primary" @click="addChapterSubmit">确认添加</el-button>
+            </div>
+        </el-dialog>
+
+        <!-- 编辑课程 -->
+        <el-dialog title="编辑课程" :visible.sync="editCourseGroup.show" width="40%">
+        <el-form :model="editCourseGroup.course">
+            <el-form-item label="课程名称" style="width: 100%;">
+                <el-input v-model="editCourseGroup.course.courseName" placeholder="请输入课程名称"></el-input>
+            </el-form-item>
+            <el-form-item label="课程图片（添加图片连接）">
+                <el-input v-model="editCourseGroup.course.courseImage" placeholder="请输入课程图片连接"></el-input>
+                <el-image :src="editCourseGroup.course.courseImage">
+                    <div slot="error" class="image-slot"></div>
+                </el-image>
+            </el-form-item>
+            <el-form-item label="课程描述">
+                <el-input type="textarea" v-model="editCourseGroup.course.courseDescribe" autosize placeholder="请输入课程描述"></el-input>
+            </el-form-item>
+        </el-form>
+        <div slot="footer" class="dialog-footer">
+            <el-button type="primary" @click="editCourseSubmit">确认修改</el-button>
+        </div>
+        </el-dialog>
+
+        <!-- 添加小节 -->
+        <el-dialog title="添加小节" :visible.sync="addSubsectionGroup.show" width="40%">
+            <el-form :model="addSubsectionGroup.subsection">
+                <el-form-item label="小节名称" label-width="120px">
+                    <el-input v-model="addSubsectionGroup.subsection.subsectionName" placeholder="请输入小节名称"></el-input>
+                </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button type="primary" @click="addSubsectionSubmit">确认添加</el-button>
+            </div>
+        </el-dialog>
+
+        <!-- 编辑章节 -->
+        <el-dialog title="编辑章节" :visible.sync="editChapterGroup.show" width="40%">
+            <el-form :model="editChapterGroup.chapter">
+                <el-form-item label="章节标题" label-width="100px">
+                    <el-input v-model="editChapterGroup.chapter.chapterTitle" placeholder="请输入章节标题（第*章）"></el-input>
+                </el-form-item>
+                <el-form-item label="章节名称" label-width="100px">
+                    <el-input v-model="editChapterGroup.chapter.chapterName" placeholder="请输入章节名称"></el-input>
+                </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button type="primary" @click="editChapterSubmit">确认修改</el-button>
+            </div>
+        </el-dialog>
+
+        <!-- 编辑小节 -->
+         <el-dialog title="编辑小节" :visible.sync="editSubsectionGroup.show" width="40%">
+            <el-form :model="editSubsectionGroup.subsection">
+                <el-form-item label="小节名称" label-width="120px">
+                    <el-input v-model="editSubsectionGroup.subsection.subsectionName" placeholder="请输入小节名称"></el-input>
+                </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button type="primary" @click="editSubsectionSubmit">确认修改</el-button>
+            </div>
+         </el-dialog>
+
     </div>
 </template>
 <script>
@@ -217,7 +308,47 @@ export default {
             size:10,
             total:0,
             courseName:'',
-            vague:true
+            vague:true,
+            addChapterGroup:{
+                show:false,
+                chapter:{
+                    chapterTitle:'',
+                    chapterName:'',
+                    subsections:[],
+                    courseId:''
+                }
+            },
+            editCourseGroup:{
+                show:false,
+                course:{
+                    courseName:'',
+                    courseImage:'',
+                    courseDescribe:'',
+                    courseId:''
+                }
+            },
+            addSubsectionGroup:{
+                show:false,
+                subsection:{
+                    subsectionName:'',
+                    chapterId:''
+                }
+            },
+            editChapterGroup:{
+                show:false,
+                chapter:{
+                    chapterTitle:'',
+                    chapterName:'',
+                    chapterId:''
+                }
+            },
+            editSubsectionGroup:{
+                show:false,
+                subsection:{
+                    subsectionName:'',
+                    subsectionId:''
+                }
+            }
         }
     },
     methods:{
@@ -230,17 +361,127 @@ export default {
             this.subsections=row.subsections
             this.subsectionsDialogVisible=true
         },
+        addChapter(row){
+            this.addChapterGroup.chapter.courseId=row.courseId
+            this.addChapterGroup.show=true
+        },
+        addChapterSubmit(){
+            // 章节名称不能为空
+            if(!this.addChapterGroup.chapter.chapterName){
+                this.$message.error('章节名称不能为空')
+                return
+            }
+            // 章节标题不能为空
+            if(!this.addChapterGroup.chapter.chapterTitle){
+                this.$message.error('章节标题不能为空')
+                return
+            }
+            // 小节不能为空
+            if(!this.addChapterGroup.chapter.subsections.length){
+                this.$message.error('小节不能为空')
+                return
+            }
+            api.insertChapter(this.addChapterGroup.chapter).then(res=>{
+                this.addChapterGroup.show=false
+                this.nextPage(this.page)
+                // 清空表单
+                this.addChapterGroup.chapter.chapterTitle=''
+                this.addChapterGroup.chapter.chapterName=''
+                this.addChapterGroup.chapter.subsections=[]
+            })
+        },
         editCourse(row){
-            
+            this.editCourseGroup.course.courseId=row.courseId
+            this.editCourseGroup.course.courseName=row.courseName
+            this.editCourseGroup.course.courseImage=row.courseImage
+            this.editCourseGroup.course.courseDescribe=row.courseDescribe
+            this.editCourseGroup.show=true
+        },
+        editCourseSubmit(){
+            // 课程名称不能为空
+            if(!this.editCourseGroup.course.courseName){
+                this.$message.error('课程名称不能为空')
+                return
+            }
+            // 课程图片不能为空
+            if(!this.editCourseGroup.course.courseImage){
+                this.$message.error('课程图片不能为空')
+                return
+            }
+            // 课程描述不能为空
+            if(!this.editCourseGroup.course.courseDescribe){
+                this.$message.error('课程描述不能为空')
+                return
+            }
+            api.updateCourse(this.editCourseGroup.course).then(res=>{
+                this.editCourseGroup.show=false
+                this.nextPage(this.page)
+            })
         },
         deleteCourse(row){
-
+            // 删除之前提示一下，不然点错了
+            this.$confirm('确认删除该课程吗？').then(() => {
+                api.deleteCourseByCourseId(row.courseId).then(res=>{
+                    this.nextPage(this.page)
+                })
+            }).catch(() => {
+                this.$message({
+                    type: 'info',
+                    message: '已取消删除'
+                })
+            })
         },
         editChapter(row){
-
+            this.editChapterGroup.chapter.chapterId=row.chapterId
+            this.editChapterGroup.chapter.chapterTitle=row.chapterTitle
+            this.editChapterGroup.chapter.chapterName=row.chapterName
+            this.editChapterGroup.show=true
+        },
+        editChapterSubmit(){
+            // 章节名称不能为空
+            if(!this.editChapterGroup.chapter.chapterName){
+                this.$message.error('章节名称不能为空')
+                return
+            }
+            // 章节标题不能为空
+            if(!this.editChapterGroup.chapter.chapterTitle){
+                this.$message.error('章节标题不能为空')
+                return
+            }
+            api.updateChapter(this.editChapterGroup.chapter).then(res=>{
+                this.editChapterGroup.show=false
+                this.nextPage(this.page)
+            })
+        },
+        addSubsection(row){
+            this.addSubsectionGroup.subsection.chapterId=row.chapterId
+            this.addSubsectionGroup.show=true
+        },
+        addSubsectionSubmit(){
+            // 小节名称不能为空
+            if(!this.addSubsectionGroup.subsection.subsectionName){
+                this.$message.error('小节名称不能为空')
+                return
+            }
+            api.insertSubsection(this.addSubsectionGroup.subsection).then(res=>{
+                this.addSubsectionGroup.show=false
+                this.nextPage(this.page)
+                // 清空表单
+                this.addSubsectionGroup.subsection.subsectionName=''
+            })
         },
         deleteChapter(row){
-            
+            // 删除之前提示一下，不然点错了
+            this.$confirm('确认删除该章节吗？').then(() => {
+                api.deleteChapterByChapterId(row.chapterId).then(res=>{
+                    this.nextPage(this.page)
+                })
+            }).catch(() => {
+                this.$message({
+                    type: 'info',
+                    message: '已取消删除'
+                })
+            })
         },
         addCourse(){
             // 课程名称不能为空
@@ -284,6 +525,35 @@ export default {
                 this.courses=res.data.list
                 this.total=res.data.total
             })
+        },
+        editSubsection(row){
+            this.editSubsectionGroup.subsection.subsectionId=row.subsectionId
+            this.editSubsectionGroup.subsection.subsectionName=row.subsectionName
+            this.editSubsectionGroup.show=true
+        },
+        editSubsectionSubmit(){
+            // 小节名称不能为空
+            if(!this.editSubsectionGroup.subsection.subsectionName){
+                this.$message.error('小节名称不能为空')
+                return
+            }
+            api.updateSubsection(this.editSubsectionGroup.subsection).then(res=>{
+                this.editSubsectionGroup.show=false
+                this.nextPage(this.page)
+            })
+        },
+        deleteSubsection(row){
+            // 删除之前提示一下，不然点错了
+            this.$confirm('确认删除该小节吗？').then(() => {
+                api.deleteSubsectionBySubsectionId(row.subsectionId).then(res=>{
+                    this.nextPage(this.page)
+                })
+            }).catch(() => {
+                this.$message({
+                    type: 'info',
+                    message: '已取消删除'
+                })
+            })            
         }
     },
     mounted(){

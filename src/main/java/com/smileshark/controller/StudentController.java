@@ -31,4 +31,12 @@ public class StudentController {
     public String selectStudentInStudentIds(@RequestBody RequestParams requestParams){
         return studentService.selectStudentInStudentIds(requestParams);
     }
+    @RequestMapping("/teacher/list/selectStudentByStudentNameOrAccount")
+    public String selectStudentByStudentNameOrAccount(@RequestBody RequestParams requestParams){
+        return studentService.selectStudentByStudentNameOrAccount(requestParams);
+    }
+    @RequestMapping("/teacher/student/delete/deleteStudentByStudentId")
+    public String deleteStudentByStudentId(@RequestBody RequestParams requestParams){
+        return studentService.deleteStudentByStudentId(requestParams);
+    }
 }

@@ -16,4 +16,6 @@ public interface StudentMapper {
     List<Student> selectAllStudent();
     Student selectStudentByStudentId(@Param("studentId")String studentId);
     List<Student> selectStudentInStudentIds(@Param("studentIds")List<String> studentIds);
+    List<Student> selectStudentByStudentNameOrAccount(@Param("student")Student student);
+    int deleteStudentByStudentId(@Param("studentId")String studentId);
 }

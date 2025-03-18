@@ -1,16 +1,16 @@
 package com.smileshark.service.imp;
 
 import com.alibaba.fastjson.JSONObject;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.smileshark.common.RequestParams;
 import com.smileshark.common.Result;
 import com.smileshark.entity.user.Student;
 import com.smileshark.mapper.ExamPaperAllocationMapper;
 import com.smileshark.mapper.StudentMapper;
 import com.smileshark.service.StudentService;
-import com.smileshark.utils.AESUtils;
-import com.smileshark.utils.CreateId;
-import com.smileshark.utils.DateStrToLongUtil;
-import com.smileshark.utils.JwtUtils;
+import com.smileshark.utils.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -96,5 +96,25 @@ public class StudentServiceImp implements StudentService {
                 Result.success("查询成功",
                         students)
         );
+    }
+
+    @Override
+    public String selectStudentByStudentNameOrAccount(RequestParams requestParams) {
+        Student student = requestParams.getStudent();
+        if(requestParams.getVague()){
+            student.setStudentName(VagueUtil.createVagueString(student.getStudentName()));
+            student.setStudentAccount(VagueUtil.createVagueString(student.getStudentAccount()));
+        }
+        Page<Student> page = PageHelper.startPage(requestParams.getPage(), requestParams.getSize());
+        List<Student> students = studentMapper.selectStudentByStudentNameOrAccount(
+                requestParams.getStudent()
+        );
+        return JSONObject.toJSONString(Result.success("查询成功", PageInfo.of(page)));
+    }
+
+    @Override
+    public String deleteStudentByStudentId(RequestParams requestParams) {
+        int i = studentMapper.deleteStudentByStudentId(requestParams.getStudentId());
+        return JSONObject.toJSONString(Result.success("删除成功"));
     }
 }

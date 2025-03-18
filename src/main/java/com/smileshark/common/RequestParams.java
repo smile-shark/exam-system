@@ -1,8 +1,10 @@
 package com.smileshark.common;
 
 import com.smileshark.entity.paper.ExamPaperAllocation;
+import com.smileshark.entity.question.Chapter;
 import com.smileshark.entity.question.Course;
 import com.smileshark.entity.question.Question;
+import com.smileshark.entity.question.Subsection;
 import com.smileshark.entity.user.Student;
 import lombok.Data;
 import org.apache.ibatis.javassist.runtime.Inner;
@@ -53,4 +55,7 @@ public class RequestParams {
     private String courseName;
     private Course course;
     private Question question;
+    private Chapter chapter;
+    private Subsection subsection;
+    private Student student;
 }

@@ -8,4 +8,6 @@ public interface StudentService {
     String studentCount();
     String selectAllStudent();
     String selectStudentInStudentIds(RequestParams requestParams);
+    String selectStudentByStudentNameOrAccount(RequestParams requestParams);
+    String deleteStudentByStudentId(RequestParams requestParams);
 }

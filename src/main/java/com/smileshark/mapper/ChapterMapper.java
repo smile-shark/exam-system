@@ -13,5 +13,7 @@ public interface ChapterMapper {
     Chapter selectChapterInfoByChapterId(@Param("chapterId") String chapterId);
     List<Chapter> selectChaptersInCourseIds(@Param("courseIds")List<String> courseIds);
     List<Chapter> selectChaptersByCourseIdAndSubsections(@Param("courseId")String courseId);
-    int insertChapter(@Param("chapters")List<Chapter> chapters);
+    int insertChapters(@Param("chapters")List<Chapter> chapters);
+    int updateChapter(@Param("chapter")Chapter chapter);
+    int deleteChapter(@Param("chapterId")String chapterId);
 }

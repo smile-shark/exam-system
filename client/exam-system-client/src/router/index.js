@@ -20,6 +20,7 @@ import ExamPaperReviewPageView from '@/views/home/child/ExamPaperReviewPageView.
 import AdminStudentScoreView from '@/views/admin/home/child/AdminStudentScoreView.vue'
 import ImportQuestionsView from '@/views/admin/home/child/ImportQuestionsView.vue'
 import AdminCourseManageView from '@/views/admin/home/child/AdminCourseManageView.vue'
+import AdminStudentInfoView from '@/views/admin/home/child/AdminStudentInfoView.vue'
 
 Vue.use(VueRouter)
 const routes = [
@@ -154,6 +155,11 @@ const routes = [
         name: 'adminCourseManage',
         component: AdminCourseManageView,
         meta: { breadcrumb: '课程管理' }
+      },{
+        path: 'adminStudentInfo',
+        name: 'adminStudentInfo',
+        component: AdminStudentInfoView,
+        meta: { breadcrumb: '学生信息' }
       }
     ]
   }

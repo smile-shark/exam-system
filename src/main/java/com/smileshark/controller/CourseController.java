@@ -27,4 +27,12 @@ public class CourseController {
     public String insertCourse(@RequestBody RequestParams requestParams){
         return courseService.insertCourse(requestParams);
     }
+    @RequestMapping("/teacher/course/update/updateCourse")
+    public String updateCourse(@RequestBody RequestParams requestParams){
+        return courseService.updateCourse(requestParams);
+    }
+    @RequestMapping("/teacher/course/delete/deleteCourseByCourseId")
+    public String deleteCourseByCourseId(@RequestBody RequestParams requestParams){
+        return courseService.deleteCourseByCourseId(requestParams);
+    }
 }

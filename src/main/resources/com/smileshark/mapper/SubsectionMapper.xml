@@ -33,4 +33,12 @@
             (#{subsection.subsectionId}, #{subsection.chapterId}, #{subsection.subsectionName})
             </foreach>
     </insert>
+    <update id="updateSubsection">
+        update subsection
+        set subsection_name=#{subsection.subsectionName}
+        where subsection_id=#{subsection.subsectionId}
+    </update>
+    <delete id="deleteSubsectionBySubsectionId">
+        delete from subsection where subsection_id = #{subsectionId}
+    </delete>
 </mapper>

@@ -53,8 +53,6 @@ public class ServiceAsp {
                 System.out.println("完整试卷状态已经在执行，当前线程将跳过。");
             }
         });
-
-
         String proceed = JSONObject.toJSONString(Result.error());
         try {
             proceed = (String)pjp.proceed();

@@ -19,4 +19,16 @@ public class ChapterController {
     public String selectAllChaptersNameTitleAndIdInCourseId(@RequestBody RequestParams requestParams) {
         return chapterService.selectAllChaptersNameTitleAndIdInCourseId(requestParams);
     }
+    @RequestMapping("/teacher/chapter/insert/insertChapters")
+    public String insertChapters(@RequestBody RequestParams requestParams) {
+        return chapterService.insertChapters(requestParams);
+    }
+    @RequestMapping("/teacher/chapter/update/updateChapter")
+    public String updateChapter(@RequestBody RequestParams requestParams) {
+        return chapterService.updateChapter(requestParams);
+    }
+    @RequestMapping("/teacher/chapter/delete/deleteChapter")
+    public String deleteChapter(@RequestBody RequestParams requestParams) {
+        return chapterService.deleteChapter(requestParams);
+    }
 }

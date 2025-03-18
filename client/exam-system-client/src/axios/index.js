@@ -292,5 +292,58 @@ export default {
           answers:question.answers
         }
       })
+    },
+    insertChapter(chapter){
+      return myAxios.post(path.insertChapter,{
+        chapter:chapter
+      })
+    },
+    updateCourse(course){
+      return myAxios.post(path.updateCourse,{
+        course:course
+      })
+    },
+    deleteCourseByCourseId(courseId){
+      return myAxios.post(path.deleteCourseByCourseId,{
+        courseId:courseId
+      })
+    },
+    insertSubsection(subsection){
+      return myAxios.post(path.insertSubsection,{
+        subsection:subsection
+      })
+    },
+    updateChapter(chapter){
+      return myAxios.post(path.updateChapter,{
+        chapter:chapter
+      })
+    },
+    deleteChapterByChapterId(chapterId){
+      return myAxios.post(path.deleteChapterByChapterId,{
+        chapterId:chapterId
+      })
+    },
+    updateSubsection(subsection){
+      return myAxios.post(path.updateSubsection,{
+        subsection:subsection
+      })
+    },
+    deleteSubsectionBySubsectionId(subsectionId){
+      return myAxios.post(path.deleteSubsectionBySubsectionId,{
+        subsectionId:subsectionId
+      })
+    },
+    getStudentListVague(student,page,size,vague){
+      return myAxios.post(path.getStudentListVague,{
+        student:student,
+        page:page,
+        size:size,
+        vague:vague
+      })
+    },
+    deleteStudentByStudentId(studentId){
+      return myAxios.post(path.deleteStudentByStudentId,{
+        studentId:studentId
+      })
     }
 }
