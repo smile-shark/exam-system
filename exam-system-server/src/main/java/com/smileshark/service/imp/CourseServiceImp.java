@@ -1,6 +1,7 @@
 package com.smileshark.service.imp;
 
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -35,7 +36,9 @@ public class CourseServiceImp implements CourseService {
 
     @Override
     public String selectAllCoursesNameAndId() {
-        return JSONObject.toJSONString(Result.success("获取成功",courseMapper.selectAllCoursesNameAndId()));
+        return JSONObject.toJSONString(
+                Result.success("获取成功",courseMapper.selectAllCoursesNameAndId())
+                , SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override
@@ -54,7 +57,7 @@ public class CourseServiceImp implements CourseService {
                 .toJSONString(
                         Result.success("获取成功",
                                 PageInfo.of(page))
-                );
+                        , SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override

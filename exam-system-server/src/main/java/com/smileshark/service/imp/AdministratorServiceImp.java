@@ -1,6 +1,7 @@
 package com.smileshark.service.imp;
 
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.smileshark.common.RequestParams;
 import com.smileshark.common.Result;
 import com.smileshark.entity.user.Administrator;
@@ -17,7 +18,7 @@ public class AdministratorServiceImp implements AdministratorService {
     private final AdministratorMapper administratorMapper;
     @Override
     public String getAdministratorNameList() {
-        return JSONObject.toJSONString(Result.success(null,administratorMapper.getAdministratorNameList()));
+        return JSONObject.toJSONString(Result.success(null,administratorMapper.getAdministratorNameList()), SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override
@@ -35,6 +36,6 @@ public class AdministratorServiceImp implements AdministratorService {
         }else {
             result.setMsg("没有该管理员账号");
         }
-        return JSONObject.toJSONString(result);
+        return JSONObject.toJSONString(result, SerializerFeature.DisableCircularReferenceDetect);
     }
 }

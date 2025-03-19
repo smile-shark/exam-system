@@ -1,6 +1,7 @@
 package com.smileshark.service.imp;
 
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.smileshark.common.RequestParams;
 import com.smileshark.common.Result;
 import com.smileshark.entity.paper.ExamPaperAllocation;
@@ -31,7 +32,7 @@ public class ScoreServiceImp implements ScoreService {
         }else{
             result.setData(0);
         }
-        return JSONObject.toJSONString(result.setMsg(null));
+        return JSONObject.toJSONString(result.setMsg(null), SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override
@@ -39,6 +40,6 @@ public class ScoreServiceImp implements ScoreService {
         Result result = Result.success(null);
         Double v = scoreMapper.avgScoreByStudentId(requestParams.getStudentId());
         result.setData(Objects.requireNonNullElse(v, 0));
-        return JSONObject.toJSONString(result);
+        return JSONObject.toJSONString(result, SerializerFeature.DisableCircularReferenceDetect);
     }
 }

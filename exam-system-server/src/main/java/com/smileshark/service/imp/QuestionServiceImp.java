@@ -1,6 +1,7 @@
 package com.smileshark.service.imp;
 
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -82,7 +83,7 @@ public class QuestionServiceImp implements QuestionService {
             List<Question> questions = questionMapper.selectQuestionByParams(requestParams.getQuestionContent(), requestParams.getQuestionTypes());
             result = Result.success("获取成功", PageInfo.of(page));
         }
-        return JSONObject.toJSONString(result);
+        return JSONObject.toJSONString(result, SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override
@@ -131,7 +132,7 @@ public class QuestionServiceImp implements QuestionService {
                 ));
             }
         }
-        return JSONObject.toJSONString(Result.success("获取成功", questions));
+        return JSONObject.toJSONString(Result.success("获取成功", questions), SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override
@@ -150,7 +151,7 @@ public class QuestionServiceImp implements QuestionService {
                     requestParams.getQuestionId()
             );
         }
-        return JSONObject.toJSONString(Result.success("获取成功", question));
+        return JSONObject.toJSONString(Result.success("获取成功", question), SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override

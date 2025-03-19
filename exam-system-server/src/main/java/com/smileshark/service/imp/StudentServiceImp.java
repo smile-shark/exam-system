@@ -1,6 +1,7 @@
 package com.smileshark.service.imp;
 
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -94,7 +95,7 @@ public class StudentServiceImp implements StudentService {
         }
         return JSONObject.toJSONString(
                 Result.success("查询成功",
-                        students)
+                        students), SerializerFeature.DisableCircularReferenceDetect
         );
     }
 
@@ -109,7 +110,8 @@ public class StudentServiceImp implements StudentService {
         List<Student> students = studentMapper.selectStudentByStudentNameOrAccount(
                 requestParams.getStudent()
         );
-        return JSONObject.toJSONString(Result.success("查询成功", PageInfo.of(page)));
+        return JSONObject.toJSONString(Result.success("查询成功", PageInfo.of(page)),
+                SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override

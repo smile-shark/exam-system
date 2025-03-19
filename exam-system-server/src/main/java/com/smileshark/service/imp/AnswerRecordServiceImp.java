@@ -1,6 +1,7 @@
 package com.smileshark.service.imp;
 
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -49,7 +50,7 @@ public class AnswerRecordServiceImp implements AnswerRecordService {
         return JSONObject.toJSONString(
                 Result.success(null,
                         answerRecordMapper.answerRecordCountByStudentId(requestParams.getStudentId()))
-        );
+                , SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override
@@ -57,7 +58,7 @@ public class AnswerRecordServiceImp implements AnswerRecordService {
         return JSONObject.toJSONString(
                 Result.success(null,
                         answerRecordMapper.wrongQuestionRecordCountByStudentId(requestParams.getStudentId()))
-        );
+                , SerializerFeature.DisableCircularReferenceDetect );
     }
 
     @Override
@@ -151,7 +152,7 @@ public class AnswerRecordServiceImp implements AnswerRecordService {
         } else {
             result.setMsg("你已经提交过答卷了，不能再提交");
         }
-        return JSONObject.toJSONString(result);
+        return JSONObject.toJSONString(result, SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override
@@ -160,6 +161,6 @@ public class AnswerRecordServiceImp implements AnswerRecordService {
         List<AnswerRecord> answerRecords = answerRecordMapper.selectAnswerRecordByStudentIdIsFalse(requestParams.getStudentId());
         return JSONObject.toJSONString(
                 Result.success(null, PageInfo.of(objects))
-        );
+                , SerializerFeature.DisableCircularReferenceDetect);
     }
 }

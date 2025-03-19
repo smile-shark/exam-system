@@ -1,6 +1,7 @@
 package com.smileshark.service.imp;
 
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.smileshark.common.RequestParams;
 import com.smileshark.common.Result;
 import com.smileshark.entity.question.Subsection;
@@ -22,21 +23,21 @@ public class SubsectionServiceImp implements SubsectionService {
                         requestParams.getChapterId()
                 )
             )
-        );
+                , SerializerFeature.DisableCircularReferenceDetect );
     }
 
     @Override
     public String selectAllSubsectionInfoBySubsectionId(RequestParams requestParams) {
         return JSONObject.toJSONString(Result.success("查询成功",subsectionMapper.selectAllSubsectionInfoBySubsectionId(
                 requestParams.getSubsectionId()
-        )));
+        )), SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override
     public String selectSubsectionsInChapterIds(RequestParams requestParams) {
         return JSONObject.toJSONString(Result.success(null,subsectionMapper.selectSubsectionsInChapterIds(
                 requestParams.getChapterIds()
-        )));
+        )), SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override

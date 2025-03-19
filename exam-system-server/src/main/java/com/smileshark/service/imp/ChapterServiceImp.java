@@ -1,6 +1,7 @@
 package com.smileshark.service.imp;
 
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.smileshark.common.RequestParams;
 import com.smileshark.common.Result;
 import com.smileshark.entity.question.Chapter;
@@ -29,7 +30,7 @@ public class ChapterServiceImp implements ChapterService {
                                 requestParams.getCourseId()
                         )
                 )
-        );
+                , SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override
@@ -40,7 +41,7 @@ public class ChapterServiceImp implements ChapterService {
                                 requestParams.getCourseIds()
                         )
                 )
-        );
+                , SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override
@@ -61,7 +62,7 @@ public class ChapterServiceImp implements ChapterService {
                 result = Result.success("插入成功");
             }
         }
-        return JSONObject.toJSONString(result);
+        return JSONObject.toJSONString(result, SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override

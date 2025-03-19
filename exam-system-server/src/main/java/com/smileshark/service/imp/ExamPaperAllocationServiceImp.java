@@ -29,12 +29,14 @@ public class ExamPaperAllocationServiceImp implements ExamPaperAllocationService
                         requestParams.getStudentId(),
                         requestParams.getExamPaperAllocationState()
                 ))
-        );
+                , SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override
     public String ExamCountByStudentId(RequestParams requestParams) {
-        return JSONObject.toJSONString(Result.success(null,examPaperAllocationMapper.ExamCountByStudentId(requestParams.getStudentId())));
+        return JSONObject.toJSONString(Result.success(null,
+                examPaperAllocationMapper.ExamCountByStudentId(requestParams.getStudentId()))
+                , SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override
@@ -59,7 +61,7 @@ public class ExamPaperAllocationServiceImp implements ExamPaperAllocationService
         }else{
             result=Result.success("获取成功",examPaperAllocation);
         }
-        return JSONObject.toJSONString(result);
+        return JSONObject.toJSONString(result, SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override
@@ -82,7 +84,7 @@ public class ExamPaperAllocationServiceImp implements ExamPaperAllocationService
         }else{
             result=Result.success("获取成功",examPaperAllocation);
         }
-        return JSONObject.toJSONString(result);
+        return JSONObject.toJSONString(result, SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override
@@ -95,6 +97,6 @@ public class ExamPaperAllocationServiceImp implements ExamPaperAllocationService
                         DateStrToLongUtil.dateStrToLong(requestParams.getExamStartTime()),
                         DateStrToLongUtil.dateStrToLong(requestParams.getExamEndTime())
                 )
-        ));
+        ), SerializerFeature.DisableCircularReferenceDetect);
     }
 }
