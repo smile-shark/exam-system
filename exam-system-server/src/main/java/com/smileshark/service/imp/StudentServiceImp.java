@@ -69,12 +69,13 @@ public class StudentServiceImp implements StudentService {
 
     @Override
     public String studentCount() {
-        return JSONObject.toJSONString(Result.success(null,studentMapper.selectStudentCount()));
+        return JSONObject.toJSONString(Result.success(null,studentMapper.selectStudentCount()), SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override
     public String selectAllStudent() {
-        return JSONObject.toJSONString(Result.success("获取成功",studentMapper.selectAllStudent()));
+        return JSONObject.toJSONString(Result.success("获取成功",
+                studentMapper.selectAllStudent()), SerializerFeature.DisableCircularReferenceDetect);
     }
 
     @Override
