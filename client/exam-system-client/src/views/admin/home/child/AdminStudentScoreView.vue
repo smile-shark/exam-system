@@ -142,10 +142,34 @@ export default{
                 this.$message.error("至少需要选择一个学生")
                 return
             }
-            api.getStudentScoreListByStudentsNew(this.studentsSelected,this.fromDateToDate[0],this.fromDateToDate[1]).then(res=>{
-                this.studentScores = res.data
-                console.log(this.studentScores[0].examPaperAllocations[0].examPaperRelease.examPaper.examPaperTitle)
-            })
+            api.getStudentScoreListByStudentsNew(this.studentsSelected, this.fromDateToDate[0], this.fromDateToDate[1]).then(res => {
+                // 获取返回的数据
+                const data = res.data;
+
+                // 根据 examPaperAllocations 的数量对数据进行降序排序
+                // 首先，我们需要确保每个学生的数据中 examPaperAllocations 是数组类型
+                const sortedData = data.map(student => {
+                    // 如果 examPaperAllocations 不是数组，将其转换为数组
+                    if (!Array.isArray(student.examPaperAllocations)) {
+                        student.examPaperAllocations = [];
+                    }
+                    return student;
+                }).sort((a, b) => {
+                    // 如果 b 的 examPaperAllocations 数量大于 a 的，那么 b 应该排在前面
+                    if (b.examPaperAllocations.length > a.examPaperAllocations.length) {
+                        return -1;
+                    }
+                    // 如果 a 的 examPaperAllocations 数量大于 b 的，那么 a 应该排在前面
+                    if (a.examPaperAllocations.length > b.examPaperAllocations.length) {
+                        return 1;
+                    }
+                    // 如果两者数量相同，保持原始顺序
+                    return 0;
+            });
+
+            // 将排序后的数据赋值给 this.studentScores
+            this.studentScores = sortedData;
+        });
         },
         exportToExcel() {
             // 检查数据是否存在
