@@ -33,7 +33,7 @@
                                 </template>
                             </el-table-column>
                             <el-table-column  
-                            :label="studentScores[0].examPaperAllocations[index].examPaperRelease.examPaper.examPaperTitle" 
+                            :label="timestampToString(studentScores[0].examPaperAllocations[index].examPaperRelease.examEndTime)" 
                             v-for="(examPaperAllocation,index) in studentScores[0].examPaperAllocations" :key="index">
                                 <template slot-scope="scope">
                                     {{ scope.row.examPaperAllocations[index].score?scope.row.examPaperAllocations[index].score.score:'缺考' }}
@@ -158,7 +158,7 @@ export default{
             const header = ["学生名称"];
             if (this.studentScores[0].examPaperAllocations) {
                 this.studentScores[0].examPaperAllocations.forEach((allocation) => {
-                header.push(allocation.examPaperRelease.examPaper.examPaperTitle);
+                header.push(this.timestampToString(allocation.examPaperRelease.examEndTime));
                 });
             }
 
@@ -190,6 +190,16 @@ export default{
                 type: "application/octet-stream",
             });
             FileSaver.saveAs(blob, "学生成绩.xlsx");
+        },
+        timestampToString(timestamp) {
+            const date = new Date(timestamp);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0'); // 月份从0开始计数
+            const day = String(date.getDate()).padStart(2, '0');
+            const hours = String(date.getHours()).padStart(2, '0');
+            const minutes = String(date.getMinutes()).padStart(2, '0');
+            const seconds = String(date.getSeconds()).padStart(2, '0');
+            return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
         }
     },
     mounted(){
