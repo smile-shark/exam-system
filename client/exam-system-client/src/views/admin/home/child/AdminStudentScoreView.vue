@@ -36,7 +36,8 @@
                             :label="timestampToString(studentScores[0].examPaperAllocations[index].examPaperRelease.examEndTime)" 
                             v-for="(examPaperAllocation,index) in studentScores[0].examPaperAllocations" :key="index">
                                 <template slot-scope="scope">
-                                    {{ scope.row.examPaperAllocations[index].score?scope.row.examPaperAllocations[index].score.score:'缺考' }}
+                                    {{  !scope.row.examPaperAllocations[index]?'不参加':
+                                        scope.row.examPaperAllocations[index].score?scope.row.examPaperAllocations[index].score.score:'缺考' }}
                                 </template>
                             </el-table-column>
                         </el-table>
@@ -154,7 +155,7 @@ export default{
                         student.examPaperAllocations = [];
                     }
                     return student;
-                }).sort((a, b) => {
+                }).sort((b,a) => {
                     // 如果 b 的 examPaperAllocations 数量大于 a 的，那么 b 应该排在前面
                     if (b.examPaperAllocations.length > a.examPaperAllocations.length) {
                         return -1;
