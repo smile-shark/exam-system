@@ -62,8 +62,11 @@ myAxios.interceptors.response.use(
     };
     // 处理 URL 替换
     if (!JSON.stringify(resp.data).includes('ai.cqzuxia.com')) {
-      resp.data = JSON.parse(JSON.stringify(resp.data).replaceAll('/oss/api/ImageViewer/', 'https://ai.cqzuxia.com/oss/api/ImageViewer/'));
-    }
+      resp.data = JSON.parse(
+          JSON.stringify(resp.data)
+              .replace(/\/oss\/api\/ImageViewer\//g, '<url id="cvggi4oh8njkpu5d9k5g" type="url" status="failed" title="" wc="0">https://ai.cqzuxia.com/oss/api/ImageViewer/</url> ')
+      );
+  }
     return resp.data;
   },
   error => {
