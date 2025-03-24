@@ -243,16 +243,23 @@ export default {
                 return
             }
             let adminId=JSON.parse(localStorage.adminInfo).administratorId
-            if(adminId&&!this.isSubmit){
-                // 点快了会创建很多要加个防抖
-                this.isSubmit=true
-                api.createExamPaper(adminId,this.examPaper.examPaperTitle,this.questions,this.examPaper.examPaperScore).then(res=>{
-                    if(res.msg=='创建成功'){
-                        // 全部重置
-                        this.reset()
+            if(adminId){
+                if(!this.isSubmit){
+                    // 点快了会创建很多要加个防抖
+                    this.isSubmit=true
+                    api.createExamPaper(adminId,this.examPaper.examPaperTitle,this.questions,this.examPaper.examPaperScore).then(res=>{
+                        if(res.msg=='创建成功'){
+                            // 全部重置
+                            this.reset()
+                            this.isSubmit=false
+                        }
+                    })
+                    .catch(err=>{
                         this.isSubmit=false
-                    }
-                })
+                    })
+                }else{
+                    this.$message.error('正在提交，请稍后')
+                }
             }else{
                 this.$message.error('请先登录')
                 this.router.push('/login')
