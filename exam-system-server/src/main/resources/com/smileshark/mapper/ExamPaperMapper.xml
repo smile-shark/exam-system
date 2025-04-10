@@ -58,4 +58,10 @@
     <select id="selectExamPaperByExamPaperIdToExam" resultMap="examPaperMapToExam">
         select * from exam_paper where exam_paper_id = #{examPaperId}
     </select>
+    <update id="updateExamPaperToCancel">
+        update exam_paper set exam_paper_state=1 where exam_paper_id=#{examPaperId}
+    </update>
+    <delete id="deleteExamPaperById">
+        delete from exam_paper where exam_paper_id = #{examPaperId}
+    </delete>
 </mapper>

@@ -27,4 +27,12 @@ public class ExamPaperController {
     public String selectExamPaperByParams(@RequestBody RequestParams requestParams){
         return examPaperService.selectExamPaperByParams(requestParams);
     }
+    @RequestMapping("/teacher/exam/updateExamPaperToCancel")
+    public String updateExamPaperToCancel(@RequestBody RequestParams requestParams){
+        return examPaperService.updateExamPaperToCancel(requestParams);
+    }
+    @RequestMapping("/teacher/exam/deleteExamPaperById")
+    public String deleteExamPaperById(@RequestBody RequestParams requestParams){
+        return examPaperService.deleteExamPaperById(requestParams);
+    }
 }

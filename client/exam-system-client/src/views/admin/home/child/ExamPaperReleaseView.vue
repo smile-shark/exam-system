@@ -88,7 +88,7 @@ import api from "@/axios/index"
                 examPaperId:'',
                 examStartTime:'',
                 examEndTime:'',
-                notes:'',
+                notes:'默认备注',
                 duration:1
             },
             students:[],
@@ -130,11 +130,6 @@ import api from "@/axios/index"
                 this.$message.error("请选择考试结束时间！")
                 return
             }
-            // 开始时间不能小于当前时间
-            if(this.release.examStartTime<new Date()){
-                this.$message.error("考试开始时间不能小于当前时间！")
-                return
-            }
             // 结束时间不能小于当前时间
             if(this.release.examEndTime<new Date()){
                 this.$message.error("考试结束时间不能小于当前时间！")
@@ -155,20 +150,27 @@ import api from "@/axios/index"
                 this.$message.error("时长不能为空！")
                 return
             }
-            if(localStorage.adminInfo&&!this.isRelease){
-                let administratorId=JSON.parse(localStorage.adminInfo).administratorId
-                this.isRelease=true
-                api.releaseExamPaper(
-                    this.release.examPaperId,
-                    administratorId,
-                    this.release.examStartTime,
-                    this.release.examEndTime,
-                    this.release.notes,
-                    this.studentsSelected,
-                    this.release.duration).then(res=>{
-                        this.reset()
+            if(localStorage.adminInfo){
+                if(!this.isRelease){
+                    let administratorId=JSON.parse(localStorage.adminInfo).administratorId
+                    this.isRelease=true
+                    api.releaseExamPaper(
+                        this.release.examPaperId,
+                        administratorId,
+                        this.release.examStartTime,
+                        this.release.examEndTime,
+                        this.release.notes,
+                        this.studentsSelected,
+                        this.release.duration).then(res=>{
+                            this.reset()
+                            this.isRelease=false
+                    }).catch(err=>{
                         this.isRelease=false
+                        console.log(err)
                     })
+                }else{
+                    this.$message.error("试卷正在发布中！")
+                }
             }else{
                 this.$message.error("请先登录！")
             }

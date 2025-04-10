@@ -41,6 +41,8 @@ export default{
     deleteSubsectionBySubsectionId:api+"/teacher/subsection/delete/deleteSubsectionBySubsectionId",
     getStudentListVague:api+"/teacher/list/selectStudentByStudentNameOrAccount",
     deleteStudentByStudentId:api+"/teacher/student/delete/deleteStudentByStudentId",
+    updateExamPaperToCancel:api+"/teacher/exam/updateExamPaperToCancel",
+    deleteExamPaperById:api+"/teacher/exam/deleteExamPaperById",
     
     getExamPaperCountByState:api+"/student/count/allocationExamPaperCountByStudentIdAndState",
     getAnswerQuestionCountByStudentId:api+"/student/answerRecordCountByStudentId",

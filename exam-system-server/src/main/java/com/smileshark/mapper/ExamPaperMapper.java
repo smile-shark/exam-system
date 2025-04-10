@@ -19,4 +19,6 @@ public interface ExamPaperMapper {
     );
     ExamPaper selectExamPaperByExamPaperId(@Param("examPaperId")String examPaperId);
     ExamPaper selectExamPaperByExamPaperIdToExam(@Param("examPaperId")String examPaperId);
+    int updateExamPaperToCancel(@Param("examPaperId")String examPaperId);
+    int deleteExamPaperById(@Param("examPaperId")String examPaperId);
 }

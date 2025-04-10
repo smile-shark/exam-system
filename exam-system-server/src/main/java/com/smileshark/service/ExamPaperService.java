@@ -7,4 +7,6 @@ public interface ExamPaperService {
     String insertExamPaper(RequestParams requestParams);
     String selectAllExamPaperIdTitle();
     String selectExamPaperByParams(RequestParams requestParams);
+    String updateExamPaperToCancel(RequestParams requestParams);
+    String deleteExamPaperById(RequestParams requestParams);
 }

@@ -79,7 +79,7 @@
                 label="操作"
                 fixe="right">
                     <template slot-scope="scope">
-                        <el-button type="text" @click="viewExamPaper(scope.row)">查看</el-button>
+                        <!-- <el-button type="text" @click="viewExamPaper(scope.row)">查看</el-button> -->
                         <el-button type="text" @click="editExamPaper(scope.row)" v-if="scope.row.examPaperState===0">作废</el-button>
                         <el-button type="text" @click="deleteExamPaper(scope.row)">删除</el-button>
                     </template>
@@ -151,6 +151,26 @@ export default{
             const minutes = date.getMinutes().toString().padStart(2, '0');
             const seconds = date.getSeconds().toString().padStart(2, '0');
             return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+        },
+        editExamPaper(row){
+            api.updateExamPaperToCancel(row.examPaperId).then(res=>{
+                if(res.msg=='作废成功'){
+                    this.$message.success(res.msg)
+                    this.serachExamPaperList(1);
+                }else{
+                    this.$message.error(res.msg);
+                }
+            })  
+        },
+        deleteExamPaper(row){
+            api.deleteExamPaperById(row.examPaperId).then(res=>{
+                if(res.msg=='删除成功'){
+                    this.$message.success(res.msg)
+                    this.serachExamPaperList(1);
+                }else{
+                    this.$message.error(res.msg);
+                }
+            })  
         }
     },
     mounted(){

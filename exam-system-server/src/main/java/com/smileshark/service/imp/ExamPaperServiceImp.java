@@ -85,4 +85,22 @@ public class ExamPaperServiceImp implements ExamPaperService {
         return JSONObject.toJSONString(Result.success("获取成功", PageInfo.of(page))
                 , SerializerFeature.DisableCircularReferenceDetect);
     }
+
+    @Override
+    public String updateExamPaperToCancel(RequestParams requestParams) {
+        int i = examPaperMapper.updateExamPaperToCancel(requestParams.getExamPaperId());
+        if (i > 0) {
+            return JSONObject.toJSONString(Result.success("作废成功"));
+        }
+        return JSONObject.toJSONString(Result.error("作废失败"));
+    }
+
+    @Override
+    public String deleteExamPaperById(RequestParams requestParams) {
+        int i = examPaperMapper.deleteExamPaperById(requestParams.getExamPaperId());
+        if (i > 0) {
+            return JSONObject.toJSONString(Result.success("删除成功"));
+        }
+        return JSONObject.toJSONString(Result.error("删除失败"));
+    }
 }

@@ -317,6 +317,8 @@ export default {
             })
             console.log(res.data)
             this.examPaperAllocation = res.data
+        }).catch(err=>{
+            console.log(err)
         })
         
         setInterval(this.updateTime, 1000); // 每秒更新一次

@@ -7,7 +7,7 @@ import CryptoJS from "crypto-js";
 const AESKEY='www.examSystem.com'
 
 const myAxios=axios.create({
-  timeout:6000
+  timeout:30000
 })
 // 请求拦截器
 myAxios.interceptors.request.use(config => {
@@ -36,36 +36,11 @@ myAxios.interceptors.response.use(
         }, 1000);
       }
     }
-
-    // 解析 JSONPath
-    const resolveJsonPath = (data, path) => {
-      try {
-        // 去掉 $ 和 .，然后分割路径
-        const keys = path.replace(/^\$\.?/, '').split('.');
-        let result = data;
-        for (const key of keys) {
-          // 处理数组索引，例如 list[0]
-          if (key.includes('[')) {
-            const arrayKey = key.split('[')[0];
-            const index = key.match(/\[(\d+)\]/)[1];
-            result = result[arrayKey][index];
-          } else {
-            result = result[key];
-          }
-        }
-        return result;
-      } catch (error) {
-        console.warn(`无法解析 $ref: ${path}`, error);
-        return null;
-      }
-    };
     // 处理 URL 替换
-    if (!JSON.stringify(resp.data).includes('ai.cqzuxia.com')) {
       resp.data = JSON.parse(
           JSON.stringify(resp.data)
-              .replace(/\/oss\/api\/ImageViewer\//g, '<url id="cvggi4oh8njkpu5d9k5g" type="url" status="failed" title="" wc="0">https://ai.cqzuxia.com/oss/api/ImageViewer/</url> ')
+              .replace(/\/oss\/api\/ImageViewer\//g, 'https://ai.cqzuxia.com/oss/api/ImageViewer/')
       );
-  }
     return resp.data;
   },
   error => {
@@ -378,5 +353,15 @@ export default {
         page:page,
         size:size
       })
-    }
+    },
+    updateExamPaperToCancel(examPaperId){
+      return myAxios.post(path.updateExamPaperToCancel,{
+        examPaperId:examPaperId
+      })
+    },
+    deleteExamPaperById(examPaperId){
+      return myAxios.post(path.deleteExamPaperById,{
+        examPaperId:examPaperId
+      })
+    },
 }

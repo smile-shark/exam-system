@@ -12,6 +12,14 @@ public class Result {
     private String msg;
     private Object data;
 
+    public static Result error(String msg) {
+        Result r = new Result();
+        r.setSuccess(false);
+        r.setCode(ResultCode.ERROR);
+        r.setMsg(msg);
+        return r;
+    }
+
     public Result setCode(int code) {
         this.code = code;
         return this;
