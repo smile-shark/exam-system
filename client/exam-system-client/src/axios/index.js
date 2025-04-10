@@ -3,7 +3,6 @@ import path from "./path";
 import { Message } from "element-ui";
 import router from "@/router";
 import CryptoJS from "crypto-js";
-import {fastJsonParse} from 'fast-json-parse'
 
 const AESKEY='www.examSystem.com'
 

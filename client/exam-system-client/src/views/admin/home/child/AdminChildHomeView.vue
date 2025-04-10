@@ -10,18 +10,36 @@
                 </div>
             </el-col>
         </el-row>
+        <el-row>
+          <el-col :sapn="24">
+            <el-card>
+              <div slot="header">
+                <span>考试数据</span>
+              </div>
+              <!-- <BarChart :chartData="barChartData" /> -->
+            </el-card>
+          </el-col>
+        </el-row>
     </div>
 </template>
 
 <script>
 import api from '@/axios/index'
+import BarChart from '@/views/components/BarChart.vue'
 export default {
+  components:{
+    BarChart
+  },
     data(){
         return{
             studentCount:0,
             courseCount:0,
             questionCount:0,
-            paperCount:0
+            paperCount:0,
+            barChartData: {
+              xAxisData: ['周一', '周二', '周三', '周四', '周五'],
+              seriesData: [200, 320, 301, 334, 390]
+            }
         }
     },
     mounted(){

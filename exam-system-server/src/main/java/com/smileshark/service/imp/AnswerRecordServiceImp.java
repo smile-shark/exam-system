@@ -37,13 +37,6 @@ public class AnswerRecordServiceImp implements AnswerRecordService {
     private final ScoreMapper scoreMapper;
     private final QuestionMapper questionMapper;
     private final ExamPaperMapper examPaperMapper;
-    private int isTrueCount = 0;
-
-    public void addIsTrueCount() {
-        synchronized (this) {
-            this.isTrueCount++;
-        }
-    }
 
     @Override
     public String answerRecordCountByStudentId(RequestParams requestParams) {
@@ -63,19 +56,24 @@ public class AnswerRecordServiceImp implements AnswerRecordService {
 
     @Override
     public String insertAnswerRecord(RequestParams requestParams) {
+        int isTrueCount = 0;
         Result result = Result.error();
+        // 1. 修改考试试卷的状态为已完成
         if (examPaperAllocationMapper.updateExamPaperAllocationStateToFinish(
                 requestParams.getExamPaperAllocation().getExamPaperAllocationId()
         ) > 0) {
+            // 2. 遍历考试中的题目
             for (QuestionOnTestPaper questionOnTestPaper : requestParams
                     .getExamPaperAllocation()
                     .getExamPaperRelease()
                     .getExamPaper()
                     .getQuestionOnTestPapers()) {
+                // 查询到题目对应的答案
                 Question question = questionMapper.selectQuestionByQuestionIdHaveReallyAnswer(
                         questionOnTestPaper.getQuestion().getQuestionId()
                 );
                 String answerRecordId = CreateId.createId();
+                // 3. 创建新的答题记录
                 AnswerRecord answerRecord = new AnswerRecord() {{
                     setExamPaperAllocationId(
                             requestParams.getExamPaperAllocation().getExamPaperAllocationId()
@@ -88,33 +86,46 @@ public class AnswerRecordServiceImp implements AnswerRecordService {
                     );
                     setAnswerRecordId(answerRecordId);
                 }};
+                // 将answerId转为字符串列表
                 List<String> answerIds = question.getAnswers().stream()
                         .map(Answer::getAnswerId)
                         .toList();
+                // 默认是错误答案
                 boolean isTrue = false;
                 if (questionOnTestPaper.getQuestion().getSelectedId() != null && !questionOnTestPaper.getQuestion().getSelectedId().isEmpty()) {
                     // 如果是单选题
+                    System.out.println(
+                            "单选题选择的答案："+List.of(questionOnTestPaper.getQuestion().getSelectedId())+
+                                    "  正确答案："+answerIds
+                    );
                     if (SelectedIsTrueOrFalse.isTrueOrFalse(
+                            // 单选题的answerIds只有一个元素
                             List.of(questionOnTestPaper.getQuestion().getSelectedId()),
                             answerIds
                     )) {
                         isTrue = true;
                     }
                     answerRecord.setIsTrue(isTrue);
-                    answerRecordMapper.insertAnswerRecord(answerRecord);
+                    // 4. 插入答题记录
+                    int i = answerRecordMapper.insertAnswerRecord(answerRecord);
+                    // 5. 插入学生选择的答案
                     studentSelectedAnswerMapper.insertStudentSelectedAnswer(new StudentSelectedAnswer() {{
                         setAnswerId(questionOnTestPaper.getQuestion().getSelectedId());
                         setAnswerRecordId(answerRecordId);
                     }});
                 } else if (!questionOnTestPaper.getQuestion().getSelectedIds().isEmpty()) {
                     // 如果是多选题
+                    System.out.println(
+                            "多选题选择的答案："+questionOnTestPaper.getQuestion().getSelectedIds()+
+                                    "  正确答案："+answerIds
+                    );
                     if (SelectedIsTrueOrFalse.isTrueOrFalse(
                             questionOnTestPaper.getQuestion().getSelectedIds(),
                             answerIds
                     )) {
                         isTrue = true;
                     }
-
+                    // 4. 插入答题记录
                     answerRecord.setIsTrue(isTrue);
                     answerRecordMapper.insertAnswerRecord(answerRecord);
                     for (String selectedId : questionOnTestPaper.getQuestion().getSelectedIds()) {
@@ -125,9 +136,10 @@ public class AnswerRecordServiceImp implements AnswerRecordService {
                     }
                 }
                 if (isTrue) {
-                    this.addIsTrueCount();
+                    isTrueCount++;
                 }
             }
+            // 6. 获取这张试卷的信息
             ExamPaper examPaper = examPaperMapper.selectExamPaperByExamPaperId(
                     requestParams
                             .getExamPaperAllocation()
@@ -135,8 +147,8 @@ public class AnswerRecordServiceImp implements AnswerRecordService {
                             .getExamPaper()
                             .getExamPaperId()
             );
-            // 计算分数
-            double score = (double) this.isTrueCount / examPaper.getQuestionCount() * examPaper.getTotalScore();
+            // 计算分数通过正确答题的数量除以总题数乘以总分
+            double score = (double) isTrueCount / examPaper.getQuestionCount() * examPaper.getTotalScore();
             // 将数据插入到score表中
             if (scoreMapper.insertScore(new Score() {{
                 setStudentId(requestParams.getExamPaperAllocation().getStudentId());
