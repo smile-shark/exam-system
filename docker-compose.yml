@@ -1,6 +1,7 @@
 version: '3.8'
 services:
   exam-system:
+    restart: always
     build: 
       context: .
       dockerfile: Dockerfile

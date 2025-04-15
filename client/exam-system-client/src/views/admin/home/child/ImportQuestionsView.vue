@@ -242,7 +242,7 @@
             if(this.subminting){
                 Message.error("正在上传，请勿重复操作")
             }else{
-                subminting=true
+                this.subminting=true
                 api.insertQuestions(this.questions,this.subsectionId).then(res=>{
                     this.subminting=false
                     // 上传成功后清空数据
