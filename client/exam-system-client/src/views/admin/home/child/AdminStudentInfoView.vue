@@ -47,6 +47,8 @@
         <el-row>
             <el-col :span="24" style="display: flex;justify-content: center;align-items: center;">
                 <el-pagination
+                @current-change="search"
+                :page-size="size"
                 background
                 layout="prev, pager, next"
                 :total="total">
@@ -67,7 +69,7 @@ export default {
             students:[],
             vague:true,
             page:1,
-            size:20,
+            size:10,
             total:0,
             notShowPassword:true
         }

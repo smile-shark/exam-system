@@ -39,7 +39,8 @@ myAxios.interceptors.response.use(
     // 处理 URL 替换
       resp.data = JSON.parse(
           JSON.stringify(resp.data)
-              .replace(/\/oss\/api\/ImageViewer\//g, 'https://ai.cqzuxia.com/oss/api/ImageViewer/')
+          .replace(/https:\/\/ai.cqzuxia.com\/oss\/api\/ImageViewer\//g, '/oss/api/ImageViewer/')
+          .replace(/\/oss\/api\/ImageViewer\//g, 'https://ai.cqzuxia.com/oss/api/ImageViewer/')
       );
     return resp.data;
   },
