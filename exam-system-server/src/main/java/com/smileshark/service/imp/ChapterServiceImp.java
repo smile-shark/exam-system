@@ -9,12 +9,14 @@ import com.smileshark.entity.question.Subsection;
 import com.smileshark.mapper.ChapterMapper;
 import com.smileshark.mapper.SubsectionMapper;
 import com.smileshark.service.ChapterService;
+import com.smileshark.service.SubsectionService;
 import com.smileshark.utils.ChapterTitleUtil;
 import com.smileshark.utils.CreateId;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 @Service
@@ -22,6 +24,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class ChapterServiceImp implements ChapterService {
     private final ChapterMapper chapterMapper;
     private final SubsectionMapper subsectionMapper;
+    private final SubsectionService subsectionService;
     @Override
     public String selectAllChaptersNameTitleAndIdByCourseId(RequestParams requestParams) {
         return JSONObject.toJSONString(
@@ -73,6 +76,12 @@ public class ChapterServiceImp implements ChapterService {
 
     @Override
     public String deleteChapter(RequestParams requestParams) {
+        List<Subsection> subsections = subsectionMapper.selectAllSubsectionsIdByChapterId(requestParams.getChapterId());
+        for (Subsection subsection : subsections) {
+            subsectionService.deleteSubsectionBySubsectionId(new RequestParams(){{
+                setSubsectionId(subsection.getSubsectionId());
+            }});
+        }
         int i = chapterMapper.deleteChapter(requestParams.getChapterId());
         return JSONObject.toJSONString(Result.success("删除成功"));
     }

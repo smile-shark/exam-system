@@ -147,7 +147,7 @@ export default {
                 questionCountType0:0,
                 questionCountType1:0,
                 questionCountType2:0,
-                examPaperTitle:'试卷标题',
+                examPaperTitle:this.getFormattedDate(),
                 examPaperScore:100,
             },
             courses:[],
@@ -213,6 +213,9 @@ export default {
                 this.examPaper.questionCountType1,
                 this.examPaper.questionCountType2
             ).then(res=>{
+                if(res.data.length==0){
+                    this.$message.error('没有找到符合条件的题目')
+                }
                 this.questions=res.data
             })
         },
@@ -270,10 +273,17 @@ export default {
                 questionCountType0:0,
                 questionCountType1:0,
                 questionCountType2:0,
-                examPaperTitle:'试卷标题',
+                examPaperTitle:this.getFormattedDate(),
                 examPaperScore:100,
             }
             this.questions=[]
+        },
+        getFormattedDate() {
+            const now = new Date(); // 获取当前日期和时间
+            const year = now.getFullYear(); // 获取年份
+            const month = String(now.getMonth() + 1).padStart(2, '0'); // 获取月份，+1 是因为 getMonth() 返回的是 0-11
+            const day = String(now.getDate()).padStart(2, '0'); // 获取日期
+            return `${year}年${month}月${day}日考试`;
         }
     },
     mounted(){

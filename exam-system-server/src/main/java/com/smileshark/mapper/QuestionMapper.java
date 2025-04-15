@@ -48,4 +48,6 @@ public interface QuestionMapper {
     int insertQuestion(@Param("questions")List<Question> questions);
     int deleteQuestionByQuestionId(@Param("questionId") String questionId);
     int updateQuestionByQuestionId(@Param("question") Question question);
+
+    List<Question> selectQuestionBySubsectionId(@Param("subsectionId") String subsectionId);
 }

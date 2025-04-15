@@ -88,8 +88,8 @@ export default {
         },
         deleteStudent(row){
             // 删除之前提示一下，不然点错了
-            this.$confirm('确认删除该小节吗？').then(() => {
-                api.deleteStudentByStudentId(row.studentId).then(res=>{
+            this.$confirm('确认删除该学生的账户吗？').then(() => {
+                api.deleteStudentByStudentId(row).then(_=>{
                     this.search(this.page);
                 })
             }).catch(() => {

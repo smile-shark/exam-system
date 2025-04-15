@@ -36,7 +36,7 @@
         from chapter
         where course_id = #{courseId}
     </select>
-    <insert id="insertChapter">
+    <insert id="insertChapters">
         insert into chapter
         (chapter_id, course_id, chapter_title, chapter_name, `order`)
         values

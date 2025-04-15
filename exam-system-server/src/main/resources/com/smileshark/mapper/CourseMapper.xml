@@ -28,7 +28,7 @@
     <update id="updateCourse">
         update course set course_name=#{course.courseName},
                           course_image=#{course.courseImage},
-                          course_describe=#{course.describe}
+                          course_describe=#{course.courseDescribe}
         where course_id=#{course.courseId}
     </update>
     <delete id="deleteCourseByCourseId">

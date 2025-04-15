@@ -25,7 +25,7 @@
             </if>
         </where>
     </select>
-    <insert id="insertSubsection">
+    <insert id="insertSubsections">
         insert into subsection
         (subsection_id, chapter_id, subsection_name)
         values

@@ -380,6 +380,14 @@ export default {
             if(!this.addChapterGroup.chapter.subsections.length){
                 this.$message.error('小节不能为空')
                 return
+            }else{
+                for(let i=0;i<this.addChapterGroup.chapter.subsections.length;i++){
+                    // 小节名称不能为空
+                    if(!this.addChapterGroup.chapter.subsections[i].subsectionName){
+                        this.$message.error('第'+(i+1)+'小节名称不能为空')
+                        return
+                    }   
+                }
             }
             api.insertChapter(this.addChapterGroup.chapter).then(res=>{
                 this.addChapterGroup.show=false
@@ -504,11 +512,29 @@ export default {
                 this.$message.error('章节不能为空')
                 return
             }
-            // 小节不能为空
             for(let i=0;i<this.course.chapters.length;i++){
+                // 章节中的标题格式需要正确
+                if(!/^第\d章$/.test(this.course.chapters[i].chapterTitle)){
+                    this.$message.error('第'+(i+1)+'章节标题格式错误，请按照“第*章”格式填写')
+                    return
+                }
+                // 章节名称不能为空
+                if(!this.course.chapters[i].chapterName){
+                    this.$message.error('第'+(i+1)+'章节名称不能为空')
+                    return
+                }
+                // 小节不能为空
                 if(!this.course.chapters[i].subsections.length){
                     this.$message.error('第'+(i+1)+'章节小节不能为空')
                     return
+                }else{
+                    for(let j=0;j<this.course.chapters[i].subsections.length;j++){
+                        // 小节名称不能为空
+                        if(!this.course.chapters[i].subsections[j].subsectionName){
+                            this.$message.error('第'+(i+1)+'章节第'+(j+1)+'小节名称不能为空')
+                            return
+                        }   
+                    }
                 }
             }
             api.insertCourse(this.course).then(res=>{

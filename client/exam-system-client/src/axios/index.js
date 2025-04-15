@@ -344,6 +344,7 @@ export default {
       })
     },
     deleteStudentByStudentId(studentId){
+      console.log(studentId)
       return myAxios.post(path.deleteStudentByStudentId,{
         studentId:studentId
       })

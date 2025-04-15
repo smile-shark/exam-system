@@ -13,6 +13,7 @@ import com.smileshark.entity.question.Subsection;
 import com.smileshark.mapper.ChapterMapper;
 import com.smileshark.mapper.CourseMapper;
 import com.smileshark.mapper.SubsectionMapper;
+import com.smileshark.service.ChapterService;
 import com.smileshark.service.CourseService;
 import com.smileshark.utils.ChapterTitleUtil;
 import com.smileshark.utils.CreateId;
@@ -29,6 +30,7 @@ public class CourseServiceImp implements CourseService {
     private final CourseMapper courseMapper;
     private final ChapterMapper chapterMapper;
     private final SubsectionMapper subsectionMapper;
+    private final ChapterService chapterService;
     @Override
     public String courseCount() {
         return JSONObject.toJSONString(Result.success(null,courseMapper.courseCount()));
@@ -101,6 +103,13 @@ public class CourseServiceImp implements CourseService {
 
     @Override
     public String deleteCourseByCourseId(RequestParams requestParams) {
+        List<Chapter> chapters = chapterMapper.selectAllChaptersIdByCourseId(requestParams.getCourseId());
+        System.out.println(chapters);
+        for(Chapter chapter:chapters){
+            chapterService.deleteChapter(new RequestParams(){{
+                setChapterId(chapter.getChapterId());
+            }});
+        }
         int i = courseMapper.deleteCourseByCourseId(requestParams.getCourseId());
         return JSONObject.toJSONString(Result.success("删除成功"));
     }

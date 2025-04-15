@@ -163,4 +163,7 @@
     <update id="updateQuestionByQuestionId">
         update question set question=#{question.question},question_type=#{question.questionType} where question_id=#{question.questionId}
     </update>
+    <select id="selectQuestionBySubsectionId" resultType="question">
+        select * from question where subsection_id = #{subsectionId}
+    </select>
 </mapper>   
