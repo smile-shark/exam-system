@@ -20,6 +20,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @Aspect
 @Component
 public class ServiceAsp {
+
     @Autowired
     private ExamPaperStateHandle examPaperStateHandle;
 

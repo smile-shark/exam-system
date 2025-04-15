@@ -288,7 +288,7 @@ export default {
       return myAxios.post(path.updateQuestion,{
         question:{
           questionId:question.questionId,
-          questionName:question.questionName,
+          questionName:question.question,
           questionType:question.questionType,
           answers:question.answers
         }
