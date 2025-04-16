@@ -33,6 +33,7 @@
         select *
         from exam_paper_allocation
         where student_id=#{studentId} and exam_paper_allocation_state=#{examPaperAllocationState}
+        order by create_time desc
     </select>
     <update id="updateExamPaperAllocationStateTo1">
         update exam_paper_allocation
@@ -56,6 +57,7 @@
     <select id="selectExamPaperAllocationByExamPaperAllocationId" resultMap="examPaperAllocationMapToExam">
         select * from exam_paper_allocation where exam_paper_allocation_id=#{examPaperAllocationId}
         and exam_paper_allocation_state=1
+        order by create_time desc
     </select>
     <update id="updateExamPaperAllocationStateToFinish">
         update exam_paper_allocation

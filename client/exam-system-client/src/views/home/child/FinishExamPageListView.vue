@@ -49,6 +49,7 @@
                 background
                 layout="prev, pager, next"
                 :total="total"
+                :page-size="size"
                 :hide-on-single-page="true"
                 @current-change="handleCurrentChange">
                 </el-pagination>
@@ -67,7 +68,7 @@ export default {
             total:0,      
             examPaperList:[],
             page:1,
-            size:5
+            size:2
         }
     },
     methods: {

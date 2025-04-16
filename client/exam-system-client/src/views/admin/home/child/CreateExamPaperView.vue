@@ -221,9 +221,9 @@ export default {
         },
         questionNum(){
             let count=
-            parseInt(this.examPaper.questionCountType0)+
-            parseInt(this.examPaper.questionCountType1)+
-            parseInt(this.examPaper.questionCountType2)
+            parseInt(this.examPaper.questionCountType0?this.examPaper.questionCountType0:0)+
+            parseInt(this.examPaper.questionCountType1?this.examPaper.questionCountType1:0)+
+            parseInt(this.examPaper.questionCountType2?this.examPaper.questionCountType2:0)
             return count
         },
         refreshQuestion(row){
@@ -245,6 +245,10 @@ export default {
                 this.$message.error('请先拉取题目')
                 return
             }
+            if(this.questions.length!=this.questionNum()){
+                this.$message.error('题目数量不匹配')
+                return
+            }
             let adminId=JSON.parse(localStorage.adminInfo).administratorId
             if(adminId){
                 if(!this.isSubmit){
@@ -254,8 +258,8 @@ export default {
                         if(res.msg=='创建成功'){
                             // 全部重置
                             this.reset()
-                            this.isSubmit=false
                         }
+                        this.isSubmit=false
                     })
                     .catch(err=>{
                         this.isSubmit=false

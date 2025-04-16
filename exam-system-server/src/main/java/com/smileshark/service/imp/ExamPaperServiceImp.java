@@ -8,9 +8,11 @@ import com.github.pagehelper.PageInfo;
 import com.smileshark.common.RequestParams;
 import com.smileshark.common.Result;
 import com.smileshark.entity.paper.ExamPaper;
+import com.smileshark.entity.paper.ExamPaperRelease;
 import com.smileshark.entity.paper.QuestionOnTestPaper;
 import com.smileshark.entity.question.Question;
 import com.smileshark.mapper.ExamPaperMapper;
+import com.smileshark.mapper.ExamPaperReleaseMapper;
 import com.smileshark.mapper.QuestionOnTestPaperMapper;
 import com.smileshark.service.ExamPaperService;
 import com.smileshark.utils.CreateId;
@@ -25,6 +27,7 @@ import java.util.List;
 public class ExamPaperServiceImp implements ExamPaperService {
     private final ExamPaperMapper examPaperMapper;
     private final QuestionOnTestPaperMapper questionOnTestPaperMapper;
+    private final ExamPaperReleaseMapper examPaperReleaseMapper;
 
     @Override
     public String examPaperCount() {
@@ -97,8 +100,12 @@ public class ExamPaperServiceImp implements ExamPaperService {
 
     @Override
     public String deleteExamPaperById(RequestParams requestParams) {
-        int i = examPaperMapper.deleteExamPaperById(requestParams.getExamPaperId());
-        if (i > 0) {
+        List<ExamPaperRelease> examPaperReleases = examPaperReleaseMapper.selectByExamPaperId(requestParams.getExamPaperId());
+        if(!examPaperReleases.isEmpty()){
+            return JSONObject.toJSONString(Result.error("试卷已发布，不能删除"));
+        }
+        if (questionOnTestPaperMapper.deleteByExamPaperId(requestParams.getExamPaperId()) > 0
+        && examPaperMapper.deleteExamPaperById(requestParams.getExamPaperId()) > 0 ) {
             return JSONObject.toJSONString(Result.success("删除成功"));
         }
         return JSONObject.toJSONString(Result.error("删除失败"));

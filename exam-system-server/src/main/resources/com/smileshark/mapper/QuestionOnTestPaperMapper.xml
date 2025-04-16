@@ -12,4 +12,7 @@
     <select id="selectByExamPaperId" resultMap="questionOnTestMapperMap">
         select * from question_on_test_paper where exam_paper_id = #{examPaperId}
     </select>
+    <delete id="deleteByExamPaperId">
+        delete from question_on_test_paper where exam_paper_id = #{examPaperId}
+    </delete>
 </mapper>

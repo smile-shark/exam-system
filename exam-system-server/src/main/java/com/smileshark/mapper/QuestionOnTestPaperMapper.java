@@ -10,4 +10,5 @@ import java.util.List;
 public interface QuestionOnTestPaperMapper {
     int insertItem(@Param("questionOnTestPaper")QuestionOnTestPaper questionOnTestPaper);
     List<QuestionOnTestPaper> selectByExamPaperId(@Param("examPaperId") String examPaperId);
+    int deleteByExamPaperId(@Param("examPaperId") String examPaperId);
 }

@@ -111,6 +111,7 @@
                 <el-pagination
                 @current-change="answerRecordsPage"
                 background
+                :page-size="size"
                 layout="prev, pager, next"
                 :total="total">
                 </el-pagination>

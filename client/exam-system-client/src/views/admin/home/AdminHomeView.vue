@@ -43,9 +43,7 @@
 						</div>
 					</el-col>
 				</el-row>
-				<keep-alive>
 				    <router-view></router-view>
-				</keep-alive>
 			</el-col>
 		</el-row>
   	</div>
@@ -63,7 +61,7 @@ import api from '@/axios/index'
 		},
 		watch: {
 			"$route"(newRoute) {
-			this.updateBreadcrumb(newRoute);
+				this.updateBreadcrumb(newRoute);
 			}
 		},
 		created() {
@@ -71,11 +69,11 @@ import api from '@/axios/index'
 		},
 		methods: {
 			updateBreadcrumb(route) {
-			this.breadcrumbList = route.matched
-				.filter(record => record.meta && record.meta.breadcrumb)
-				.map(record => ({
-				name: record.meta.breadcrumb,
-				to: record.path
+				this.breadcrumbList = route.matched
+					.filter(record => record.meta && record.meta.breadcrumb)
+					.map(record => ({
+					name: record.meta.breadcrumb,
+					to: record.path
 				}));
 			}
 		},

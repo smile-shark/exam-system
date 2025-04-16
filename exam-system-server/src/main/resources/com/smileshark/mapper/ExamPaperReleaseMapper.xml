@@ -37,4 +37,7 @@
     <select id="selectExamPaperReleaseByExamPaperReleaseIdToExam" resultMap="examPaperReleaseMapToExam">
         select * from exam_paper_release where exam_paper_release_id = #{examPaperReleaseId}
     </select>
+    <select id="selectByExamPaperId" resultType="examPaperRelease">
+        select * from exam_paper_release where exam_paper_id = #{examPaperId}
+    </select>
 </mapper>
